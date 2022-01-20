@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head ><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://weareher.com/wp-content/themes/her/css/owl.carousel.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css" />
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/style.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/media.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/bootstrap.min.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+
+	<link data-minify="1" rel="preload" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'">		
+    <link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css" />
+    
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.8 (Yoast SEO v17.9) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Terms of Service - HER</title><style id="rocket-critical-css">.wp-block-group{box-sizing:border-box}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" /></noscript>
+	<meta name="description" content="HER Terms of services." />
+	<link rel="canonical" href="https://weareher.com/terms/" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style type="text/css">.pt_splitter {
+	display: block;
+}</style><link rel='preload'   href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8.3' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1641499633' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=5.8.3' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=5.8.3' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1641499633' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 22px;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 18px;}
+</style>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://weareher.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://weareher.com/wp-json/" /><link rel="alternate" type="application/json" href="https://weareher.com/wp-json/wp/v2/pages/24583" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://weareher.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://weareher.com/wp-includes/wlwmanifest.xml" /> 
+<link rel="alternate" type="application/json+oembed" href="https://weareher.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fweareher.com%2Fterms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://weareher.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fweareher.com%2Fterms%2F&#038;format=xml" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>//<![CDATA[
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Robyn"};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQR3526');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<link rel="preload" as="font" href="https://weareher.com/wp-content/themes/her/fonts/swis%20bold/Swiss721BT-BoldCondensed.woff2" crossorigin><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<meta name="wpsso-begin" content="wpsso meta tags and schema markup begin"/>
+<!-- generator:1 --><meta name="generator" content="WPSSO Core 9.14.0/S"/>
+<!-- generator:2 --><meta name="generator" content="WPSSO JSON 5.2.1/S"/>
+<link rel="shortlink" href="https://weareher.com/?p=24583"/>
+<meta property="fb:app_id" content="966242223397117"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://weareher.com/terms/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="HER Queer Dating App"/>
+<meta property="og:title" content="Terms of Service"/>
+<meta property="og:description" content="HER Terms and Conditions. Effective Date: May 25, 2018 Our Terms. Welcome to HER! HER provides a platform for dating, making friends, reading content, finding out about local events, or just chatting with the biggest community for queer people worldwide. IMPORTANT &mdash; THIS AGREEMENT (&ldquo;AGREEMENT&rdquo;..."/>
+<meta property="og:updated_time" content="2021-04-22T11:57:10+00:00"/>
+<!-- og:image:1 --><meta property="og:image" content="https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x630-cropped.png"/>
+<!-- og:image:1 --><meta property="og:image:width" content="1200"/>
+<!-- og:image:1 --><meta property="og:image:height" content="630"/>
+<!-- og:image:1 --><meta property="og:image:alt" content="HER app logo"/>
+<meta property="article:publisher" content="http://facebook.com/hersocialapp"/>
+<meta property="article:published_time" content="2021-04-22T11:57:10+00:00"/>
+<meta property="article:modified_time" content="2021-04-22T11:57:10+00:00"/>
+<meta property="article:section" content="Dating"/>
+<meta name="twitter:domain" content="weareher.com"/>
+<meta name="twitter:site" content="@hersocialapp"/>
+<meta name="twitter:title" content="Terms of Service"/>
+<meta name="twitter:description" content="HER Terms and Conditions. Effective Date: May 25, 2018 Our Terms. Welcome to HER! HER provides a platform for dating, making friends, reading content, finding out about local events, or just..."/>
+<meta name="twitter:creator" content="@robynexton"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x630-cropped.png"/>
+<meta name="twitter:image:alt" content="HER app logo"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="Robyn"/>
+<meta name="twitter:label2" content="Est. reading time"/>
+<meta name="twitter:data2" content="34 minutes"/>
+<meta name="author" content="Robyn"/>
+<meta name="thumbnail" content="https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x630-cropped.png"/>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@id": "/terms/#sso/article",
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": "https://weareher.com/terms/",
+            "url": "https://weareher.com/terms/",
+            "sameAs": [
+                "https://weareher.com/?p=24583"
+            ],
+            "name": "Terms of Service",
+            "description": "HER Terms and Conditions. Effective Date: May 25, 2018 Our Terms. Welcome to HER! HER provides a platform for dating, making friends, reading content, finding out about local events, or just chatting with the biggest community for queer people worldwide. IMPORTANT &mdash; THIS AGREEMENT (&ldquo;AGREEMENT&rdquo;...",
+            "image": [
+                {
+                    "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200.png#sso/image-object"
+                },
+                {
+                    "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200-1200x900-cropped.png#sso/image-object"
+                },
+                {
+                    "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200-1200x675-cropped.png#sso/image-object"
+                }
+            ],
+            "publisher": [
+                {
+                    "@id": "#sso/organization/site/org-banner-url"
+                }
+            ],
+            "headline": "Terms of Service",
+            "inLanguage": "en_US",
+            "dateCreated": "2021-04-22T11:57:10+00:00",
+            "datePublished": "2021-04-22T11:57:10+00:00",
+            "dateModified": "2021-04-22T11:57:10+00:00",
+            "author": {
+                "@id": "/d83dcad2f8000625059537345e8cb3ec#sso/person"
+            },
+            "thumbnailUrl": "https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x630-cropped.png",
+            "articleSection": "Dating",
+            "articleBody": "HER Terms and Conditions. Effective Date: May 25, 2018 Our Terms. Welcome to HER! HER provides a platform for dating, making friends, reading content, finding out about local events, or just chatting with the biggest community for queer people worldwide. IMPORTANT &mdash; THIS AGREEMENT (&ldquo;AGREEMENT&rdquo; or &ldquo;TERMS&rdquo;) IS A LEGAL AGREEMENT BETWEEN YOU (&ldquo;YOU&rdquo; or &ldquo;YOUR&rdquo;) AND BLOOMER INC. HEREINAFTER &ldquo;HER,&rdquo; &ldquo;WE&rdquo;, &ldquo;US&rdquo; OR &ldquo;OUR&rdquo;) THAT sets forth the legal terms and conditions for your access to and use of https://weareher.com and any other website owned and operated by HER (the &ldquo;Website(s)&rdquo; OR &ldquo;site(s)&rdquo;) and ANY HER software, INCLUDING ANY HER mobile applications (the &ldquo;APP(s)&rdquo;) or other services offered by HER from time to time and other PRODUCTS OR services offered BY third parties USING HER functionality (collectively, the website(s), App(s) and services are referred to as &ldquo;Service(s)&rdquo;). PLEASE BE AWARE THAT SECTION 14 OF THESE TERMS OF SERVICE, BELOW, CONTAINS PROVISIONS THAT GOVERN HOW CLAIMS THAT YOU AND HER HAVE AGAINST EACH OTHER ARE RESOLVED. IN PARTICULAR, IT CONTAINS AN ARBITRATION AGREEMENT WHICH WILL, WITH LIMITED EXCEPTIONS, REQUIRE YOU TO SUBMIT CLAIMS THAT YOU HAVE AGAINST HER TO BINDING AND FINAL ARBITRATION. UNLESS YOU OPT OUT OF THE ARBITRATION AGREEMENT IN SECTION 14 OF THESE TERMS: (i) YOU WILL ONLY BE PERMITTED TO PURSUE CLAIMS AND SEEK RELIEF AGAINST HER ON AN INDIVIDUAL BASIS, NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS OR REPRESENTATIVE ACTION OR PROCEEDING; AND (ii) YOU ARE WAIVING YOUR RIGHT TO SEEK RELIEF IN A COURT OF LAW AND TO HAVE A JURY TRIAL ON YOUR CLAIMS. THE ARBITRATION PROVISIONS SET FORTH IN SECTION 14 OF THESE TERMS COULD AFFECT YOUR RIGHT TO PARTICIPATE IN PENDING CLASS ACTION LITIGATION. PLEASE SEE SECTION 14 FOR MORE INFORMATION REGARDING THESE ARBITRATION PROVISIONS, INCLUDING THE ARBITRATION PROVISIONS&rsquo; IMPACT ON THE PENDING CLASS LITIGATION AND HOW TO OPT OUT OF ARBITRATION. THE TERMS OF SERVICE LIMIT THE REMEDIES THAT MAY BE AVAILABLE TO YOU IN THE EVENT OF A DISPUTE. Why should you read these Terms? These terms create a legally binding agreement between you and us. By accessing or using the Site, you are accepting these Terms. Some of our Services may have additional rules, policies, and procedures. Where such additional terms apply, we will make them available for you. BY USING ANY SERVICES FROM HER, YOU AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT. Some of our services may have additional rules, policies and procedures (collectively, &ldquo;ADDITIONAL TERMS&rdquo;). Where Additional Terms apply, we will make them available for you to read through in connection with your use of that service. By using that service, you agree to the Additional Terms. You confirm that you can enter the Agreement. You confirm and promise to us that you have the right, authority, and capacity to enter into these terms. Which provisions of the terms should you pay particular attention to? The key terms that you should consider in particular detail are Sections: Changes to the Site and these Terms; 9. Disclaimer; Limitation of Liability and Indemnification; 12. Termination and 14; Arbitration Agreement. What to do if you don&rsquo;t want to accept these terms? If you do not agree with all of the provisions of these terms, do not access and/or use the Services. Information about HER and contact details. Who we are. HER Inc. is a Delaware corporation located in California, USA. You can contact us by writing to us at 1760 Mission Street, San Francisco, California, 94103. How we may contact you. If we have to contact you we may do so by text or email to the number and/or address you provided when you registered for an Account. Email counts as &ldquo;in writing&rdquo;. When we use the words &ldquo;writing&rdquo; or &ldquo;written&rdquo; in these Terms, this includes emails. For contractual purposes, you consent to receiving communications from HER by email. Changes to the Services and these Terms. Notice of Changes.We reserve the right to change the terms and conditions of this Agreement or to modify or discontinue the Services offered by HER at any time. Those changes will go into effect on the effective date shown in the revised agreement. If we change this Agreement, we will give you notice by posting the revised agreement on the applicable website(s) or app(s) Material Changes. In the event of a more significant change to the Services and/or this Agreement, meaning that the changes materially impact your rights under this Agreement or your use of the Services, we may also require you to provide consent to the updated agreement before further use of the Services is permitted. By continuing to use any Services after the new effective date, you agree to be bound by such changes. If the modified terms are not acceptable to you, except as otherwise required by law, your only recourse is to cease using the Services. Service Description and Participation/Account Creation/Eligibility. Service Description and Participation. HER provides an online platform that connects our users with other that are interested in connection for dating purposes, friendship, making connections and other similar purposes (such users collectively referred to herein as &ldquo;Customer&rdquo; or &ldquo;User&rdquo;). As a User of the Services, you agree to provide us with complete and accurate information (if requested) and to update such information to keep it accurate, current and complete. You hereby grant HER the right to use and distribute the information that you have provided to HER for the purpose for which it was provided. YOU UNDERSTAND AND AGREE THAT THE HER HAS NO CONTROL OVER THE CONDUCT OF USERS. TO THE FULLEST EXTENT PERMITTED BY LAW, YOU HEREBY AGREE TO RELEASE HER FROM ALL LIABILITY ARISING OUT OF OR RELATED TO ANY INTERACTIONS YOU MAY HAVE WITH OTHER USERS THROUGH YOUR USE OF THE SERVICES OR ANY ACT OR OMISSION OF OTHER USERS. Account Creation. In order to access certain features of the Website and Apps and to use certain Services, you may be required register to create an account (&ldquo;Account&rdquo;). In connection with setting up your Account with HER, we may supply you with a User identification and/or password. In connection with any future use, you may be asked to input your User identification and/or password from time to time. You agree to be responsible for all activity that occurs under your Account and agree to be responsible for maintaining the security of your password and User identification. You can delete your Account at any time, for any reason, by following the instructions on the Site. Eligibility &amp; Age Restrictions. Persons under 18 are prohibited from providing personal information on our Websites or via our Apps. If you are under the age of eighteen (18), you may not use the Services under any circumstances. Further, you agree and represent and warrant that you will not show pictures of anyone under the age of 18 or talk about or share information regarding other people (whether or not they are Users of the Services) on or through the Services. Acceptable Use. You are responsible for your use of the Services, and for any use of the Services made using your Account. Our goal is to create a positive experience in connection with our Services. To promote this goal, we prohibit certain kinds of conduct that may be harmful to other Users or to HER. When you use the Services, you agree that you will not: violate this Agreement or any HER rules regarding use of the Services; violate any law or regulation; send any nudes or pornographic shots, including nipples, genitals or backsides; solicit sex or any kind of sexual favors; breach any agreements you enter into with any third parties; violate, infringe, or misappropriate other people&rsquo;s intellectual property, privacy, publicity, or other legal rights; engage in any behavior that is abusive, harassing, indecent, profane, obscene, hateful or otherwise objectionable, including sexual misconduct; stalk, harass, or harm another individual; post any defamatory content or use the Services as a means to bully or degrade any other Users of the Services. impersonate any person or entity or perform any other similar fraudulent activity; impersonate any individual when interacting with other Users through the Services; use any means to scrape or crawl any Web pages or Content contained in the Websites or Apps (although HER may allow operators of public search engines to use spiders to index materials. from the Websites for the sole purpose of creating publicly available searchable indices of the materials, and HER reserves the right to revoke these exceptions either generally or in specific cases); attempt to circumvent any technological measure implemented by HER or any of HER&rsquo;s providers or any other third party (including another User) to protect the Websites or Apps; to the. extent permitted by applicable law, attempt to decipher, decompile, disassemble, or reverse engineer any of the software used to provide the Websites or Apps; or advocate, encourage, or assist any third party in doing any of the foregoing. Licence. Subject at all times to this Agreement, if you elect to download the App, the following also applies: HER grants you a licence to download, install and use a copy of the App on a single mobile device or computer that you own or control solely for your personal and professional use on the basis that the licence is: a personal, revocable, non-exclusive, non-transferable license (without a right to sublicense) to download, install and use a copy of the App on a single mobile device or computer that you own or control solely for your personal and professional use, subject at all times to this Agreement, including the restrictions on use, the acceptable use provisions and our right to remove Your Materials (as defined in Section 8) at our discretion at any time. Furthermore, with respect to any App accessed through or downloaded from an App Store such as Google Play or the Apple App Store (an &ldquo;App Store Sourced Application&rdquo;)..."
+        },
+        {
+            "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200.png#sso/image-object",
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "url": "https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200.png",
+            "identifier": "25281-wpsso-schema-1x1",
+            "name": "HER-LOGO_1200",
+            "alternativeHeadline": "HER app logo",
+            "description": "HER app logo",
+            "fileFormat": "image/png",
+            "uploadDate": "2021-06-21T13:12:44+00:00",
+            "width": 1200,
+            "height": 1200
+        },
+        {
+            "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200-1200x900-cropped.png#sso/image-object",
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "url": "https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x900-cropped.png",
+            "identifier": "25281-wpsso-schema-4x3",
+            "name": "HER-LOGO_1200",
+            "alternativeHeadline": "HER app logo",
+            "description": "HER app logo",
+            "fileFormat": "image/png",
+            "uploadDate": "2021-06-21T13:12:44+00:00",
+            "width": 1200,
+            "height": 900
+        },
+        {
+            "@id": "/wp-content/uploads/2021/06/HER-LOGO_1200-1200x675-cropped.png#sso/image-object",
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "url": "https://weareher.com/wp-content/uploads/2021/06/HER-LOGO_1200-1200x675-cropped.png",
+            "identifier": "25281-wpsso-schema-16x9",
+            "name": "HER-LOGO_1200",
+            "alternativeHeadline": "HER app logo",
+            "description": "HER app logo",
+            "fileFormat": "image/png",
+            "uploadDate": "2021-06-21T13:12:44+00:00",
+            "width": 1200,
+            "height": 675
+        },
+        {
+            "@id": "#sso/organization/site/org-banner-url",
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://weareher.com",
+            "name": "HER Queer Dating App",
+            "description": "HER is one of the world's biggest dating apps for LGBTQ+ women and queer folks. Created for queer people by queer people, HER is a safe and inclusive and has 7 million users worldwide.",
+            "sameAs": [
+                "http://facebook.com/hersocialapp",
+                "http://instagram.com/hersocialapp",
+                "https://www.linkedin.com/company/hersocialapp/about/",
+                "https://twitter.com/hersocialapp"
+            ]
+        },
+        {
+            "@id": "/d83dcad2f8000625059537345e8cb3ec#sso/person",
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "url": "http://weareher.com",
+            "name": "Robyn",
+            "givenName": "Robyn",
+            "familyName": "Exton",
+            "description": "Robyn is the CEO &amp; Founder of HER the world's largest brand for LGBTQ womxn &amp; queer people. Also runs London Queer Fashion Show. Find her on LinkedIn or Twitter.",
+            "sameAs": [
+                "https://www.linkedin.com/in/robynexton",
+                "https://twitter.com/robynexton",
+                "https://www.crunchbase.com/person/robyn-exton"
+            ]
+        }
+    ]
+}</script>
+<meta name="wpsso-end" content="wpsso meta tags and schema markup end"/>
+<meta name="wpsso-cached" content="2022-01-20T14:20:59+00:00">
+<meta name="wpsso-added" content="2022-01-20T14:33:46+00:00 in 0.001142 secs for weareher.com">
+
+<link rel="icon" href="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" sizes="32x32" />
+<link rel="icon" href="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" />
+<meta name="msapplication-TileImage" content="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" />
+		<style type="text/css" id="wp-custom-css">
+			a.section_button{
+	text-decoration:none !important;
+}
+.footerWP{
+align-items:center;	
+	margin-top:15px;
+	font-family: 'Spartan', sans-serif !important;
+    font-weight: 400;
+	
+}
+a{
+	text-decoration:none !important;
+}
+.footerWP ul{
+	align-content:center;
+	padding-left:25%;
+}
+a.section_button {
+    text-decoration:none !important;
+}
+a.section_button:hover{
+	color:white;
+}
+
+.footercol a{
+	 color: #666F75;
+	  text-decoration: none;
+	text-align:center;
+	
+}
+.pc{
+	display:all;
+}
+.phone{
+	display:none;
+}
+.footercol {
+		margin-top:15px;
+	list-style:none ;
+	margin-right:30px;
+	font-size:18px;
+	
+
+
+	
+}
+.footercol li {
+	 padding-bottom: 16px;
+	text-align:left;
+	
+}
+  
+.footerWP h6{
+	font-weight:400px;
+	font-size:22px;
+	text-decoration:bold;
+	    font-family:Spartan,sans-serif;
+	color:#404145;
+	padding-left:25%;
+  	padding-bottom:15px;
+	
+	
+}
+.footerWP .col {
+
+	width:25% !important;
+}
+.footerWP .row{
+		text-align:left;
+}
+
+@media(max-width:1200px) and (min-width:482px)
+{	
+	
+	.footerWP ul{
+	align-content:center;
+	padding-left:12% !important;
+}
+	.footerWP h6{
+	font-weight:400px;
+	font-size:22px;
+	text-decoration:bold;
+	    font-family:Spartan,sans-serif;
+	color:#404145;
+	padding-left:12%;
+  	padding-bottom:15px;
+	
+	
+}
+	
+}
+@media(max-width:481px){
+	.footerWP ul{
+	align-content:center;
+	padding-left:15% !important;
+}
+
+	.footerWP hr.rounded {
+display:none;
+}
+	.pc{
+	display:none;
+}
+.phone{
+	display:block;
+}
+.footerbtn{
+	font-size: 16px;
+  line-height: 140%;
+	width:100%;
+	text-decoration:bold;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+  cursor: pointer;
+	
+
+}
+.footerbtn svg {
+	margin-right:10px;
+	margin-top:3px;
+	color: #404145;
+    float: right;
+    height: 20px;
+    width: 20px;
+	transform: rotate(90deg);
+}
+	.footerbtn span{	
+	float:left;
+	margin-left:25px;
+		font-weight:400px;
+	font-size:22px;
+	text-decoration:bold;
+font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	color:#404145;
+
+}
+
+}
+.collapse{display:none}
+.collapse.in{display:block}
+.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}.navbar-collapse.in{overflow-y:visible}.navbar-fixed-top .navbar-collapse,.navbar-static-top .navbar-collapse,.navbar-fixed-bottom .navbar-collapse{padding-left:0;padding-right:0}}
+h1 {
+    font-family: 'Swis721 Cn BT' !important;;
+    font-size: 64px !important;;
+    font-weight: bold !important;;
+    letter-spacing: 0 !important;;
+    line-height: 74px !important;;
+    color: #030505;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+	padding-top: 15px;
+}
+.blog_post h1 {
+	text-align: center;
+    margin-top: 12px !important;
+	font-size:25px !important;
+	line-height: 30px !important;
+    height: 70px !important;
+    overflow: hidden;
+    font-weight: bold;
+    letter-spacing: 0;
+	margin-bottom: 5px;
+ 
+}
+	.blog_post h1 {
+	text-align: center;
+    margin-top: 20px;
+	font-size:25px !important;
+	line-height: 36px;
+    height: 115px;
+    overflow: hidden;
+    font-weight: bold;
+    letter-spacing: 0;
+	margin-bottom: 30px;
+ 
+}
+	/* download form */
+		@media(max-width:1200px) and (min-width:482px)
+{	
+.download_content h4 {
+	font-size:22px !important;
+text-align:left !important;
+	  }
+	.download_content h2 {
+    line-height: 1 !important;
+
+    font-size: 40pt !important;
+	text-align:left !important;
+	  }
+	.download_content p {
+	text-align:left !important;
+	 font-size:19px !important ;
+	letter-spacing: 0;
+	color:#666f75 !important;
+	  }
+	.download_content .wpcf7 {
+    padding-top: 10px !important;
+   padding-left: 10px !important;
+    margin: 0 auto;
+	}}
+	
+@media(max-width:481px) 
+{	
+.download_content button, html input[type=button], input[type=reset], input[type=submit] {
+	margin-top: 10px !important;
+	margin-left :15% !important
+	}
+	.download_content .wpcf7-form-control .wpcf7-submit{
+		
+	}
+	}	
+.download_content h4 {
+	font-size:24px !important;
+	font-family: 'Swis721 Cn BT' !important;
+    font-weight: bold !important;
+    color: #030505 !important;
+	  }
+.download_content h2 {
+    font-family: 'Swis721 Cn BT' !important;
+    font-size: 45pt ;
+    font-weight: bold !important;
+    letter-spacing: 0 !important;
+    color: rgb(3,5,5) !important;
+    margin-top: 0 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0 !important;
+	  }
+.download_content p {
+	
+	 font-size:20px ;
+	letter-spacing: 0;
+	color:#666f75 !important;
+	  }
+.download_content .wpcf7-form-control-wrap{
+	float:left !important;
+	margin: 0 auto;
+}
+.download_content .intl-tel-input.allow-dropdown input{
+    margin-left: 0;
+    border: none;
+    box-shadow: 1px 1px #666f75;
+    border-radius: 10px;
+    padding: 5px 52px;
+}
+.download_content button, html input[type=button], input[type=reset], input[type=submit] {
+	    font-family: Spartan !important;
+    background-color: black !important;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left:10px;
+	margin-top: -0px;
+}	
+	.download_content .wpcf7-response-output{
+		border:none !important;
+		font-family: Spartan,sans-serif !important;
+		    color: #666f75 !important;
+		font-size: 12px!important;
+	}
+	.download_content .wpcf7{
+		margin:0 auto !important;
+	}
+	.download_content .wpcf7-form-control-wrap{
+		margin:0 auto !important;
+		padding-left: 5%;
+	}
+.bs-post-container ul li, .bs-post-container ol li {
+	font-size: 16px;
+	color: #666F75;
+	background: transparent!important;
+	margin-bottom: 8px;
+	margin-left: 30px;
+	line-height: 30px;
+}
+
+.bs-post-container ul li::marker, .bs-post-container ol li::marker {
+	color: #666F75;
+}
+
+.auth-date li {
+	color: #666F75!important;
+}
+
+@media (max-width: 481px)
+.footerWP .row.pc {
+    display: flex!important;
+}
+
+.footerWP .container {
+	overflow-x: hidden;
+}
+
+.navbar-drawer-bar .drawer-container {
+	padding: 0;
+}
+
+.sticky .navbar-drawer-bar .drawer-container {
+	padding: 10px;
+}
+
+a.section_buttonChat:hover, a.banner_button {
+	color: #fff!important;
+}
+
+.bs-after-post-content .auth-content p {
+	line-height: 30px;
+}
+
+@media(min-width:768px) {
+	.bs-post-section h1 {
+		text-transform: unset
+}
+}
+
+@media(min-width:768px) and (max-width:1199px){
+	.bs-post-section h1 {
+		margin-top: -10px;
+}
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script type="rocketlazyloadscript">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'linkSentToMobile'
+});
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=618288b54564d200122a80db&product=inline-share-buttons" async="async"></script>
+</head>
+<body class="page-template-default page page-id-24583">
+
+	
+<div class="navbar-drawer strikingly-drawer bottom-border">
+    <ul id="menu-main-menu" class=""><li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://weareher.com/download/">Download</a></li>
+<li id="menu-item-24596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat-app/">Chat</a></li>
+<li id="menu-item-25139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25139"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://weareher.com/blog/">Blog</a></li>
+</ul></div>
+<div class="mobile_header wp_left" id="myHeader1">
+	<div class="col-xs-4">
+		<a href="https://weareher.com"><img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" /><noscript><img width="80" height="80" src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
+	</div>
+	<div class="col-xs-8">
+		<div class="navbar-drawer-bar">
+			<div class="drawer-container">
+				<a class="navbar" href="javascript:void(0);">
+				<img width="28" height="48" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2048'%3E%3C/svg%3E" class="img-responsive tongle_img" data-lazy-src="https://weareher.com/wp-content/themes/her/images/Accordion menu@2x.png" /><noscript><img width="28" height="48" src="https://weareher.com/wp-content/themes/her/images/Accordion menu@2x.png" class="img-responsive tongle_img" /></noscript>
+				<img width="28" height="48" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2048'%3E%3C/svg%3E" class="img-responsive black_tongle" data-lazy-src="https://weareher.com/wp-content/themes/her/images/black-tongle.png" /><noscript><img width="28" height="48" src="https://weareher.com/wp-content/themes/her/images/black-tongle.png" class="img-responsive black_tongle" /></noscript>
+				</a> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="header_wrapper wp_left black" id="myHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="logo wp_left"> <a href="https://weareher.com"><img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="img-responsive" alt="Her Logo" data-lazy-src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" /><noscript><img width="80" height="80" src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" class="img-responsive" alt="Her Logo" /></noscript></a> </div>
+      </div>
+      <div class="col-sm-10">
+         <div class="main_menu wp_left">
+         <ul id="menu-main-menu-1" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://weareher.com/download/">Download</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat-app/">Chat</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25139"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://weareher.com/blog/">Blog</a></li>
+</ul>         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main_wrapper wp_left">
+	
+<div class="container">
+  <div class="join_section section_bg wp_left">
+   <div class="wrapper">
+   <h1><span class="ez-toc-section" id="HER_Terms_and_Conditions"></span>HER Terms and Conditions<span class="ez-toc-section-end"></span></h1>
+<p><strong>Effective Date: May 25, 2018</strong></p>
+<h2><span class="ez-toc-section" id="Our_Terms"></span>Our Terms<span class="ez-toc-section-end"></span></h2>
+<p>Welcome to HER! HER provides a platform for dating, making friends, reading content, finding out about local events, or just chatting with the biggest community for queer people worldwide.<br />
+IMPORTANT — THIS AGREEMENT (“AGREEMENT” or “TERMS”) IS A LEGAL AGREEMENT BETWEEN YOU (“YOU” or “YOUR”) AND BLOOMER INC. HEREINAFTER “HER,” “WE”, “US” OR “OUR”) THAT sets forth the legal terms and conditions for your access to and use of https://weareher.com and any other website owned and operated by HER (the “Website(s)” OR “site(s)”) and ANY HER software, INCLUDING ANY HER mobile applications (the “APP(s)”) or other services offered by HER from time to time and other PRODUCTS OR services offered BY third parties USING HER functionality (collectively, the website(s), App(s) and services are referred to as “Service(s)”).</p>
+<p>PLEASE BE AWARE THAT SECTION 14 OF THESE TERMS OF SERVICE, BELOW, CONTAINS PROVISIONS THAT GOVERN HOW CLAIMS THAT YOU AND HER HAVE AGAINST EACH OTHER ARE RESOLVED. IN PARTICULAR, IT CONTAINS AN ARBITRATION AGREEMENT WHICH WILL, WITH LIMITED EXCEPTIONS, REQUIRE YOU TO SUBMIT CLAIMS THAT YOU HAVE AGAINST HER TO BINDING AND FINAL ARBITRATION. UNLESS YOU OPT OUT OF THE ARBITRATION AGREEMENT IN SECTION 14 OF THESE TERMS: (i) YOU WILL ONLY BE PERMITTED TO PURSUE CLAIMS AND SEEK RELIEF AGAINST HER ON AN INDIVIDUAL BASIS, NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS OR REPRESENTATIVE ACTION OR PROCEEDING; AND (ii) YOU ARE WAIVING YOUR RIGHT TO SEEK RELIEF IN A COURT OF LAW AND TO HAVE A JURY TRIAL ON YOUR CLAIMS. THE ARBITRATION PROVISIONS SET FORTH IN SECTION 14 OF THESE TERMS COULD AFFECT YOUR RIGHT TO PARTICIPATE IN PENDING CLASS ACTION LITIGATION. PLEASE SEE SECTION 14 FOR MORE INFORMATION REGARDING THESE ARBITRATION PROVISIONS, INCLUDING THE ARBITRATION PROVISIONS’ IMPACT ON THE PENDING CLASS LITIGATION AND HOW TO OPT OUT OF ARBITRATION. THE TERMS OF SERVICE LIMIT THE REMEDIES THAT MAY BE AVAILABLE TO YOU IN THE EVENT OF A DISPUTE.</p>
+<p>Why should you read these Terms? These terms create a legally binding agreement between you and us. By accessing or using the Site, you are accepting these Terms. Some of our Services may have additional rules, policies, and procedures. Where such additional terms apply, we will make them available for you.</p>
+<p><strong>BY USING ANY SERVICES FROM HER, YOU AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT.</strong></p>
+<p>Some of our services may have additional rules, policies and procedures (collectively, “ADDITIONAL TERMS”). Where Additional Terms apply, we will make them available for you to read through in connection with your use of that service. By using that service, you agree to the Additional Terms. You confirm that you can enter the Agreement. You confirm and promise to us that you have the right, authority, and capacity to enter into these terms.</p>
+<p>Which provisions of the terms should you pay particular attention to? The key terms that you should consider in particular detail are Sections: Changes to the Site and these Terms; 9. Disclaimer; Limitation of Liability and Indemnification; 12. Termination and 14; Arbitration Agreement.</p>
+<p>What to do if you don’t want to accept these terms? If you do not agree with all of the provisions of these terms, do not access and/or use the Services.</p>
+<h2><span class="ez-toc-section" id="Information_about_HER_and_contact_details"></span>Information about HER and contact details<span class="ez-toc-section-end"></span></h2>
+<p>Who we are. HER Inc. is a Delaware corporation located in California, USA. You can contact us by writing to us at 1760 Mission Street, San Francisco, California, 94103.<br />
+How we may contact you. If we have to contact you we may do so by text or email to the number and/or address you provided when you registered for an Account.<br />
+Email counts as “in writing”. When we use the words “writing” or “written” in these Terms, this includes emails. For contractual purposes, you consent to receiving communications from HER by email.</p>
+<h2><span class="ez-toc-section" id="Changes_to_the_Services_and_these_Terms"></span>Changes to the Services and these Terms<span class="ez-toc-section-end"></span></h2>
+<p>Notice of Changes.We reserve the right to change the terms and conditions of this Agreement or to modify or discontinue the Services offered by HER at any time. Those changes will go into effect on the effective date shown in the revised agreement. If we change this Agreement, we will give you notice by posting the revised agreement on the applicable website(s) or app(s)<br />
+Material Changes. In the event of a more significant change to the Services and/or this Agreement, meaning that the changes materially impact your rights under this Agreement or your use of the Services, we may also require you to provide consent to the updated agreement before further use of the Services is permitted. By continuing to use any Services after the new effective date, you agree to be bound by such changes. If the modified terms are not acceptable to you, except as otherwise required by law, your only recourse is to cease using the Services.</p>
+<h2><span class="ez-toc-section" id="Service_Description_and_ParticipationAccount_CreationEligibility"></span>Service Description and Participation/Account Creation/Eligibility<span class="ez-toc-section-end"></span></h2>
+<p>Service Description and Participation. HER provides an online platform that connects our users with other that are interested in connection for dating purposes, friendship, making connections and other similar purposes (such users collectively referred to herein as “Customer” or “User”). As a User of the Services, you agree to provide us with complete and accurate information (if requested) and to update such information to keep it accurate, current and complete. You hereby grant HER the right to use and distribute the information that you have provided to HER for the purpose for which it was provided. YOU UNDERSTAND AND AGREE THAT THE HER HAS NO CONTROL OVER THE CONDUCT OF USERS. TO THE FULLEST EXTENT PERMITTED BY LAW, YOU HEREBY AGREE TO RELEASE HER FROM ALL LIABILITY ARISING OUT OF OR RELATED TO ANY INTERACTIONS YOU MAY HAVE WITH OTHER USERS THROUGH YOUR USE OF THE SERVICES OR ANY ACT OR OMISSION OF OTHER USERS.</p>
+<p>Account Creation. In order to access certain features of the Website and Apps and to use certain Services, you may be required register to create an account (“Account”). In connection with setting up your Account with HER, we may supply you with a User identification and/or password. In connection with any future use, you may be asked to input your User identification and/or password from time to time. You agree to be responsible for all activity that occurs under your Account and agree to be responsible for maintaining the security of your password and User identification. You can delete your Account at any time, for any reason, by following the instructions on the Site.</p>
+<p>Eligibility &amp; Age Restrictions. Persons under 18 are prohibited from providing personal information on our Websites or via our Apps. If you are under the age of eighteen (18), you may not use the Services under any circumstances. Further, you agree and represent and warrant that you will not show pictures of anyone under the age of 18 or talk about or share information regarding other people (whether or not they are Users of the Services) on or through the Services.</p>
+<h2><span class="ez-toc-section" id="Acceptable_Use"></span>Acceptable Use<span class="ez-toc-section-end"></span></h2>
+<p>You are responsible for your use of the Services, and for any use of the Services made using your Account. Our goal is to create a positive experience in connection with our Services. To promote this goal, we prohibit certain kinds of conduct that may be harmful to other Users or to HER.</p>
+<h3><span class="ez-toc-section" id="When_you_use_the_Services_you_agree_that_you_will_not"></span>When you use the Services, you agree that you will not:<span class="ez-toc-section-end"></span></h3>
+<ul>
+<li>violate this Agreement or any HER rules regarding use of the Services;</li>
+<li>violate any law or regulation;</li>
+<li>send any nudes or pornographic shots, including nipples, genitals or backsides;</li>
+<li>solicit sex or any kind of sexual favors;</li>
+<li>breach any agreements you enter into with any third parties;</li>
+<li>violate, infringe, or misappropriate other people’s intellectual property, privacy, publicity, or other legal rights;</li>
+<li>engage in any behavior that is abusive, harassing, indecent, profane, obscene, hateful or otherwise objectionable, including sexual misconduct;</li>
+<li>stalk, harass, or harm another individual;</li>
+<li>post any defamatory content or use the Services as a means to bully or degrade any other Users of the Services</li>
+<li>impersonate any person or entity or perform any other similar fraudulent activity;</li>
+<li>impersonate any individual when interacting with other Users through the Services;</li>
+<li>use any means to scrape or crawl any Web pages or Content contained in the Websites or Apps (although HER may allow operators of public search engines to use spiders to index materials</li>
+<li>from the Websites for the sole purpose of creating publicly available searchable indices of the materials, and HER reserves the right to revoke these exceptions either generally or in specific cases);</li>
+<li>attempt to circumvent any technological measure implemented by HER or any of HER’s providers or any other third party (including another User) to protect the Websites or Apps; to the</li>
+<li>extent permitted by applicable law, attempt to decipher, decompile, disassemble, or reverse engineer any of the software used to provide the Websites or Apps; or<br />
+advocate, encourage, or assist any third party in doing any of the foregoing.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Licence"></span>Licence<span class="ez-toc-section-end"></span></h2>
+<p>Subject at all times to this Agreement, if you elect to download the App, the following also applies: HER grants you a licence to download, install and use a copy of the App on a single mobile device or computer that you own or control solely for your personal and professional use on the basis that the licence is: a personal, revocable, non-exclusive, non-transferable license (without a right to sublicense) to download, install and use a copy of the App on a single mobile device or computer that you own or control solely for your personal and professional use, subject at all times to this Agreement, including the restrictions on use, the acceptable use provisions and our right to remove Your Materials (as defined in Section 8) at our discretion at any time. Furthermore, with respect to any App accessed through or downloaded from an App Store such as Google Play or the Apple App Store (an “App Store Sourced Application”), you will only use the App Store Sourced Application: (1) on a product that runs the operating system for which it was intended and (2) as permitted by the “Usage Rules” set forth in the corresponding App Store. Use of the App from a third party App Store is also subject to the provisions of Section 106.</p>
+<h2><span class="ez-toc-section" id="Payments_HER_Premium_Plans_and_Cancellation"></span>Payments, HER Premium Plans and Cancellation<span class="ez-toc-section-end"></span></h2>
+<ul>
+<li>HER Free Services. If you don’t choose to purchase HER Premium, you can simply use HER for free.</li>
+<li>HER Premium. HER Premium offers Users with access to new features, including unlimited swipes, changes in locations, views of whose liked you, read receipts, MixHer, etc. HER has multiple subscription options to choose from, starting as low as $9.99 USD per month.</li>
+</ul>
+<h3><span class="ez-toc-section" id="Payment_Breakdowns_and_Models_for_HER_Premium"></span>Payment Breakdowns and Models for HER Premium:<span class="ez-toc-section-end"></span></h3>
+<ul>
+<li>1 month: $14.99 and $24.99 USD</li>
+<li>12 months: $89.99 and $59.99 USD</li>
+</ul>
+<p>If you choose to purchase HER Premium, payment will be charged to your iTunes or Google Play account (as applicable). All subscription prices are in USD and are listed in full above. Prices may vary in other countries than the U.S. and except where prohibited by law, are subject to change without notice.</p>
+<p>Where to find the price. We may charge fees in connection with your use of the Services. If you are using the paid-for version of the Services, the price of the product will be the price indicated on the order pages when you placed your order. We use our best efforts to ensure that the price advised to you is correct. However please see Section 7.4 for what happens if we discover an error in the price of your order.</p>
+<p>When you must pay and how you must pay. Your Account will be charged for renewal within 24 hours prior to the end of the current subscription period (regardless of the length of the subscription period). Auto-renewal may be turned off at any time by going to the iTunes Store or Google Play Store (as applicable) after purchase and must be turned off at least 24 hours before the end of the current subscription period to take effect. We may change the fees we charge or may choose to temporarily change the fees for our Services and such changes are effective when we post the change on the Service. You agree to pay all charges incurred by you or any Users of your Account and payment card (or other applicable payment mechanism) at the amounts in effect when such charges are incurred. Customers must provide HER with a valid credit or debit card (Visa, MasterCard, or any other accepted issuer) or use Apple Pay or any other payment or financial mechanism specified by HER (“Payment Provider”). The Customer’s Payment Provider agreement governs its use of the designated credit or debit card or other mechanism, and the Customer should refer to that agreement and not this Agreement to determine its rights and liabilities. By providing HER with your payment and/or financial information, you agree that HER and any of its third party payment processors are authorized to immediately debit or credit your account for all applicable fees and charges and that no additional notice or consent is required. You agree to immediately notify HER of any change in your payment and financial information. HER reserves the right at any time to change its prices and billing methods. All information that you provide to us or our third party payment processors must be accurate, current and complete. YOU REPRESENT AND WARRANT THAT YOU HAVE THE LEGAL RIGHT TO USE ANY PAYMENT CARD(S), PAYMENT MEANS OR OTHER FINANCIAL INFORMATION THAT YOU PROVIDE. You will also be responsible for paying any applicable taxes relating to payments that you make or that you receive.</p>
+<h2><span class="ez-toc-section" id="Ownership_Copyright"></span>Ownership &amp; Copyright<span class="ez-toc-section-end"></span></h2>
+<p>The parties agree that all proprietary rights in the Services are and will remain the property of HER. This includes non-personally identifiable aggregate data collected by HER in connection with providing the Services, as well as usage statistics and traffic patterns, any and all rights, title and interest to which are hereby assigned to HER by you.</p>
+<h3><span class="ez-toc-section" id="Copyright_Restrictions"></span>Copyright Restrictions<span class="ez-toc-section-end"></span></h3>
+<ul>
+<li>The Websites and Apps, including but not limited to software, content, text, photographs, images, graphics, video, audio and the compilation as a whole (“Content”), are copyrighted under U.S. copyright and other laws by HER or its licensors, unless otherwise noted. You must abide by all additional copyright notices or restrictions contained in the Websites, Apps or elsewhere. You may not delete any legal or proprietary notices in the Websites, Apps or elsewhere.</li>
+<li>Except as noted in Section 8 below: (1) the Websites and Apps may not be used, displayed, copied, reproduced, distributed, republished, uploaded, downloaded, posted, transmitted, mirrored or modified; and (2) except to the extent permitted by applicable law, you may not redistribute, sell, translate, modify, reverse-engineer or reverse-compile or decompile, disassemble or make derivative works of the Websites, Apps or any Content or components that are available on the Websites or Apps.</li>
+</ul>
+<p>(c) You agree not to interfere or take action that results in interference with or disruption of the Websites or Apps or servers or networks connected to the Websites or Apps. You agree not to attempt to gain unauthorized access to other computer systems or networks connected to the Websites or Apps. HER reserves all other rights. Except as expressly provided herein, nothing on the Websites or as part of the Services will be construed as conferring any license under HER’s and/or any third party’s intellectual property rights, whether by estoppel, implication or otherwise. Notwithstanding anything herein to the contrary, HER may revoke any of the foregoing rights and/or your access to the Services, including the App, or any part thereof, at any time without prior notice.</p>
+<ul>
+<li>Copyright Permission. Permission is granted for viewing the Website pages and Content on the Internet and via the Apps, subject to the terms and conditions of this Agreement. In the event that information is downloaded from the Websites or Apps, the information, including any Content, data or files incorporated in or generated by the Websites or Apps are owned by HER and HER retains complete title to the information and all property rights therein. All other rights are reserved.</li>
+<li>Content Licence. As part of the Services, we may, in our sole discretion, permit you to post, upload, publish, submit or transmit certain content (“Your Materials”). We may also post a photograph or other visual likeness of you (“Your Image”). By making available any of Your Materials on or through the Services or if we make available Your Image on or through the Services, you hereby grant to HER the right to use Your Materials and Your Image as necessary to provide the Services and improve the Services. You also hereby grant to HER the right to use Your Materials (but not Your Image) to promote and market the Services. HER does not claim any ownership rights in any of Your Materials and nothing in this Agreement will be deemed to restrict any rights that you may have to use and exploit any of Your Materials.</li>
+<li>Copyright Policy. You acknowledge and agree that you are solely responsible for all of Your Materials that you make available through the Services. You represent and warrant that: (1) you either are the sole and exclusive owner of all of Your Materials that you make available through the Services or you have all rights, licenses, consents and releases that are necessary to grant to HER (or any other User as applicable) the rights in Your Materials, as contemplated under this Agreement; and (2) neither Your Materials nor your posting, uploading, publication, submission or transmittal of Your Materials or HER’s use of Your Materials or Your Image (or any portion thereof) on, through or by means of the Services will infringe, misappropriate or violate any patent, copyright, trademark, trade secret, moral rights or other proprietary or intellectual property rights, or rights of publicity or privacy, or result in the violation of any applicable law or regulation.</li>
+<li>Trademarks/Use of Name or Brand. All Content, product names, trademarks, service marks and logos appearing as part of the Services, unless otherwise noted, are wholly owned or validly licensed by HER. Trademarks, service marks and logos owned by third parties remain the property of such third parties.</li>
+<li>Feedback. If you submit any ideas, suggestions or testimonials “Feedback” to HER, you hereby transfer to us all rights in such Feedback without charge. You also agree that HER shall have the right to use and fully exploit such Feedback in any manner that we consider appropriate, including posting on the Internet. Please note that the Feedback you provide to us will not be treated as confidential information – accordingly, you agree not to submit to us any information or ideas that you consider to be confidential or proprietary.You may only submit ideas and material if you have obtained appropriate copyright and other permission to submit such materials and to permit HER to use such material without restriction. You agree that you will not violate or infringe the rights of third parties, including privacy, publicity and intellectual and proprietary rights, such as copyright or trademark rights.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Disclaimer_Limitation_of_Liability_and_Indemnification"></span>Disclaimer; Limitation of Liability and Indemnification<span class="ez-toc-section-end"></span></h2>
+<p>HER DOES NOT MAKE ANY REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, COMPATIBILITY, SECURITY, ACCURACY, OR USEFULNESS WITH RESPECT TO THE SERVICES. YOU AGREE THAT ANY CLAIMS OR CAUSES OF ACTION ARISING OUT OF ANY ACTION OR INACTION OF ANY THERAPISTS OR CUSTOMERS, SHALL BE EXCLUSIVELY BETWEEN YOU AND THE THERAPIST OR CUSTOMER (AS APPLICABLE) AND NOT HER. THE SERVICES ARE PROVIDED ON A STRICTLY “AS IS” BASIS, WITH ALL FAULTS. YOU AGREE TO USE THE SERVICES SOLELY AT YOUR OWN RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, YOU ASSUME FULL RESPONSIBILITY AND RISK OF LOSS RESULTING FROM YOUR USE OF THE SERVICES. ALTHOUGH WE INTEND TO TAKE REASONABLE STEPS TO PREVENT ANY DAMAGES TO YOU, TO THE FULLEST EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE FOR ANY DAMAGES OR HARM ATTRIBUTABLE TO THE FOREGOING.</p>
+<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, YOU AGREE TO DEFEND, INDEMNIFY AND HOLD HARMLESS HER, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES AND AGENTS, FROM AND AGAINST ANY AND ALL CLAIMS, DAMAGES, OBLIGATIONS, LOSSES, LIABILITIES, COSTS OR DEBT, AND EXPENSES (INCLUDING BUT NOT LIMITED TO REASONABLE ATTORNEY’S FEES) ARISING FROM: (i) YOUR USE OF AND/OR ACCESS TO THE SERVICES AND/OR ANY CONTENT ACCESSED OR PROVIDED THROUGH THE SERVICES; (ii) YOUR VIOLATION OF ANY TERM OF THESE TERMS OF SERVICES; (iii) YOUR VIOLATION OF ANY THIRD PARTY RIGHT, INCLUDING WITHOUT LIMITATION, ANY COPYRIGHT, PROPERTY OR PRIVACY RIGHT; (iv) ANY CLAIM THAT YOUR CONTENT CAUSED DAMAGE TO A THIRD PARTY; AND/OR (v) YOUR VIOLATION OF ANY LAW OR REGULATION. THIS DEFENSE AND INDEMNIFICATION OBLIGATION WILL SURVIVE THESE TERMS OF SERVICE AND YOUR USE OF THE SERVICES.<br />
+LIMITATION OF LIABILITY. EXCEPT AS PROHIBITED BY APPLICABLE LAW, IN NO EVENT SHALL HER, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING FROM ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, OR THE FAILURE TO OBTAIN AND MAINTAIN ANY LICENSES IN OR TO SUCH CONTENT, INCLUDING WITHOUT LIMITATION ANY CONTENT SOURCED FROM A THIRD PARTY; (II) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR SERVICE; (III) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN; (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SERVICE, (IV) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE, WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SERVICE BY ANY THIRD PARTY; AND/OR (V) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT HER IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW IN THE APPLICABLE JURISDICTION. TO THE FULLEST EXTENT PERMITTED BY LAW, YOU SPECIFICALLY ACKNOWLEDGE THAT HER SHALL NOT BE LIABLE FOR CONTENT OR THE DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. SOME JURISDICTIONS DO NOT ALLOW FOR LIMITED LIABILITY OR EXCLUSION OF IMPLIED WARRANTIES, SO NOT ALL OF THE ABOVE LIMITATIONS MAY APPLY TO YOU. YOU ACKNOWLEDGE AND UNDERSTAND THAT THE DISCLAIMERS, EXCLUSIONS AND LIMITATIONS OF LIABILITY SET FORTH HEREIN FORM AN ESSENTIAL BASIS OF THE AGREEMENT BETWEEN THE PARTIES HERETO, THAT THE PARTIES HAVE RELIED UPON SUCH DISCLAIMERS, EXCLUSIONS AND LIMITATIONS OF LIABILITY, AND THAT ABSENT SUCH DISCLAIMERS, EXCLUSIONS AND LIMITATIONS OF LIABILITY, THE TERMS AND CONDITIONS OF THIS AGREEMENT WOULD BE SUBSTANTIALLY DIFFERENT.</p>
+<p><strong>WHAT WE DO NOT EXCLUDE. NOTHING IN THESE TERMS SHALL LIMIT OR EXCLUDE OUR LIABILITY FOR:</strong></p>
+<ul>
+<li>DEATH OR PERSONAL INJURY RESULTING FROM OUR NEGLIGENCE OR THE NEGLIGENCE OF OUR EMPLOYEES, AGENTS OR SUBCONTRACTORS;</li>
+<li>FRAUD OR FRAUDULENT MISREPRESENTATION;</li>
+<li>ANY OTHER LIABILITY THAT CANNOT BE EXCLUDED BY APPLICABLE LAW.</li>
+</ul>
+<p>Location of the Services. The Services are controlled by HER from its facilities in the United States of America. HER makes no representations or warranties that the Services are appropriate or available for use in other locations. Those who access or use the Services from other jurisdictions do so at their own volition and are responsible for compliance with all applicable local laws and regulations.</p>
+<h2><span class="ez-toc-section" id="Third_Party_Links_App_Store"></span>Third Party Links &amp; App Store<span class="ez-toc-section-end"></span></h2>
+<p>Third-Party Links &amp; Ads. The Services may contain links to third-party websites and services, and/or display advertisements for third parties (collectively, “Third-Party Links &amp; Ads”). Where the Services contain links to Third-Party Links &amp; Ads, these links are provided for your information and convenience only. We have no control over the contents of those sites or resources. HER does not review, approve, endorse or make any promises with respect to Third-Party Links &amp; Ads. You use Third-Party Links &amp; Ads at your own risk. You use all Third-Party Links &amp; Ads at your own risk, and should apply a suitable level of caution and discretion in doing so. When you click on any of the Third-Party Links &amp; Ads, the applicable third party’s terms and policies apply, not these Terms.</p>
+<p>App Store. When you download our Apps, you may do so through a third party’s App Store. You acknowledge that the terms of this Agreement are between you and us and not with the owner or operator of the App Store (“App Store Owner”). As between the App Store Owner and us, we, and not the App Store Owner, are solely responsible for the Services, including the App, the content, maintenance, support services, and warranty, and addressing any claims relating thereto (e.g., product liability, legal compliance or intellectual property infringement). In order to use the App, you must have access to a wireless network, and you agree to pay all fees associated with such access. You also agree to pay all fees (if any) charged by the App Store Owner in connection with the Services, including the App. The following applies to any App Store Sourced Application (as such term is defined in Section 7):</p>
+<ul>
+<li>Your use of the App Store Sourced Application must comply with the App Store’s “Terms of Service” or equivalent terms.</li>
+<li>You acknowledge that the App Store Owner has no obligation whatsoever to furnish any maintenance and support services with respect to the App Store Sourced Application.</li>
+<li>In the event of any failure of the App Store Sourced Application to conform to any applicable warranty, you may notify the App Store Owner, and the App Store Owner will refund the purchase price for the App Store Sourced Application to you (if any) and to the maximum extent permitted by applicable law, the App Store Owner will have no other warranty obligation whatsoever with respect to the App Store Sourced Application. As between HER and the App Store Owner, any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty will be the sole responsibility of HER.</li>
+<li>You and we acknowledge that, as between HER and the App Store Owner, the App Store Owner is not responsible for addressing any claims you have or any claims of any third party relating to the App Store Sourced Application or your possession and use of the App Store Sourced Application, including, but not limited to: (1) product liability claims; (2) any claim that the App Store Sourced Application fails to conform to any applicable legal or regulatory requirement; and (3) claims arising under consumer protection or similar legislation.</li>
+<li>You and we acknowledge that, in the event of any third-party claim that the App Store Sourced Application or your possession and use of that App Store Sourced Application infringes that third party’s intellectual property rights, as between HER and the App Store Owner, HER, not the App Store Owner, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim to the extent required by this Agreement.</li>
+<li>You and we acknowledge and agree that the App Store Owner, and the App Store Owner’s subsidiaries, are third-party beneficiaries of this Agreement as related to your license of the App Store Sourced Application, and that, upon your acceptance of this Agreement, the App Store Owner will have the right (and will be deemed to have accepted the right) to enforce the terms of this Agreement as related to your license of the App Store Sourced Application against you as a third-party beneficiary thereof.</li>
+<li>You represent and warrant that (1) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and (2) you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
+<li>Without limiting any other terms in this Agreement, you must comply with all applicable third-party terms of agreement when using the App Store Sourced Application.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Termination"></span>Termination<span class="ez-toc-section-end"></span></h2>
+<ul>
+<li>When we might suspend or terminate your Account or Site access. We may, in our discretion and without liability to you, with or without cause, with or without prior notice and at any time: (a) terminate this Agreement and/or your access to the Services, and (b) deactivate or cancel your Account.</li>
+<li>What happens when these Terms terminate? In the event HER terminates this Agreement or your access to the Services or deactivates or cancels your Account, you will remain liable for all amounts due hereunder.</li>
+<li>Your right to cancel. You may cancel your Account at any time by contacting us. Please note that if your Account is cancelled, we do not have any obligation to delete or return to you any of Your Content that you have posted to the Services, including, but not limited to, any reviews or Feedback.</li>
+<li>Our right to cancel. If we terminate this Agreement and/or your access to the Services as a result of your violation of any applicable law or regulation, we may also, at our sole discretion, inform law enforcement or regulatory authorities of the circumstances surrounding such termination.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Other_Important_Terms"></span>Other Important Terms<span class="ez-toc-section-end"></span></h2>
+<ul>
+<li>Privacy Policy. HER has customer information and privacy policies as set forth in its online Privacy Policy weareher.com/privacy. You hereby agree to be bound by HER’s Privacy Policy. Consistent with these policies, you may not collect, distribute or gather personal or aggregate information, including Internet or e-mail addresses, about HER’s customers or other Users.</li>
+<li>Anti-Spam. HER prohibits the sending of unsolicited bulk email or text messages (spam). Spam is defined for this purpose as sending multiple messages similar in content to any persons, entities, newsgroups, forums, email lists, or other groups or lists unless prior authorization has been obtained from the recipient or unless a business or personal relationship has already been established with the recipient. HER also prohibits using false headers in emails or falsifying, forging or altering the origin of any email or text message in connection with HER, and/or any products and Services. HER prohibits engaging in any of the foregoing activities by using the service of another provider, remailer service, or otherwise. IF YOU OR ANYONE YOU KNOW IS “SPAMMED” BY SOMEONE IN RELATION TO HER’S SERVICES, PLEASE CONTACT US PROMPTLY VIA THE CONTACT MECHANISM MADE AVAILABLE VIA THE WEBSITE SO THAT WE MAY TAKE APPROPRIATE ACTION.</li>
+<li>Governing Law and Jurisdiction. This Agreement will be governed by and interpreted in accordance with the laws of the State of California and we both agree to submit to the non-exclusive jurisdiction of the District Courts of California. This means that, if you are a citizen of a country in the EU, you may bring a claim to enforce your consumer protection rights in connection with these Terms in California or in the EU country in which you live.</li>
+<li>Even if we delay in enforcing these Terms, we can still enforce it later. If we do not insist immediately that you do anything you are required to do under these Terms, or if we delay in taking steps against you in respect of your breaking these Terms, that will not mean that you do not have to do those things and it will not prevent us taking steps against you at a later date.<br />
+Rights and Waiver. No delay or omission by either party hereto to exercise any right or power occurring upon any noncompliance or default by the other party with respect to any of the terms of this Agreement shall impair any such right or power or be construed to be a waiver thereof. The terms and conditions of this Agreement may be waived or amended only in writing and only by the party that is entitled to the benefits of the term(s) or condition(s) being waived or amended. Unless stated otherwise, all remedies provided for in this Agreement shall be cumulative and in addition to and not in lieu of any other remedies available to either party at law, in equity, or otherwise.</li>
+<li>Severability. If any provision of this Agreement or any word, phrase, clause, sentence, or other portion thereof should be held to be unenforceable or invalid for any reason, then such provision or portion thereof shall be modified or deleted in such manner as to render this Agreement as modified legal and enforceable to the maximum extent permitted under applicable laws.</li>
+<li>The party entering into this Agreement hereby acknowledges, represents and warrants that he or she is expressly and duly authorized to enter into this Agreement and to legally bind said party to this Agreement.</li>
+<li>We may transfer these Terms to someone else. This Agreement, and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by without restriction. We may transfer our rights and obligations under these Terms to another organisation – for example, this could include another member of our group of companies or someone who buys our business. We will always tell you in writing if this happens and we will ensure that the transfer will not affect your rights under these Terms.</li>
+<li>Nobody else has any rights under these Terms. These Terms are between you and us. No other person or party shall have any rights to enforce any of its terms.</li>
+<li>Notice to California Users. Under California Civil Code Section 1789.3, Users of the Services from California are entitled to the following specific consumer rights notice. You may report complaints to The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 400 R Street, Sacramento, CA 95814, or by telephone at (800) 952-5210.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Arbitration_Agreement_and_Dispute_Resolution"></span>Arbitration Agreement and Dispute Resolution.<span class="ez-toc-section-end"></span></h2>
+<p>Please read this Arbitration Agreement carefully. It is part of your contract with Bloomer, Inc. (doing business as HER) and affects your rights. It contains procedures for MANDATORY BINDING ARBITRATION AND A CLASS ACTION WAIVER.</p>
+<ul>
+<li>Scope of Arbitration Agreement (“Arbitration Agreement”). You acknowledge and agree that any dispute or claim relating in any way to your access or use of the Website or to any other aspect of your relationship with HER will be resolved by binding arbitration, rather than in court, except that (1) you may assert claims in small claims court if your claims qualify, so long as the matter remains in such court and advances only on an individual (non-class, non-representative) basis; and (2) you or HER may seek equitable relief in court for infringement or other misuse of intellectual property rights (such as trademarks, trade dress, domain names, trade secrets, copyrights, and patents). This Arbitration Agreement shall apply, without limitation, to all claims that arose before this or any prior Agreement. NOW OR IN THE FUTURE, THERE MAY BE LAWSUITS AGAINST HER ALLEGING CLASS, COLLECTIVE, AND/OR REPRESENTATIVE CLAIMS. SUCH CLAIMS, IF SUCCESSFUL, COULD RESULT IN SOME MONETARY RECOVERY TO YOU. THE EXISTENCE OF SUCH CLASS, COLLECTIVE, AND/OR REPRESENTATIVE LAWSUITS DOES NOT MEAN THAT SUCH LAWSUITS WILL ULTIMATELY SUCCEED. BUT IF YOU AGREE TO ARBITRATION WITH HER, YOU ARE AGREEING IN ADVANCE THAT YOU WILL NOT PARTICIPATE IN OR SEEK TO RECOVERY MONETARY OR OTHER RELIEF UNDER SUCH CLASS, COLLECTIVE, AND/OR REPRESENTATIVE LAWSUITS. INSTEAD, BY AGREEING TO ARBITRATION, YOU MAY BRING YOUR CLAIMS AGAINST HER IN AN INDIVIDUAL ARBITRATION PROCEEDING. IF SUCCESSFUL ON SUCH CLAIMS, YOU COULD BE AWARDED MONEY OR OTHER RELIEF BY AN ARBITRATOR.</li>
+</ul>
+<ul>
+<li>Arbitration Rules and Forum. This Arbitration Agreement is governed by the Federal Arbitration Act in all respects. To begin an arbitration proceeding, you must send a letter requesting arbitration and describing your claim to our registered agent, The Corporation Trust Company, at 1209 Orange Street, Wilmington, DE 19801. The arbitration will be conducted by the American Arbitration Association (“AAA”) under its rules, including the AAA’s Supplementary Procedures for Consumer-Related Disputes. The AAA’s rules are available at adr.org or by calling the AAA at 1-800-778-7879. Payment of all filing, administration, and arbitration fees will be governed by the AAA’s rules. We will reimburse those fees for claims totaling less than $10,000 unless the arbitrator determines the claims are frivolous. Likewise, HER will not seek attorneys’ fees and costs in arbitration unless the arbitrator determines the claims are frivolous. If the AAA is not available to arbitrate, the parties will select an alternative arbitral forum.</li>
+</ul>
+<ul>
+<li>Arbitrator Powers. The arbitrator, and not any federal, state, or local court or agency, shall have exclusive authority to resolve any dispute relating to the interpretation, applicability, enforceability or formation of this Arbitration Agreement including, but not limited to any claim that all or any part of this Arbitration Agreement is void or voidable. The arbitration will decide the rights and liabilities, if any, of you and HER. The dispute will not be consolidated with any other matters or joined with any other cases or parties. The arbitrator will have the authority to grant motions dispositive of all or part of any claim or dispute. The arbitrator will have the authority to award monetary damages and to grant any non-monetary remedy or relief available to an individual under applicable law, the arbitral forum’s rules, and this Agreement. The arbitrator will issue a written award and statement of decision describing the essential findings and conclusions on which the award is based, including the calculation of any damages awarded. The arbitrator has the same authority to award relief on an individual basis that a judge in a court of law would have. The award of the arbitrator is final and binding on you and HER.</li>
+<li>Waiver of Jury Trial. YOU AND HER EACH KNOWINGLY AND VOLUNTARILY WAIVE ANY CONSTITUTIONAL AND STATUTORY RIGHTS TO SUE IN COURT AND RECEIVE A JUDGE OR JURY TRIAL. You and HER are instead electing to have claims and disputes resolved by arbitration. An arbitrator can award on an individual basis the same damages and relief as a court and must follow this Agreement as a court would. However, there is no judge or jury in arbitration, and court review of an arbitration award is limited. In any litigation between you and HER over whether to vacate or enforce an arbitration award, you and HER waive all rights to a jury trial, and elect instead to have a judge resolve the dispute.</li>
+<li>Waiver of Class or Consolidated Actions. ALL CLAIMS AND DISPUTES WITHIN THE SCOPE OF THIS ARBITRATION AGREEMENT MUST BE ARBITRATED ON AN INDIVIDUAL BASIS AND NOT ON A CLASS BASIS. CLAIMS OF MORE THAN ONE CUSTOMER OR USER CANNOT BE ARBITRATED OR LITIGATED JOINTLY OR CONSOLIDATED WITH THOSE OF ANY OTHER CUSTOMER OR USER. If, however, this waiver of class or consolidated actions is deemed invalid or unenforceable, neither you nor HER is entitled to arbitration. Instead, all claims and disputes will then be resolved in a court as set forth in this Section 14 (Exclusive Venue) below.</li>
+<li>Opt Out. You may opt out of this Arbitration Agreement. If you do so, neither you nor HER can force the other to arbitrate. To opt out, you must notify HER in writing no later than 30 days after first becoming subject to this Arbitration Agreement. Your notice must include your name and address, your HER username (if any), the email address you used to set up your HER account (if you have one), and an unequivocal statement that you want to opt out of this Arbitration Agreement. You must send your opt-out notice to: hello@weareher.com and 1760 Mission Street, San Francisco, CA, 94103. If you opt out of this Arbitration Agreement, all other parts of this Agreement will continue to apply to you. Opting out of this Arbitration Agreement has no effect on any previous, other, or future arbitration agreements that you may have with us.</li>
+<li>This Arbitration Agreement will survive any termination of your relationship with HER.</li>
+<li>Exclusive Venue. To the extent the parties are permitted under this Agreement to initiate litigation in a court, both you and HER agree that all claims and disputes arising out of or relating to the Agreement will be litigated exclusively in the state or federal courts located in the applicable county within the State of California.</li>
+</ul>
+<p>PLEASE PRINT A COPY OF THIS AGREEMENT FOR YOUR RECORDS AND PLEASE CHECK BACK FREQUENTLY FOR ANY CHANGES TO THIS AGREEMENT.</p>
+   </div>
+ </div>
+ </div>
+     </div>
+<div class="footerWP wp_left">
+
+    <div class="container">
+        <!-- <div class="row phone">
+            <button type="button" class="footerbtn" data-toggle="collapse" data-target="#about"><span>About us</span>
+                <svg width="8" height="16" viewBox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z"></path>
+                </svg>
+            </button>
+            <div id="about" class="collapse">
+				<div class="menu-about-us-container"><ul id="menu-about-us" class="footercol"><li id="menu-item-25606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25606"><a href="https://weareher.com/about/">About HER</a></li>
+<li id="menu-item-25607" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25607"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
+<li id="menu-item-25866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25866"><a href="https://weareher.com/her-affiliate-program/">Affiliate program</a></li>
+<li id="menu-item-26692" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26692"><a href="https://weareher.com/dm-slider/">Opening Lines Generator</a></li>
+<li id="menu-item-25609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25609"><a href="https://weareher.com/download/">Download HER</a></li>
+<li id="menu-item-25886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25886"><a href="https://weareher.com/tinder-vs-her/">Tinder vs HER</a></li>
+</ul></div>            </div>
+            <button type="button" class="footerbtn " data-toggle="collapse" data-target="#support">
+                <span>Support & legal</span>
+                <svg width="8" height="16" viewBox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z"></path>
+                </svg>
+            </button>
+            <div id="support" class="collapse">
+
+				<div class="menu-support-legal-container"><ul id="menu-support-legal" class="footercol"><li id="menu-item-25610" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25610"><a href="https://support.weareher.com/">Support</a></li>
+<li id="menu-item-28441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28441"><a href="https://weareher.com/privacy/">HER Privacy Policy</a></li>
+<li id="menu-item-25612" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-24583 current_page_item menu-item-25612"><a href="https://weareher.com/terms/" aria-current="page">Terms of Service</a></li>
+<li id="menu-item-25611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25611"><a href="https://weareher.com/community-guidelines/">Community guidelines</a></li>
+</ul></div>            </div>
+
+            <button type="button" class="footerbtn" data-toggle="collapse" data-target="#app"><span>HER for all</span>
+                <svg width="8" height="16" viewBox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z"></path>
+                </svg>
+            </button>
+            <div id="app" class="collapse">
+				<div class="menu-4-columned-footer-container"><ul id="menu-4-columned-footer" class="footercol"><li id="menu-item-28243" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-28243"><a href="https://weareher.com/best-dating-site-for-bisexual-pansexual-and-bicurious-woman/">Bisexual Dating</a></li>
+<li id="menu-item-28240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28240"><a href="https://weareher.com/pansexual-dating/">Pansexual Dating</a></li>
+<li id="menu-item-28237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28237"><a href="https://weareher.com/asexual-dating/">Asexual Dating</a></li>
+<li id="menu-item-28242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28242"><a href="https://weareher.com/trans-dating/">Transgender Dating</a></li>
+<li id="menu-item-28231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28231"><a href="https://weareher.com/non-binary-dating/">Non-Binary Dating</a></li>
+<li id="menu-item-28241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28241"><a href="https://weareher.com/qpoc-dating/">Black Queer Dating</a></li>
+<li id="menu-item-28238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28238"><a href="https://weareher.com/latine-dating/">Latine Queer Dating</a></li>
+<li id="menu-item-28229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28229"><a href="https://weareher.com/asian-dating/">Asian Queer Dating</a></li>
+<li id="menu-item-28230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28230"><a href="https://weareher.com/40-dating/">40+ Queer Dating</a></li>
+<li id="menu-item-28507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28507"><a href="https://weareher.com/65-dating/">65+ Queer Dating</a></li>
+</ul></div>            </div>
+            <button type="button" class="footerbtn" data-toggle="collapse" data-target="#other">
+                <span>Add us on socials</span>
+                <svg width="8" height="16" viewBox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z"></path>
+                </svg>
+            </button>
+            <div id="other" class="collapse">
+				<div class="menu-join-us-on-socials-container"><ul id="menu-join-us-on-socials" class="footercol"><li id="menu-item-25635" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25635"><a href="https://www.instagram.com/hersocialapp/">Instagram</a></li>
+<li id="menu-item-25633" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25633"><a href="https://www.tiktok.com/@hersocialapp">TikTok</a></li>
+<li id="menu-item-25632" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25632"><a href="https://twitter.com/HerSocialApp">Twitter</a></li>
+<li id="menu-item-25634" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25634"><a href="https://www.youtube.com/channel/UC5ezhWop2QDIBco04CeQxVA">YouTube</a></li>
+</ul></div>            </div>
+        </div> -->
+
+        <div class="row pc">
+            <div class="col">
+                <img width="56" height="56" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2056%2056'%3E%3C/svg%3E" alt="Her Logo" data-lazy-src="https://weareher.com/wp-content/themes/her/images/logo.png"><noscript><img width="56" height="56" src="https://weareher.com/wp-content/themes/her/images/logo.png" alt="Her Logo"></noscript>
+                <p>HER is here to connect queer women, non-binary, trans and gender non-confirming folks. We want to connect you to your person. A travel buddy, a friend in a new city or love for life.</p>
+                <a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img width="17" height="21"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2021'%3E%3C/svg%3E" alt=""
+                            style="margin-right: 8px;" data-lazy-src="https://weareher.com/wp-content/themes/her/images/download-icon.png"><noscript><img width="17" height="21"
+                            src="https://weareher.com/wp-content/themes/her/images/download-icon.png" alt=""
+                            style="margin-right: 8px;"></noscript> HER App</a>
+            </div>
+            <div class="col">
+                <h6>About us</h6>
+				<div class="menu-about-us-container"><ul id="menu-about-us-1" class="footercol"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25606"><a href="https://weareher.com/about/">About HER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25607"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25866"><a href="https://weareher.com/her-affiliate-program/">Affiliate program</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26692"><a href="https://weareher.com/dm-slider/">Opening Lines Generator</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25609"><a href="https://weareher.com/download/">Download HER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25886"><a href="https://weareher.com/tinder-vs-her/">Tinder vs HER</a></li>
+</ul></div>            </div>
+            <div class="col">
+                <h6>
+                    HER for all
+                </h6>
+				<div class="menu-4-columned-footer-container"><ul id="menu-4-columned-footer-1" class="footercol"><li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-28243"><a href="https://weareher.com/best-dating-site-for-bisexual-pansexual-and-bicurious-woman/">Bisexual Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28240"><a href="https://weareher.com/pansexual-dating/">Pansexual Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28237"><a href="https://weareher.com/asexual-dating/">Asexual Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28242"><a href="https://weareher.com/trans-dating/">Transgender Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28231"><a href="https://weareher.com/non-binary-dating/">Non-Binary Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28241"><a href="https://weareher.com/qpoc-dating/">Black Queer Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28238"><a href="https://weareher.com/latine-dating/">Latine Queer Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28229"><a href="https://weareher.com/asian-dating/">Asian Queer Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28230"><a href="https://weareher.com/40-dating/">40+ Queer Dating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28507"><a href="https://weareher.com/65-dating/">65+ Queer Dating</a></li>
+</ul></div>            </div>
+            <div class="col">
+                <h6>Supports &amp; legals</h6>
+				<div class="menu-support-legal-container"><ul id="menu-support-legal-1" class="footercol"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25610"><a href="https://support.weareher.com/">Support</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28441"><a href="https://weareher.com/privacy/">HER Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-24583 current_page_item menu-item-25612"><a href="https://weareher.com/terms/" aria-current="page">Terms of Service</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25611"><a href="https://weareher.com/community-guidelines/">Community guidelines</a></li>
+</ul></div>                <h6>
+                    Add us on socials
+                </h6>
+                <ul class="list-inline" style="padding-top:5px">
+                    <li>
+                        <a target="_blank" href="https://www.tiktok.com/@hersocialapp">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="TikTok" data-lazy-src="https://weareher.com/wp-content/themes/her/images/tiktok-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/tiktok-icon.svg" alt="TikTok"></noscript>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.youtube.com/channel/UC5ezhWop2QDIBco04CeQxVA">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="YouTube" data-lazy-src="https://weareher.com/wp-content/themes/her/images/youtube-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/youtube-icon.svg" alt="YouTube"></noscript>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://twitter.com/HerSocialApp">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Twitter" data-lazy-src="https://weareher.com/wp-content/themes/her/images/twitter-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/twitter-icon.svg" alt="Twitter"></noscript>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/hersocialapp/">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Instagram" data-lazy-src="https://weareher.com/wp-content/themes/her/images/instagram-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/instagram-icon.svg" alt="Instagram"></noscript>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+			<div class="col-xs-12 hidden-md hidden-lg" style="margin-top:10px">
+				<a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img width="17" height="21"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2021'%3E%3C/svg%3E" alt=""
+                            style="margin-right: 8px;" data-lazy-src="https://weareher.com/wp-content/themes/her/images/download-icon.png"><noscript><img width="17" height="21"
+                            src="https://weareher.com/wp-content/themes/her/images/download-icon.png" alt=""
+                            style="margin-right: 8px;"></noscript> HER App</a>
+			</div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/jquery-3.5.1.min.js?ver=1641499622" crossorigin="anonymous" defer></script>
+<script type="rocketlazyloadscript" src="https://weareher.com/wp-content/themes/her/js/owl.carousel.min.js" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/js/jquery-scrolltofixed.js?ver=1641499622" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" src="https://weareher.com/wp-content/themes/her/js/bootstrap.min.js" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/bootstrap/3.1.1/js/bootstrap.min.js?ver=1641499622" defer></script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+    jQuery('.owl-carousel_testimonial').owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: false,
+        nav: false,
+        mouseDrag: true,
+        singleItem: true,
+        smartSpeed: 1000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+    jQuery('.owl-carousel_logo').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: false,
+        nav: false,
+        mouseDrag: true,
+        singleItem: true,
+        smartSpeed: 1000,
+        responsive: {
+            0: {
+                items: 4
+            },
+            768: {
+                items: 4
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+});</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+    jQuery('.navbar-drawer-bar').on('click', function (e) {
+        e.preventDefault()
+        jQuery(this).toggleClass('drawer-open');
+        jQuery('#navbar-drawer-mask').toggleClass('open');
+        jQuery('.strikingly-drawer').toggleClass('translate');
+    });
+});</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+    jQuery('#myHeader').scrollToFixed();
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 50) {
+            jQuery('#myHeader').addClass('sticky');
+        } else {
+            jQuery('#myHeader').removeClass('sticky');
+        }
+    });
+
+    jQuery('#myHeader1').scrollToFixed();
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 50) {
+            jQuery('#myHeader1').addClass('sticky');
+        } else {
+            jQuery('#myHeader1').removeClass('sticky');
+        }
+    });
+});</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-app.js?ver=1641499622" defer></script>
+
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-analytics.js?ver=1641499622" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-remote-config.js?ver=1641499622" defer></script>
+
+<script type="rocketlazyloadscript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyA61ZdBAE2wsyY8DyzoJ4Q2rmE5c8HN6Hc",
+        authDomain: "her-web-11144.firebaseapp.com",
+        projectId: "her-web-11144",
+        storageBucket: "her-web-11144.appspot.com",
+        messagingSenderId: "721017790546",
+        appId: "1:721017790546:web:3168b2607e85f48a30ff8b",
+        measurementId: "G-PH3DSEQ5P5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const remoteConfig = firebase.remoteConfig();
+    remoteConfig.settings.minimumFetchIntervalMillis = 36000;
+    remoteConfig.defaultConfig = {
+        "nigerian_user_filter": false,
+    };
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+    jQuery(document).ready(function () {
+        const playstore_link = 'https://play.google.com/store/apps/details?id=com.rf.hercircle';
+        const applestore_link = 'https://bnc.lt/e89j/hcE6PWvFdT';
+        const nigerian_user_filter = remoteConfig.getValue("nigerian_user_filter")._value
+
+        if (nigerian_user_filter === "true" || nigerian_user_filter === true) {
+            jQuery(`a[href="${applestore_link}"]`).each(function () {
+                $(this).attr('href', playstore_link)
+            });
+        }
+    });
+});</script>
+<script type="rocketlazyloadscript">
+	var bsTocSticky = document.getElementById('bs-toc-sticky');
+	var bsTocCol = document.getElementById('bs-toc-col');
+	var bsPostCol = document.getElementById('bs-post-column');
+
+	if(!(bsTocSticky).children.length > 0) {
+		bsTocCol.style.display = 'none';
+		bsPostCol.style.cssText = "width:100%";
+	}
+	let processScroll = () => {
+	let docElem = document.documentElement, 
+		docBody = document.body,
+		scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
+    	scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
+		scrollPercent = scrollTop / scrollBottom * 100 + '%';	
+    	document.querySelector(':root').style.setProperty("--bsProgressBarWidth", scrollPercent);	
+	}
+
+	document.addEventListener('scroll', processScroll);
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQR3526"
+height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/weareher.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1641499622' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=5.8.3' id='nbcpf-intlTelInput-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/countrySelect.min.js?ver=5.8.3' id='nbcpf-countryFlag-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='nbcpf-countryFlag-script-js-after'>window.addEventListener('DOMContentLoaded', function() {
+		(function($) {
+			$(function() {
+				$(".wpcf7-countrytext").countrySelect({
+					
+				});
+				$(".wpcf7-phonetext").intlTelInput({
+					autoHideDialCode: false,
+					autoPlaceholder: "off",
+					nationalMode: false,
+					separateDialCode: false,
+					hiddenInput: "full_number",
+						
+				});
+			});
+		})(jQuery);
+});</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1641499622' id='gtm4wp-form-move-tracker-js' defer></script>
+<script type='text/javascript' src='https://weareher.com/wp-includes/js/wp-embed.min.js?ver=5.8.3' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?ver=2.2.0' id='jquery-smooth-scroll-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1' id='js-cookie-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2' id='jquery-sticky-kit-js' defer></script>
+<script type='text/javascript' id='ez-toc-js-js-extra'>
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"90","affixSelector":"#bs-toc-sticky"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.17-1636371848' id='ez-toc-js-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://weareher.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script><script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link href="https://weareher.com/wp-content/themes/her/css/owl.carousel.min.css" rel="stylesheet" type="text/css" /><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/style.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/media.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/bootstrap.min.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" rel="stylesheet" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1641499633"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=1641499633" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" /><link rel='stylesheet' id='wp-block-library-css'  href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8.3' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='contact-form-7-css'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1641499633' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-intlTelInput-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=5.8.3' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-countryFlag-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=5.8.3' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='ez-icomoon-css'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1641499633' type='text/css' media='all' /><link rel='stylesheet' id='ez-toc-css'  href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' type='text/css' media='all' /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
