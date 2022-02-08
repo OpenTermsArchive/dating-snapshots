@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head >
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head ><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://weareher.com/wp-content/themes/her/css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://weareher.com/wp-content/themes/her/css/style.css" rel="stylesheet" type="text/css">
-	<link href="https://weareher.com/wp-content/themes/her/css/media.css" rel="stylesheet" type="text/css">
-	<link href="https://weareher.com/wp-content/themes/her/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="https://weareher.com/wp-content/themes/her/css/owl.carousel.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css" />
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/style.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/media.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+	<link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/bootstrap.min.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link data-minify="1" rel="preload" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'">		
+    <link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=1641499633" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css" />
+    
 
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
@@ -22,7 +22,7 @@
 </script>
 <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
 	<!-- This site is optimized with the Yoast SEO Premium plugin v17.8 (Yoast SEO v18.0) - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>HER Privacy Policy – HER</title>
+	<title>HER Privacy Policy – HER</title><style id="rocket-critical-css">.wp-block-group{box-sizing:border-box}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" /></noscript>
 	<meta name="description" content="Read how we treat your privacy and what information we use. Spoiler, legal language!" />
 	<link rel="canonical" href="https://weareher.com/privacy/" />
 	<!-- / Yoast SEO Premium plugin. -->
@@ -46,20 +46,23 @@ img.emoji {
 </style>
 	<style type="text/css">.pt_splitter {
 	display: block;
-}</style><link rel='stylesheet' id='wp-block-library-css'  href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9' type='text/css' media='all' />
+}</style><link rel='preload'   href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
 <style id='global-styles-inline-css' type='text/css'>
 body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
 </style>
-<link rel='stylesheet' id='contact-form-7-css'  href='https://weareher.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.4' type='text/css' media='all' />
-<link rel='stylesheet' id='nbcpf-intlTelInput-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=5.9' type='text/css' media='all' />
-<link rel='stylesheet' id='nbcpf-countryFlag-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=5.9' type='text/css' media='all' />
-<link rel='stylesheet' id='ez-icomoon-css'  href='https://weareher.com/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=2.0.17' type='text/css' media='all' />
-<link rel='stylesheet' id='ez-toc-css'  href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1641499633' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=5.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=5.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link data-minify="1" rel='preload'   href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1641499633' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+<link rel='preload'   href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
 <style id='ez-toc-inline-css' type='text/css'>
 div#ez-toc-container p.ez-toc-title {font-size: 22px;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 18px;}
 </style>
-<script type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
-<script type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://weareher.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
 <link rel="https://api.w.org/" href="https://weareher.com/wp-json/" /><link rel="alternate" type="application/json" href="https://weareher.com/wp-json/wp/v2/pages/107" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://weareher.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://weareher.com/wp-includes/wlwmanifest.xml" /> 
 <link rel="alternate" type="application/json+oembed" href="https://weareher.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fweareher.com%2Fprivacy%2F" />
@@ -70,7 +73,7 @@ div#ez-toc-container p.ez-toc-title {font-size: 22px;}div#ez-toc-container p.ez-
 	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Robyn"};
 	dataLayer.push( dataLayer_content );//]]>
 </script>
-<script data-cfasync="false">//<![CDATA[
+<script type="rocketlazyloadscript" data-cfasync="false">//<![CDATA[
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -228,8 +231,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ]
 }</script>
 <meta name="wpsso-end" content="wpsso meta tags and schema markup end"/>
-<meta name="wpsso-cached" content="2022-02-08T06:01:26+00:00">
-<meta name="wpsso-added" content="2022-02-08T06:01:26+00:00 in 0.019874 secs for weareher.com">
+<meta name="wpsso-cached" content="2022-02-08T11:40:46+00:00">
+<meta name="wpsso-added" content="2022-02-08T12:05:35+00:00 in 0.000522 secs for weareher.com">
 
 <link rel="icon" href="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" sizes="32x32" />
 <link rel="icon" href="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" sizes="192x192" />
@@ -566,13 +569,23 @@ a.section_buttonChat:hover, a.banner_button {
 		margin-top: -10px;
 }
 }		</style>
-		<script>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script type="rocketlazyloadscript">
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 'event': 'linkSentToMobile'
 });
 </script>
-<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=618288b54564d200122a80db&product=inline-share-buttons" async="async"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=618288b54564d200122a80db&product=inline-share-buttons" async="async"></script>
 </head>
 <body class="page-template-default page page-id-107">
 
@@ -585,14 +598,14 @@ window.dataLayer.push({
 </ul></div>
 <div class="mobile_header wp_left" id="myHeader1">
 	<div class="col-xs-4">
-		<a href="https://weareher.com"><img src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" alt="Her Logo" class="img-responsive mobile_logo" /></a>
+		<a href="https://weareher.com"><img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" /><noscript><img width="80" height="80" src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
 	</div>
 	<div class="col-xs-8">
 		<div class="navbar-drawer-bar">
 			<div class="drawer-container">
 				<a class="navbar" href="javascript:void(0);">
-				<img src="https://weareher.com/wp-content/themes/her/images/Accordion menu@2x.png" class="img-responsive tongle_img" />
-				<img src="https://weareher.com/wp-content/themes/her/images/black-tongle.png" class="img-responsive black_tongle" />
+				<img width="28" height="48" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2048'%3E%3C/svg%3E" class="img-responsive tongle_img" data-lazy-src="https://weareher.com/wp-content/themes/her/images/Accordion menu@2x.png" /><noscript><img width="28" height="48" src="https://weareher.com/wp-content/themes/her/images/Accordion menu@2x.png" class="img-responsive tongle_img" /></noscript>
+				<img width="28" height="48" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2048'%3E%3C/svg%3E" class="img-responsive black_tongle" data-lazy-src="https://weareher.com/wp-content/themes/her/images/black-tongle.png" /><noscript><img width="28" height="48" src="https://weareher.com/wp-content/themes/her/images/black-tongle.png" class="img-responsive black_tongle" /></noscript>
 				</a> 
 			</div>
 		</div>
@@ -603,7 +616,7 @@ window.dataLayer.push({
   <div class="container">
     <div class="row">
       <div class="col-sm-2">
-        <div class="logo wp_left"> <a href="https://weareher.com"><img src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" class="img-responsive" alt="Her Logo" /></a> </div>
+        <div class="logo wp_left"> <a href="https://weareher.com"><img width="80" height="80" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" class="img-responsive" alt="Her Logo" data-lazy-src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" /><noscript><img width="80" height="80" src="https://weareher.com/wp-content/uploads/2021/02/herlogo.png" class="img-responsive" alt="Her Logo" /></noscript></a> </div>
       </div>
       <div class="col-sm-10">
          <div class="main_menu wp_left">
@@ -864,11 +877,13 @@ San Francisco, CA, 94114</p>
 
         <div class="row pc">
             <div class="col">
-                <img src="https://weareher.com/wp-content/themes/her/images/logo.png" alt="Her Logo">
+                <img width="56" height="56" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2056%2056'%3E%3C/svg%3E" alt="Her Logo" data-lazy-src="https://weareher.com/wp-content/themes/her/images/logo.png"><noscript><img width="56" height="56" src="https://weareher.com/wp-content/themes/her/images/logo.png" alt="Her Logo"></noscript>
                 <p>HER is here to connect queer women, non-binary, trans and gender non-confirming folks. We want to connect you to your person. A travel buddy, a friend in a new city or love for life.</p>
-                <a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img
+                <a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img width="17" height="21"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2021'%3E%3C/svg%3E" alt=""
+                            style="margin-right: 8px;" data-lazy-src="https://weareher.com/wp-content/themes/her/images/download-icon.png"><noscript><img width="17" height="21"
                             src="https://weareher.com/wp-content/themes/her/images/download-icon.png" alt=""
-                            style="margin-right: 8px;"> HER App</a>
+                            style="margin-right: 8px;"></noscript> HER App</a>
             </div>
             <div class="col">
                 <h6>About us</h6>
@@ -906,30 +921,32 @@ San Francisco, CA, 94114</p>
                 <ul class="list-inline" style="padding-top:5px">
                     <li>
                         <a target="_blank" href="https://www.tiktok.com/@hersocialapp">
-                            <img src="https://weareher.com/wp-content/themes/her/images/tiktok-icon.svg" alt="TikTok">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="TikTok" data-lazy-src="https://weareher.com/wp-content/themes/her/images/tiktok-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/tiktok-icon.svg" alt="TikTok"></noscript>
                         </a>
                     </li>
                     <li>
                         <a target="_blank" href="https://www.youtube.com/channel/UC5ezhWop2QDIBco04CeQxVA">
-                            <img src="https://weareher.com/wp-content/themes/her/images/youtube-icon.svg" alt="YouTube">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="YouTube" data-lazy-src="https://weareher.com/wp-content/themes/her/images/youtube-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/youtube-icon.svg" alt="YouTube"></noscript>
                         </a>
                     </li>
                     <li>
                         <a target="_blank" href="https://twitter.com/HerSocialApp">
-                            <img src="https://weareher.com/wp-content/themes/her/images/twitter-icon.svg" alt="Twitter">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Twitter" data-lazy-src="https://weareher.com/wp-content/themes/her/images/twitter-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/twitter-icon.svg" alt="Twitter"></noscript>
                         </a>
                     </li>
                     <li>
                         <a target="_blank" href="https://www.instagram.com/hersocialapp/">
-                            <img src="https://weareher.com/wp-content/themes/her/images/instagram-icon.svg" alt="Instagram">
+                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Instagram" data-lazy-src="https://weareher.com/wp-content/themes/her/images/instagram-icon.svg"><noscript><img src="https://weareher.com/wp-content/themes/her/images/instagram-icon.svg" alt="Instagram"></noscript>
                         </a>
                     </li>
                 </ul>
             </div>
 			<div class="col-xs-12 hidden-md hidden-lg" style="margin-top:10px">
-				<a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img
+				<a href="https://bnc.lt/e89j/hcE6PWvFdT" target="_blank" class="app-down-btn"><img width="17" height="21"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2017%2021'%3E%3C/svg%3E" alt=""
+                            style="margin-right: 8px;" data-lazy-src="https://weareher.com/wp-content/themes/her/images/download-icon.png"><noscript><img width="17" height="21"
                             src="https://weareher.com/wp-content/themes/her/images/download-icon.png" alt=""
-                            style="margin-right: 8px;"> HER App</a>
+                            style="margin-right: 8px;"></noscript> HER App</a>
 			</div>
         </div>
 
@@ -938,13 +955,12 @@ San Francisco, CA, 94114</p>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://weareher.com/wp-content/themes/her/js/owl.carousel.min.js" type="text/javascript"></script>
-<script src="https://weareher.com/wp-content/themes/her/js/jquery-scrolltofixed.js" type="text/javascript"></script>
-<script src="https://weareher.com/wp-content/themes/her/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/jquery-3.5.1.min.js?ver=1641499622" crossorigin="anonymous" defer></script>
+<script type="rocketlazyloadscript" src="https://weareher.com/wp-content/themes/her/js/owl.carousel.min.js" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/js/jquery-scrolltofixed.js?ver=1641499622" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" src="https://weareher.com/wp-content/themes/her/js/bootstrap.min.js" data-rocket-type="text/javascript" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/bootstrap/3.1.1/js/bootstrap.min.js?ver=1641499622" defer></script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
     jQuery('.owl-carousel_testimonial').owlCarousel({
         loop: true,
         margin: 0,
@@ -985,16 +1001,16 @@ San Francisco, CA, 94114</p>
             }
         }
     });
-</script>
-<script>
+});</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
     jQuery('.navbar-drawer-bar').on('click', function (e) {
         e.preventDefault()
         jQuery(this).toggleClass('drawer-open');
         jQuery('#navbar-drawer-mask').toggleClass('open');
         jQuery('.strikingly-drawer').toggleClass('translate');
     });
-</script>
-<script>
+});</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
     jQuery('#myHeader').scrollToFixed();
     jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 50) {
@@ -1012,14 +1028,14 @@ San Francisco, CA, 94114</p>
             jQuery('#myHeader1').removeClass('sticky');
         }
     });
-</script>
+});</script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-app.js?ver=1641499622" defer></script>
 
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-remote-config.js"></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-analytics.js?ver=1641499622" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://weareher.com/wp-content/cache/min/1/firebasejs/8.6.1/firebase-remote-config.js?ver=1641499622" defer></script>
 
-<script>
+<script type="rocketlazyloadscript">
     var firebaseConfig = {
         apiKey: "AIzaSyA61ZdBAE2wsyY8DyzoJ4Q2rmE5c8HN6Hc",
         authDomain: "her-web-11144.firebaseapp.com",
@@ -1038,7 +1054,7 @@ San Francisco, CA, 94114</p>
         "nigerian_user_filter": false,
     };
 </script>
-<script type="text/javascript">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
     jQuery(document).ready(function () {
         const playstore_link = 'https://play.google.com/store/apps/details?id=com.rf.hercircle';
         const applestore_link = 'https://bnc.lt/e89j/hcE6PWvFdT';
@@ -1050,8 +1066,8 @@ San Francisco, CA, 94114</p>
             });
         }
     });
-</script>
-<script>
+});</script>
+<script type="rocketlazyloadscript">
 	var bsTocSticky = document.getElementById('bs-toc-sticky');
 	var bsTocCol = document.getElementById('bs-toc-col');
 	var bsPostCol = document.getElementById('bs-post-column');
@@ -1075,17 +1091,17 @@ San Francisco, CA, 94114</p>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQR3526"
 height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><script type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
-<script type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<!-- End Google Tag Manager (noscript) --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
 /* <![CDATA[ */
 var wpcf7 = {"api":{"root":"https:\/\/weareher.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://weareher.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.4' id='contact-form-7-js'></script>
-<script type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=5.9' id='nbcpf-intlTelInput-script-js'></script>
-<script type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/countrySelect.min.js?ver=5.9' id='nbcpf-countryFlag-script-js'></script>
-<script type='text/javascript' id='nbcpf-countryFlag-script-js-after'>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1641499622' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=5.9' id='nbcpf-intlTelInput-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/countrySelect.min.js?ver=5.9' id='nbcpf-countryFlag-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='nbcpf-countryFlag-script-js-after'>window.addEventListener('DOMContentLoaded', function() {
 		(function($) {
 			$(function() {
 				$(".wpcf7-countrytext").countrySelect({
@@ -1101,7 +1117,11 @@ var wpcf7 = {"api":{"root":"https:\/\/weareher.com\/wp-json\/","namespace":"cont
 				});
 			});
 		})(jQuery);
-</script>
-<script type='text/javascript' src='https://weareher.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.14.2' id='gtm4wp-form-move-tracker-js'></script>
-</body>
+});</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1641499622' id='gtm4wp-form-move-tracker-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://weareher.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script><script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link href="https://weareher.com/wp-content/themes/her/css/owl.carousel.min.css" rel="stylesheet" type="text/css" /><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/style.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/media.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/bootstrap.min.css?ver=1641499633" rel="stylesheet" type="text/css"><link data-minify="1" rel="stylesheet" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?ver=1641499633"><link data-minify="1" href="https://weareher.com/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?ver=1641499633" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&#038;display=swap" /><link rel='stylesheet' id='wp-block-library-css'  href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='contact-form-7-css'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1641499633' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-intlTelInput-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=5.9' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-countryFlag-style-css'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=5.9' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='ez-icomoon-css'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1641499633' type='text/css' media='all' /><link rel='stylesheet' id='ez-toc-css'  href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.17' type='text/css' media='all' /></noscript></body>
 </html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
