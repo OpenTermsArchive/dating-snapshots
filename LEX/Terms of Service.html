@@ -23,7 +23,7 @@
     
 
     
-        <link rel="stylesheet" href="//d3eto7onm69fcz.cloudfront.net/assets/stylesheets/launch-1659947518778.css">
+        <link rel="stylesheet" href="//d3eto7onm69fcz.cloudfront.net/assets/stylesheets/launch-1660113264240.css">
     
     <style>
         body { background: #ffffff; }
@@ -346,6 +346,22 @@ document.addEventListener("DOMContentLoaded", function () {
 <script id="beaconLoader" type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
 <script type="text/javascript">window.Beacon('init', 'af6e956f-3625-48d2-8aa5-242e64328ae6')</script>
 
+<script type="text/javascript">
+    function hashChanged() {
+        var hash = window.location.hash.substring(1); 
+        if (hash === 'contact') {
+            window.Beacon('open')
+        }
+    }
+
+    window.onhashchange = function () {
+        hashChanged()
+    };
+
+    window.addEventListener('hashchange', hashChanged, false);
+
+</script>
+
         
         
     <script src="//d3eto7onm69fcz.cloudfront.net/assets/javascripts/app3.min.js"></script>
@@ -370,7 +386,7 @@ document.location.href = noddy.href;
 }
 </script>
         
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"248c08e607","agent":"","beacon":"bam.nr-data.net","applicationTime":52,"applicationID":"725545300","transactionName":"YlUGMhMECxBTWkJaW1sfNAoAHCYMXE1EXFhZVRYnAhEMDFwWVVxaQUILCg0AFxAceERHXVZcARVPEwwGRQ==","queueTime":0}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"248c08e607","agent":"","beacon":"bam.nr-data.net","applicationTime":59,"applicationID":"725545300","transactionName":"YlUGMhMECxBTWkJaW1sfNAoAHCYMXE1EXFhZVRYnAhEMDFwWVVxaQUILCg0AFxAceERHXVZcARVPEwwGRQ==","queueTime":0}</script>
     </body>
 </html>
 
