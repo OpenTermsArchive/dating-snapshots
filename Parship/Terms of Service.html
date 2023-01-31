@@ -1,830 +1,987 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html class=" ENABLE_INCOMING_AND_OUTGOING_MATCH_LISTS_BY_ACTION" lang="fr-FR">
+<html class="font__open-sans" lang="fr-FR">
 <head>
-<meta charset="utf-8">
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-<!-- v6.77.0 PARSHIP/France(134) Sapp4 B2023-01-23T14:44:05Z - 9f5aedf -->
-<meta name="description" content="Online - Partneragentur, die Partnersuche leichtmacht! Mit psychologischem Persönlichkeitstest und ausgewählten Singles! Wir finden den passenden Partner!"/>
-<meta name="keywords" content="parship, partnersuche, partneragentur, partner, partnerschaft, partner - agentur, partner finden, persönlichkeitstest, flirten, single, männer, frauen"/>
-<meta name="publisher" content="PE Digital GmbH"/>
-<meta name="robots" content="noindex,follow" />
-<meta http-equiv="expires" content="86400"/>
-<meta name="msvalidate.01" content="44FD25D1748E056D8C367F130AD67F21"/>
-<meta name="format-detection" content="telephone=no" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1">
-<meta name="_csrf" content="5d05b401-0609-49d3-b1f4-c815d4e4cdf9"/>
-<meta name="_csrf_header" content="X-CSRF-TOKEN"/>
-<meta name="_ibtid" content="f3e2058752fae6bd"/>
-<meta http-equiv="cleartype" content="on">
-<link rel="shortcut icon" href="/static_app/parship/img/favicons/favicon.ico?v=1"/>
-<link rel="apple-touch-icon" sizes="57x57" href="/static_app/parship/img/favicons/apple-touch-icon-57x57.png?v=1" />
-<link rel="apple-touch-icon" sizes="114x114" href="/static_app/parship/img/favicons/apple-touch-icon-114x114.png?v=1" />
-<link rel="apple-touch-icon" sizes="72x72" href="/static_app/parship/img/favicons/apple-touch-icon-72x72.png?v=1" />
-<link rel="apple-touch-icon" sizes="144x144" href="/static_app/parship/img/favicons/apple-touch-icon-144x144.png?v=1" />
-<link rel="apple-touch-icon" sizes="60x60" href="/static_app/parship/img/favicons/apple-touch-icon-60x60.png?v=1" />
-<link rel="apple-touch-icon" sizes="120x120" href="/static_app/parship/img/favicons/apple-touch-icon-120x120.png?v=1" />
-<link rel="apple-touch-icon" sizes="76x76" href="/static_app/parship/img/favicons/apple-touch-icon-76x76.png?v=1" />
-<link rel="apple-touch-icon" sizes="152x152" href="/static_app/parship/img/favicons/apple-touch-icon-152x152.png?v=1" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-196x196.png?v=1" sizes="196x196" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-96x96.png?v=1" sizes="96x96" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-64x64.png?v=1" sizes="64x64" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-48x48.png?v=1" sizes="48x48" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-32x32.png?v=1" sizes="32x32" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-24x24.png?v=1" sizes="24x24" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-16x16.png?v=1" sizes="16x16" />
-<link rel="icon" type="image/png" href="/static_app/parship/img/favicons/favicon-128x128.png?v=1" sizes="128x128" />
-<meta name="msapplication-square70x70logo" content="/static_app/parship/img/favicons/mstile-70x70.png?v=1" />
-<meta name="msapplication-square150x150logo" content="/static_app/parship/img/favicons/mstile-150x150.png?v=1" />
-<meta name="msapplication-square310x310logo" content="/static_app/parship/img/favicons/mstile-310x310.png?v=1" />
-<meta name="application-name" content="Parship"/>
-<meta name="msapplication-TileColor" content="#d70005"/>
-<link rel="preload" href="/static_app/parship/montserrat-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<title>Site de rencontre Parship - Sérieux, simple et sûr</title>
-<link rel="stylesheet" type="text/css" href="/static_app/parship/6.77.0/css/app_combined.css" />
-<script src="/static_app/parship/6.77.0/js/browser_details_combined.js" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
-<script defer src="/static_cms/parship/static/peg_utils/peg_logger/peg_logger.js?v=4" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
-<script defer src="/static_app/parship/6.77.0/js/base_combined.js" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
-<script defer src="/static_app/parship/6.77.0/js/app_combined.js" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
+	<meta charset="UTF-8" />
+	<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--red: #d70005;--wp--preset--color--blue: #008ec2;--wp--preset--color--green: #2fa350;--wp--preset--color--orange: #ff9224;--wp--preset--color--dark-grey: #66666c;--wp--preset--color--grey: #d9d9db;--wp--preset--color--light-grey: #f2f2f2;--wp--preset--color--decoration-100: #b4005a;--wp--preset--color--decoration-200: #f07800;--wp--preset--color--decoration-300: #fbb800;--wp--preset--color--decoration-400: #ff422e;--wp--preset--color--brand-blue: #4b46ff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 30px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--extra-small: 11px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}body { margin: 0;--wp--style--global--content-size: 1000px;--wp--style--global--wide-size: 1200px; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }.wp-site-blocks > * + * { margin-block-start: 24px; }body { --wp--style--block-gap: 24px; }body .is-layout-flow > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-flow > * + *{margin-block-start: 24px;margin-block-end: 0;}body .is-layout-constrained > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-constrained > * + *{margin-block-start: 24px;margin-block-end: 0;}body .is-layout-flex{gap: 24px;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-red-color{color: var(--wp--preset--color--red) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-green-color{color: var(--wp--preset--color--green) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-dark-grey-color{color: var(--wp--preset--color--dark-grey) !important;}.has-grey-color{color: var(--wp--preset--color--grey) !important;}.has-light-grey-color{color: var(--wp--preset--color--light-grey) !important;}.has-decoration-100-color{color: var(--wp--preset--color--decoration-100) !important;}.has-decoration-200-color{color: var(--wp--preset--color--decoration-200) !important;}.has-decoration-300-color{color: var(--wp--preset--color--decoration-300) !important;}.has-decoration-400-color{color: var(--wp--preset--color--decoration-400) !important;}.has-brand-blue-color{color: var(--wp--preset--color--brand-blue) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-red-background-color{background-color: var(--wp--preset--color--red) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-dark-grey-background-color{background-color: var(--wp--preset--color--dark-grey) !important;}.has-grey-background-color{background-color: var(--wp--preset--color--grey) !important;}.has-light-grey-background-color{background-color: var(--wp--preset--color--light-grey) !important;}.has-decoration-100-background-color{background-color: var(--wp--preset--color--decoration-100) !important;}.has-decoration-200-background-color{background-color: var(--wp--preset--color--decoration-200) !important;}.has-decoration-300-background-color{background-color: var(--wp--preset--color--decoration-300) !important;}.has-decoration-400-background-color{background-color: var(--wp--preset--color--decoration-400) !important;}.has-brand-blue-background-color{background-color: var(--wp--preset--color--brand-blue) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-red-border-color{border-color: var(--wp--preset--color--red) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-dark-grey-border-color{border-color: var(--wp--preset--color--dark-grey) !important;}.has-grey-border-color{border-color: var(--wp--preset--color--grey) !important;}.has-light-grey-border-color{border-color: var(--wp--preset--color--light-grey) !important;}.has-decoration-100-border-color{border-color: var(--wp--preset--color--decoration-100) !important;}.has-decoration-200-border-color{border-color: var(--wp--preset--color--decoration-200) !important;}.has-decoration-300-border-color{border-color: var(--wp--preset--color--decoration-300) !important;}.has-decoration-400-border-color{border-color: var(--wp--preset--color--decoration-400) !important;}.has-brand-blue-border-color{border-color: var(--wp--preset--color--brand-blue) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-extra-large-font-size{font-size: var(--wp--preset--font-size--extra-large) !important;}.has-extra-small-font-size{font-size: var(--wp--preset--font-size--extra-small) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='theme-css' href='/wp-content/themes/parship-theme/assets/dist/css/main.css?ver=1.55.10' type='text/css' media='all' />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preload" href="/wp-content/themes/parship-theme/assets/dist/fonts/os_regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/wp-content/themes/parship-theme/assets/dist/fonts/os_bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://www.parship.fr/common/dynamicconf" as="script">
+<script type='text/javascript' src='https://www.parship.fr/common/dynamicconf' id='dynamicconf-js'></script>
+<link rel="dns-prefetch" href="//trf.greatviews.fr" crossorigin /><link rel="preconnect" href="//trf.greatviews.fr" crossorigin /><link rel="dns-prefetch" href="//tms.parship.fr" crossorigin /><link rel="preconnect" href="//tms.parship.fr" crossorigin />
+
+<title>Parship CGU</title>
+
+<meta name="robots" content="noindex,noarchive">
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="CGU &#8211; www.parship.fr" />
+<meta property="og:site_name" content="Parship" />
+
+<meta property="og:url" content="https://www.parship.fr/termsandconditions/" />
+
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.parship.fr/termsandconditions/"},"headline":"CGU","datePublished":"2022-11-28T14:40:54+01:00","dateModified":"2023-01-26T11:09:25+01:00","author":{"@type":"Person","name":"Sören Wrede","familyName":"Wrede","givenName":"Sören"},"publisher":{"@context":"https://schema.org","@type":"Organization","@id":"https://www.parship.fr/termsandconditions/#organization","name":"Parship","url":"https://www.parship.fr","logo":{"@type":"ImageObject","url":"https://www.parship.fr/wp-content/plugins/parship-seo/assets/img/rich_snippet_logo_hetero_ps_de.png"},"sameAs":[]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","name":"www.parship.fr","url":"https://www.parship.fr","@id":"https://www.parship.fr"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","name":"CGU","url":"https://www.parship.fr/termsandconditions","@id":"https://www.parship.fr/termsandconditions"}}],"@id":"https://www.parship.fr/termsandconditions/#breadcrumb"}]</script>
+
+<link rel="icon" href="/wp-content/uploads/sites/12/2021/08/favicon-64x64-1.png" sizes="32x32" />
+<link rel="icon" href="/wp-content/uploads/sites/12/2021/08/favicon-64x64-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/wp-content/uploads/sites/12/2021/08/favicon-64x64-1.png" />
+<meta name="msapplication-TileImage" content="/wp-content/uploads/sites/12/2021/08/favicon-64x64-1.png" />
 </head>
-<body id="termsAndConditionsPage" class="legalPages noSubnavi" >
-<div id="pageWrapper">
-<peg-navigation>
-<header id="pageHeader" class="isExternalNavi">
-<div id="secondaryNavi">
-<div class="secondaryNaviWrapper" role="navigation" aria-label="Level 2">
-<div id="logoWrapper" aria-hidden="true">
-<a href="//www.parship.fr" aria-hidden="true" tabindex="-1">
-<img class="brandLogo" src="/static_cms/parship/static/webapp/img/logos/ps_logo_2016.svg" alt="Site de rencontre Parship.fr"
-aria-hidden="true"/>
-</a>
+<body id="top" class="page-template page-template-page-sidebar-with-headline page-template-page-sidebar-with-headline-php page page-id-280 wp-embed-responsive legal-page body-no-sub-menu body-has-sidebar" data-portal-logged-in="false">
+<script>document.body.dataset.portalLoggedIn = localStorage.getItem( 'portal-logged-in' ) ?? 'false';</script>
+
+<header class="header">
+	<div class="header-meta">
+		<div class="inner">
+			
+<div class="logo logo--header" role="banner">
+	<a href="https://www.parship.fr/" rel="home" class="logo--header__link">
+		<svg width="92" height="22" class="logo" viewBox="0 0 92 22">
+			<use href="#parship-white" xlink:href="#parship-white" />
+		</svg>	</a>
 </div>
-<ul>
-<li id="loginLink"><a href="/login/">Accès</a></li>
-<li id="registerLink"><a href="/profile/registration/">Inscription</a></li>
-</ul>
-</div>
-</div>
-<nav id="topNavi">
-<ul>
-<li id="openBurger"><a href="#burgerMenu" class="bg-icon_burger_menu"></a></li>
-<li id="naviItem_0" >
-<a href="/tour/">
-<span class="iconText">A propos de Parship</span>
-</a>
-</li>
-<li id="naviLogo">
-<a href="//www.parship.fr" aria-hidden="true" tabindex="-1">
-<img class="brandLogo" src="/static_cms/parship/static/webapp/img/logos/ps_logo_2016.svg" alt="Site de rencontre Parship.fr"
-aria-hidden="true"/>
-</a>
-</li>
-</ul>
+
+<nav class="navigation navigation-meta">
+	<ul id="menu-meta" class="menu navigation-meta__menu">
+		<li class="menu-item show-only-logged-out">
+			<a href="/login/" class=" menu-item__link">
+				Accès			</a>
+		</li>
+		<li class="menu-item show-only-logged-in">
+			<a href="/logout/" class=" menu-item__link">
+				Déconnexion			</a>
+		</li>
+		<li class="menu-item show-only-logged-out">
+			<a href="/profile/registration/" class="menu-item__link">
+				Inscription			</a>
+		</li>
+	</ul>
 </nav>
+		</div>
+	</div>
+	<nav class="navigation navigation-header inner">
+		<ul id="menu-header-navigation" class="menu navigation-header__menu"><li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-53 menu-item--depth-0"><a href="https://www.parship.fr/tour/" class=" menu-item__link menu-item__link--depth-0">A propos de Parship</a></li>
+</ul><a class="button button__premium show-only-logged-out" href="/profile/registration/">S’inscrire gratuitement</a>	</nav>
 </header>
-<nav id="burgerMenu" aria-label="Navigation menu is open" role="dialog" tabindex="0" class="a11y-visibilityHidden">
-<div>
-<div class="headerLogo">
-<a href="//www.parship.fr" aria-hidden="true" tabindex="-1">
-<img class="brandLogo" src="/static_cms/parship/static/webapp/img/logos/ps_logo_2016.svg" alt="Site de rencontre Parship.fr"
-aria-hidden="true"/>
-</a>
-<button id="closeBurgerMenu" class="wdk-button t-plainSkin3 t-iconOnly " type="submit" aria-label='Fermer Burger Menu' > <span class="icon"> <svg class="wdk-icon icon_x " role="presentation"> <use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use> </svg> </span> <span class="text">Fermer </span> </button>
-</div>
-<ul class="loggedOutList">
-<li>
-<a href="/login/" class="iconText bg-icon_keys">Accès</a>
-</li>
-<li>
-<a href="/profile/registration/" class="iconText bg-icon_check_circle">Inscription</a>
-</li>
-</ul>
+
+
+<div class="content">
+
+	<main class="main">
+
+		
+<article class="post-280 page type-page status-publish hentry page_type-legal">
+	<div class="hentry__inner page__inner">
+		
+<header class="hentry__header page__header">
+	<h2 class="hentry__headline page__headline">CGU</h2></header>
+
+<div class="hentry__content page__content hentry__content--is-content page__content--is-content">
+	
+<p><a href="https://www.parship.fr/static_cms/parship/static/Downloads/Parship_FR_TCs_2022_11_29.pdf" target="_blank" rel="noreferrer noopener">Imprimer et enregistrer en format pdf</a></p>
+
+
+
+<h3>Conditions Générales d&rsquo;Utilisation de Parship en France</h3>
+
+
+
+<h4><strong>En grand pour vous : les petits caractères</strong></h4>
+
+
+
+<p>Personne n&rsquo;aime lire les petits caractères &#8211; néanmoins, nous vous demandons de jeter également un coup d&rsquo;œil à nos CGU en vigueur. Merci beaucoup.</p>
+
+
+
+<p>Dernière mise à jour : 29.11.2022</p>
+
+
+
+<p>Les présentes Conditions générales régissent la relation contractuelle payante ou non payante entre Parship (le contractant est PE Digital GmbH, Speersort 10, 20095 Hambourg, Allemagne) et ses clients, que vous accédiez à Parship via le site web ou les applications mobiles.</p>
+
+
+
+<p>Le <a href="https://parship.fr/communityguidelines/" target="_blank" rel="noreferrer noopener">Community Guidelines</a> fait également partie intégrante de nos conditions générales de vente et s’applique donc en complément.</p>
+
+
+
+<p>Veuillez noter que des règles différentes peuvent s&rsquo;appliquer pour les relations contractuelles établies par l’intermédiaire de fournisseurs tiers tels que Apple ou Google Play. Certaines fonctions sont également exclusivement disponibles sur le site Internet ou les applications mobiles. Vous trouverez des précisions à ce sujet dans les clauses s’y rapportant.L’utilisation de ce service est interdite aux mineurs (moins de 18 ans révolus). L’utilisation du service à des fins commerciales est également interdite.</p>
+
+
+
+<p><strong>CGU</strong></p>
+
+
+
 <ul>
-<li >
-<a href="/tour/" class="iconText icon-compass">
-A propos de Parship </a>
-</li>
+<li><a href="https://www.parship.fr/termsandconditions/#tc01">1. Objet du contrat</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc02">2. Accès / conclusion du contrat</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc03">3. Services gratuits et payants</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc04">4. Politique de protection des données, sécurité lors de l’utilisation, messages indésirables non sollicités</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc05">5. Résiliation / Renouvellement</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc06">6. Responsabilité de Parship</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc07">7. Responsabilité et devoirs du client</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc08">8. Communication</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc09">9. Droits d&rsquo;usage et droits d&rsquo;auteur</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc10">10. Droit applicable, règlement alternatif des litiges</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc11">11. Droit de rétractation</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#tc12">12. Divers</a></li>
+
+
+
+<li><a href="https://www.parship.fr/termsandconditions/#widerruf">Modèle de formulaire de rétractation</a></li>
 </ul>
-</div>
-</nav>
-</peg-navigation>
-<main id="content"><!-- For Mmenu -->
-<section class="wdk-cardDeck">
-<div class="primaryCol">
-<article id="contentCard" data-2column-position="primary">
-<div class="legalTextBox">
-<a name="profile_start"></a>
-<h2>CGU</h2>
-<div class="ps_rowSeparator">
-</div>
-<p>
-</p>
-<p>
-<a class="hideInNativeAppContext" href="https://www.parship.fr/static_cms/parship/static/Downloads/Parship_FR_TCs_2022_11_29.pdf" target="_blank"> <span>Imprimer et enregistrer en format pdf </span></a>
-</p>
-<div class="ps_rowSeparator">
-</div>
-<h3>Conditions Générales d'Utilisation de Parship en France </h3>
-<div id="ps_editorial_onOffBox">
-<strong><h4>En grand pour vous : les petits caractères</h4></strong>
-<p class="ps_standardText">
-Personne n'aime lire les petits caractères - néanmoins, nous vous demandons de jeter également un coup d'œil à nos CGU en vigueur. Merci beaucoup.
-</p>
-<p class="ps_standardText">
-Dernière mise à jour : 29.11.2022
-</p>
-<p class="bold">
-<span>Les présentes Conditions générales régissent la relation contractuelle payante ou non payante entre Parship (le contractant est PE Digital GmbH, Speersort 10, 20095 Hambourg, Allemagne) et ses clients, que vous accédiez à Parship via le site web ou les applications mobiles.</span>
-</p>
-<p class="bold">
-<span>Le <a class="hideInNativeAppContext" href="https://www.parship.fr/communityguidelines/" target="_blank"> <span>Community Guidelines</span></a> fait également partie intégrante de nos conditions générales de vente et s’applique donc en complément.
-<p class="bold">
-<span>Veuillez noter que des règles différentes peuvent s'appliquer pour les relations contractuelles établies par l’intermédiaire de fournisseurs tiers tels que Apple ou Google Play. Certaines fonctions sont également exclusivement disponibles sur le site Internet ou les applications mobiles. Vous trouverez des précisions à ce sujet dans les clauses s’y rapportant.L’utilisation de ce service est interdite aux mineurs (moins de 18 ans révolus). L’utilisation du service à des fins commerciales est également interdite.
-</p>
-</div>
-<p class="ps_standardText"><b>CGU</b>
-</p>
-<ul>
-<li><a href="#tc01">1. Objet du contrat</a></li>
-<li><a href="#tc02">2. Accès / conclusion du contrat</a></li>
-<li><a href="#tc03">3. Services gratuits et payants</a></li>
-<li><a href="#tc04">4. Politique de protection des données, sécurité lors de l’utilisation, messages indésirables non sollicités</a></li>
-<li><a href="#tc05">5. Résiliation / Renouvellement</a></li>
-<li><a href="#tc06">6. Responsabilité de Parship</a></li>
-<li><a href="#tc07">7. Responsabilité et devoirs du client</a></li>
-<li><a href="#tc08">8. Communication</a></li>
-<li><a href="#tc09">9. Droits d'usage et droits d'auteur</a></li>
-<li><a href="#tc10">10. Droit applicable, règlement alternatif des litiges</a></li>
-<li><a href="#tc11">11. Droit de rétractation</a></li>
-<li><a href="#tc12">12. Divers</a></li>
-<li><a href="#widerruf">Modèle de formulaire de rétractation</a></li>
-</ul>
-<div class="ps_rowSeparator">
-</div>
+
+
+
 <h3 id="tc01">1. Objet du contrat</h3>
-<br/>
-<p class="ps_standardText">
-1.1 Parship offre à ses clients pendant la durée du contrat l’accès à une base de données en ligne leur permettant une prise de contact (ci-après dénommé « Service Parship »). Parship est un réseau social qui offre à ses clients la possibilité de se présenter avec leurs propres et d'interagir avec d'autres clients. Le Service Parship est disponible exclusivement via des applications mobiles pour les appareils iOS et Android ou via le site web, et comprend tant des services gratuits que des services payants.
-</p> <br/>
-<p class="ps_standardText">
-1.2 La base de données en ligne fournie par Parship contient ce que l’on appelle des profils, qui sont remplis avec les propres contenus (également appelés « données ») par les clients inscrits. Des informations détaillées concernant les données ainsi collectées et la manière dont elles sont visibles des autres clients sont également disponibles <a class="hideInNativeAppContext" href="https://www.parship.fr/privacypolicy/" target="_blank"> <span>dans la Politique de protection des données</span></a> (cf. article 4.1).
-</p>
-<p class="ps_standardText">
-1.3 Parship propose son service dans les pays indiqués sur le site web et permet une recherche et une prise de contact à l'échelle nationale et internationale dans chacun de ces pays sur la base des critères de recherche fournis par Parship. Le profil respectif du client est visible avec ses données dans tous les pays Parship, quelle que soit la version nationale du site web ou de l'application à partir de laquelle le client s'est inscrit.
-</p>
-<p class="ps_standardText">
-1.4 L’objet du contrat avec Parship n’est explicitement pas le courtage matrimonial ni la mise en relation en vue d’un mariage.
-</p>
-<div id="ps_editorial_onOffBox">
+
+
+
+<p>1.1 Parship offre à ses clients pendant la durée du contrat l’accès à une base de données en ligne leur permettant une prise de contact (ci-après dénommé « Service Parship »). Parship est un réseau social qui offre à ses clients la possibilité de se présenter avec leurs propres et d&rsquo;interagir avec d&rsquo;autres clients. Le Service Parship est disponible exclusivement via des applications mobiles pour les appareils iOS et Android ou via le site web, et comprend tant des services gratuits que des services payants.</p>
+
+
+
+<p>1.2 La base de données en ligne fournie par Parship contient ce que l’on appelle des profils, qui sont remplis avec les propres contenus (également appelés « données ») par les clients inscrits. Des informations détaillées concernant les données ainsi collectées et la manière dont elles sont visibles des autres clients sont également disponibles&nbsp;<a href="https://www.parship.fr/privacypolicy/" target="_blank" rel="noreferrer noopener">dans la Politique de protection des données</a>&nbsp;(cf. article 4.1).</p>
+
+
+
+<p>1.3 Parship propose son service dans les pays indiqués sur le site web et permet une recherche et une prise de contact à l&rsquo;échelle nationale et internationale dans chacun de ces pays sur la base des critères de recherche fournis par Parship. Le profil respectif du client est visible avec ses données dans tous les pays Parship, quelle que soit la version nationale du site web ou de l&rsquo;application à partir de laquelle le client s&rsquo;est inscrit.</p>
+
+
+
+<p>1.4 L’objet du contrat avec Parship n’est explicitement pas le courtage matrimonial ni la mise en relation en vue d’un mariage.</p>
+
+
+
 <h3 id="tc02">2. Accès / conclusion du contrat</h3>
-<br />
-<p class="ps_standardText">
-2.1 Afin de pouvoir utiliser le service Parship, une inscription est nécessaire. Pour s’inscrire, le client a besoin d’une adresse e-mail ainsi que d’un mot de passe choisi par ses soins. Un identifiant (« Chiffre ») et un mot de passe « service » sont générés automatiquement et envoyés par Parship par e-mail au client suite à son inscription.
-</p>
-<br /> <p class="ps_standardText">
-2.2 L’inscription établit un rapport contractuel en principe non payant entre Parship et le client inscrit (également appelé « abonnement Basic »).
-</p>
-<br /> <p class="ps_standardText">
-2.3 Pour pouvoir utiliser le service Parship, il est nécessaire de finaliser l’inscription en répondant au questionnaire de Parship. Il faut ensuite fournir des données personnelles telles que le prénom, la date de naissance, le lieu de résidence, les revenus, etc. Les autres clients peuvent voir le profil une fois toutes les informations renseignées. Une fois le profil créé, certaines de ces informations ne peuvent être modifiées qu'avec l'aide du service clientèle de Parship.
-</p>
-<br /> <p class="ps_standardText">
-2.4 Après avoir répondu au questionnaire de Parship et fourni ses informations personnelles, le client se voit proposer divers services payants par Parship. L’« abonnement Premium » en fait partie. Le client a le choix entre différentes durées initiales au cours du processus de commande, par exemple 12 ou 24 mois. Dans certains pays, Parship propose en outre l’acquisition de biens virtuels pour étendre les droits d’utilisation, en particulier dans le cadre de l’abonnement Basic (par exemple des clés de déverrouillage de profils correspondants décrites au point 3). Avant de conclure un tel rapport contractuel, le client est à nouveau informé du contenu du service payant respectif, de son prix ainsi que des conditions de paiement. En cliquant sur le bouton « Achetez » le client confirme son intention de conclure un contrat ayant pour objet les services payants choisis par ses soins. Le rapport contractuel qui en découle est établi avec l’envoi de l’email de confirmation de commande de Parship. Le lien juridique résultant de la conclusion dudit contrat est établi dès que Parship confirme la commande par e-mail. Si la vérification du mode de paiement choisi lors de la commande échoue auprès du prestataire de services de paiement électronique, la commande n’est pas validée.
-</p>
-<br /> <p class="ps_standardText">
-2.5 Parship permet également à ses clients de bénéficier de ses services payants via les plateformes de paiement Apple et Google Play (« Achats in-app »). La relation contractuelle est établie par l'envoi de l'e-mail de confirmation de Parship au client. Les fournisseurs tiers ont fixé des règles pour la conclusion du contrat, le paiement ainsi que la résiliation de la relation contractuelle, que le client accepte via les conditions d'utilisation du fournisseur tiers et sur lesquelles Parship n'a aucune influence. Si le client décide de conclure un contrat avec Parship par l'intermédiaire du fournisseur tiers, il est tenu de respecter les règles énoncées dans les conditions d'utilisation du fournisseur tiers concernant la conclusion, le paiement et la résiliation des contrats. En cas de conflit entre les conditions générales du fournisseur tiers et les présente Conditions générales de Parship, les conditions générales du fournisseur tiers prévalent. En particulier, le client est invité par le fournisseur tiers à confirmer auprès de lui son achat. Le mode de paiement est alors celui que le client a convenu avec le fournisseur tiers (par exemple, le client paie via Apple en utilisant le mode de paiement associé à son identifiant Apple). Si le client souhaite modifier ou résilier son abonnement Premium acheté dans une application, il doit le faire via son compte auprès du fournisseur tiers, se connecter à ce dernier et suivre les instructions du fournisseur tiers relatives à la suspension, la rétractation ou la résiliation de l'abonnement. Tout remboursement sera effectué, conformément aux règles du fournisseur tiers, soit dans le cadre de la relation du fournisseur tiers avec le client, soit dans le cadre de la relation de Parship avec le client.
-</p>
-<br /> <p class="ps_standardText">
-2.6 Si le client choisit le prélèvement SEPA (s’il est proposé) pour les services payants, Parship notifie le client du prélèvement initial dans l’e-mail de confirmation de commande. Pour l'abonnement Premium, le client est également informé des éventuels prélèvements suivants par un échéancier de paiement figurant dans son profil, dans « Gestion de votre profil > Abonnement ». L'indication se réfère au jour du premier prélèvement possible. Dans certains cas isolés, le montant prélevé peut différer du montant indiqué dans la notification préalable au profit du client, si le client a obtenu des crédits ou s'il a annulé des transactions entre l’envoi de la notification préalable et d'échéance.
-</p> </div>
-<div class="ps_editorial_topSpacer">
-</div>
+
+
+
+<p>2.1 Afin de pouvoir utiliser le service Parship, une inscription est nécessaire. Pour s’inscrire, le client a besoin d’une adresse e-mail ainsi que d’un mot de passe choisi par ses soins. Un identifiant (« Chiffre ») et un mot de passe « service » sont générés automatiquement et envoyés par Parship par e-mail au client suite à son inscription.</p>
+
+
+
+<p>2.2 L’inscription établit un rapport contractuel en principe non payant entre Parship et le client inscrit (également appelé « abonnement Basic »).</p>
+
+
+
+<p>2.3 Pour pouvoir utiliser le service Parship, il est nécessaire de finaliser l’inscription en répondant au questionnaire de Parship. Il faut ensuite fournir des données personnelles telles que le prénom, la date de naissance, le lieu de résidence, les revenus, etc. Les autres clients peuvent voir le profil une fois toutes les informations renseignées. Une fois le profil créé, certaines de ces informations ne peuvent être modifiées qu&rsquo;avec l&rsquo;aide du service clientèle de Parship.</p>
+
+
+
+<p>2.4 Après avoir répondu au questionnaire de Parship et fourni ses informations personnelles, le client se voit proposer divers services payants par Parship. L’« abonnement Premium » en fait partie. Le client a le choix entre différentes durées initiales au cours du processus de commande, par exemple 12 ou 24 mois. Dans certains pays, Parship propose en outre l’acquisition de biens virtuels pour étendre les droits d’utilisation, en particulier dans le cadre de l’abonnement Basic (par exemple des clés de déverrouillage de profils correspondants décrites au point 3). Avant de conclure un tel rapport contractuel, le client est à nouveau informé du contenu du service payant respectif, de son prix ainsi que des conditions de paiement. En cliquant sur le bouton « Achetez » le client confirme son intention de conclure un contrat ayant pour objet les services payants choisis par ses soins. Le rapport contractuel qui en découle est établi avec l’envoi de l’email de confirmation de commande de Parship. Le lien juridique résultant de la conclusion dudit contrat est établi dès que Parship confirme la commande par e-mail. Si la vérification du mode de paiement choisi lors de la commande échoue auprès du prestataire de services de paiement électronique, la commande n’est pas validée.</p>
+
+
+
+<p>2.5 Parship permet également à ses clients de bénéficier de ses services payants via les plateformes de paiement Apple et Google Play (« Achats in-app »). La relation contractuelle est établie par l&rsquo;envoi de l&rsquo;e-mail de confirmation de Parship au client. Les fournisseurs tiers ont fixé des règles pour la conclusion du contrat, le paiement ainsi que la résiliation de la relation contractuelle, que le client accepte via les conditions d&rsquo;utilisation du fournisseur tiers et sur lesquelles Parship n&rsquo;a aucune influence. Si le client décide de conclure un contrat avec Parship par l&rsquo;intermédiaire du fournisseur tiers, il est tenu de respecter les règles énoncées dans les conditions d&rsquo;utilisation du fournisseur tiers concernant la conclusion, le paiement et la résiliation des contrats. En cas de conflit entre les conditions générales du fournisseur tiers et les présente Conditions générales de Parship, les conditions générales du fournisseur tiers prévalent. En particulier, le client est invité par le fournisseur tiers à confirmer auprès de lui son achat. Le mode de paiement est alors celui que le client a convenu avec le fournisseur tiers (par exemple, le client paie via Apple en utilisant le mode de paiement associé à son identifiant Apple). Si le client souhaite modifier ou résilier son abonnement Premium acheté dans une application, il doit le faire via son compte auprès du fournisseur tiers, se connecter à ce dernier et suivre les instructions du fournisseur tiers relatives à la suspension, la rétractation ou la résiliation de l&rsquo;abonnement. Tout remboursement sera effectué, conformément aux règles du fournisseur tiers, soit dans le cadre de la relation du fournisseur tiers avec le client, soit dans le cadre de la relation de Parship avec le client.</p>
+
+
+
+<p>2.6 Si le client choisit le prélèvement SEPA (s’il est proposé) pour les services payants, Parship notifie le client du prélèvement initial dans l’e-mail de confirmation de commande. Pour l&rsquo;abonnement Premium, le client est également informé des éventuels prélèvements suivants par un échéancier de paiement figurant dans son profil, dans « Gestion de votre profil &gt; Abonnement ». L&rsquo;indication se réfère au jour du premier prélèvement possible. Dans certains cas isolés, le montant prélevé peut différer du montant indiqué dans la notification préalable au profit du client, si le client a obtenu des crédits ou s&rsquo;il a annulé des transactions entre l’envoi de la notification préalable et d&rsquo;échéance.</p>
+
+
+
 <h3 id="tc03">3. Services gratuits et payants</h3>
-<br />
-<p class="ps_standardText">
-3.1 L’inscription sur Parship est gratuite. Par la suite, le client répond à un questionnaire scientifique basé sur des critères psychologiques, le « questionnaire » Parship. Les résultats de ce test combinés à des données de comparaison statistiques permettent à Parship d’élaborer automatiquement un rapport de personnalité individualisé. Le profil personnalisé du client ainsi réalisé est intégré dans la base de données Parship. Le profil personnalisé du client est comparé de manière automatique avec ceux des autres clients Parship selon des données statistiques comparatives, lesquelles permettent de déterminer la comptabilité des caractéristiques personnelles de chaque client individuellement. Une version abrégée du rapport de personnalité du client est visible par tous les autres clients dans le profil du client afin d’accompagner le choix d’une prise de contact. Sur la base de ce procédé de comparaison automatisé, le client reçoit gratuitement dans son profil et par e-mail des propositions de partenaires dans la mesure où le client n'a pas désactivé cette fonctionnalité (envoi par e-mail) sur le site web. Les propositions de partenaires contiennent chacune une brève description du partenaire proposé (par exemple, profession ou prénom, âge, photo, niveau de compatibilité) ainsi qu'une mention indiquant si le client est « nouveau » sur Parship. Les membres Basic ont accès à un nombre de fonctionnalités limité. Ainsi, les membres Basic n'ont en principe accès qu'à une version floutée des photos des partenaires qui leur sont proposés. En outre, les membres Basic ne peuvent envoyer que certains types de messages, à condition que leur profil soit rempli à 50% au moins. La fonction d’envoi de messages à texte libre et la lecture de ces messages à texte libre est limitée pendant l’abonnement Basic. Par ailleurs, afin de protéger les membres et de garantir la qualité du service Parship, le nombre de messages est limité (cf. article 4.2).
-</p> <br />
-<p class="ps_standardText">
-3.2 Dès lors qu’il conclut un abonnement Premium, le client reçoit, en ligne et par e-mail, des suggestions de partenaires correspondant à ses critères de recherche et constamment actualisées. Dans le cadre des propositions de partenaires et des profils des membres accessibles aux membres Premium sont présentés la profession ou le prénom du membre, les photos des membres Basic et des membres Premium sous une forme identifiable ainsi que l'indication si le client est « nouveau » sur Parship. Les clients visualisent également une version succincte de l'analyse de personnalité des autres clients. En outre, dans le cadre de l'abonnement Premium, le client a, conformément aux consignes d’utilisation énoncées à l’article 7 de ces CGU, la possibilité d'entrer en contact sans restriction et d'un commun accord, avec d'autres clients et de communiquer par le biais de message ou, dans certains pays, via une fonctionnalité de conversation vidéo. Enfin, sauf indication contraire ci-dessus, il a accès aux mêmes possibilités d'utilisation qu'un membre Basic. Parship établit une évaluation détaillée du test de personnalité en ligne dans son profil ainsi que sous la forme d’un rapport de personnalité complet. Le rapport de personnalité est mis à la disposition du client sous la forme d’un fichier PDF par e-mail. En outre le client a la possibilité de commander séparément le rapport de personnalité.
-</p> <br />
-<p class="ps_standardText">
-3.3 D’autres prestations payantes supplémentaires figurent sous leur forme actuelle respective dans la rubrique « Prix et Prestations » du site web.
-</p> <br />
-<p class="ps_standardText">
-3.4 L'acquisition de biens virtuels (par exemple de clés de déverrouillage de profils correspondants) est en outre payante. Les biens virtuels peuvent être utilisés pour différents services ou pour étendre les autorisations d'un profil personnel. Les clés de déverrouillage de profils correspondants permettent par exemple de débloquer les photos de profil et les communications illimitées de différents profils, conformément aux présentes conditions générales de vente. Parship se réserve le droit de limiter l’offre de biens virtuels sur le plan géographique, temporel et/ou individuel.
-</p> <br />
-<p class="ps_standardText">
-3.5 Dans le cadre de campagnes de promotion, Parship permet également aux membres de tester gratuitement l'abonnement Premium ou les biens virtuels. L’abonnement Premium gratuit prend fin dans les délais définis sans qu'il soit nécessaire de le résilier. Il est suivi d’un abonnement basic gratuit.
-<br />
-3.6 Parship se réserve le droit de modifier les services proposés par ses soins pour des raisons valables et sans facturer de frais supplémentaires aux membres Parship, ou bien d’offrir des services différents,
+
+
+
+<p>3.1 L’inscription sur Parship est gratuite. Par la suite, le client répond à un questionnaire scientifique basé sur des critères psychologiques, le « questionnaire » Parship. Les résultats de ce test combinés à des données de comparaison statistiques permettent à Parship d’élaborer automatiquement un rapport de personnalité individualisé. Le profil personnalisé du client ainsi réalisé est intégré dans la base de données Parship. Le profil personnalisé du client est comparé de manière automatique avec ceux des autres clients Parship selon des données statistiques comparatives, lesquelles permettent de déterminer la comptabilité des caractéristiques personnelles de chaque client individuellement. Une version abrégée du rapport de personnalité du client est visible par tous les autres clients dans le profil du client afin d’accompagner le choix d’une prise de contact. Sur la base de ce procédé de comparaison automatisé, le client reçoit gratuitement dans son profil et par e-mail des propositions de partenaires dans la mesure où le client n&rsquo;a pas désactivé cette fonctionnalité (envoi par e-mail) sur le site web. Les propositions de partenaires contiennent chacune une brève description du partenaire proposé (par exemple, profession ou prénom, âge, photo, niveau de compatibilité) ainsi qu&rsquo;une mention indiquant si le client est « nouveau » sur Parship. Les membres Basic ont accès à un nombre de fonctionnalités limité. Ainsi, les membres Basic n&rsquo;ont en principe accès qu&rsquo;à une version floutée des photos des partenaires qui leur sont proposés. En outre, les membres Basic ne peuvent envoyer que certains types de messages, à condition que leur profil soit rempli à 50% au moins. La fonction d’envoi de messages à texte libre et la lecture de ces messages à texte libre est limitée pendant l’abonnement Basic. Par ailleurs, afin de protéger les membres et de garantir la qualité du service Parship, le nombre de messages est limité (cf. article 4.2).</p>
+
+
+
+<p>3.2 Dès lors qu’il conclut un abonnement Premium, le client reçoit, en ligne et par e-mail, des suggestions de partenaires correspondant à ses critères de recherche et constamment actualisées. Dans le cadre des propositions de partenaires et des profils des membres accessibles aux membres Premium sont présentés la profession ou le prénom du membre, les photos des membres Basic et des membres Premium sous une forme identifiable ainsi que l&rsquo;indication si le client est « nouveau » sur Parship. Les clients visualisent également une version succincte de l&rsquo;analyse de personnalité des autres clients. En outre, dans le cadre de l&rsquo;abonnement Premium, le client a, conformément aux consignes d’utilisation énoncées à l’article 7 de ces CGU, la possibilité d&rsquo;entrer en contact sans restriction et d&rsquo;un commun accord, avec d&rsquo;autres clients et de communiquer par le biais de message ou, dans certains pays, via une fonctionnalité de conversation vidéo. Enfin, sauf indication contraire ci-dessus, il a accès aux mêmes possibilités d&rsquo;utilisation qu&rsquo;un membre Basic. Parship établit une évaluation détaillée du test de personnalité en ligne dans son profil ainsi que sous la forme d’un rapport de personnalité complet. Le rapport de personnalité est mis à la disposition du client sous la forme d’un fichier PDF par e-mail. En outre le client a la possibilité de commander séparément le rapport de personnalité.</p>
+
+
+
+<p>3.3 D’autres prestations payantes supplémentaires figurent sous leur forme actuelle respective dans la rubrique « Prix et Prestations » du site web.</p>
+
+
+
+<p>3.4 L&rsquo;acquisition de biens virtuels (par exemple de clés de déverrouillage de profils correspondants) est en outre payante. Les biens virtuels peuvent être utilisés pour différents services ou pour étendre les autorisations d&rsquo;un profil personnel. Les clés de déverrouillage de profils correspondants permettent par exemple de débloquer les photos de profil et les communications illimitées de différents profils, conformément aux présentes conditions générales de vente. Parship se réserve le droit de limiter l’offre de biens virtuels sur le plan géographique, temporel et/ou individuel.</p>
+
+
+
+<p>3.5 Dans le cadre de campagnes de promotion, Parship permet également aux membres de tester gratuitement l&rsquo;abonnement Premium ou les biens virtuels. L’abonnement Premium gratuit prend fin dans les délais définis sans qu&rsquo;il soit nécessaire de le résilier. Il est suivi d’un abonnement basic gratuit.<br>3.6 Parship se réserve le droit de modifier les services proposés par ses soins pour des raisons valables et sans facturer de frais supplémentaires aux membres Parship, ou bien d’offrir des services différents,</p>
+
+
+
 <ul>
 <li>dans la mesure où Parship est tenu de s’assurer que les services qu’il propose sont conformes au droit applicable aux services, notamment en cas d’évolution de la législation en vigueur ;</li>
+
+
+
 <li>dans la mesure où Parship se conforme ainsi à une décision de justice ou une décision des autorités prise à son encontre ;</li>
+
+
+
 <li>dans la mesure où la modification est nécessaire afin de remédier à des failles de sécurité existantes ;</li>
+
+
+
 <li>à un nouvel environnement technique ou à un nombre accru d’utilisateurs pour les adapter ;</li>
+
+
+
 <li>lorsque cela est nécessaire pour des raisons opérationnelles importantes ;</li>
+
+
+
 <li>pour maintenir la conformité contractuelle du service, notamment pour répondre aux exigences actuelles du marché concernant les services du même type ; ou</li>
+
+
+
 <li>si la modification est de nature purement technique ou procédurale sans effet significatif sur l’utilisateur, comme c’est notamment le cas des changements purement graphiques et des petites modifications de l’agencement des fonctionnalités.</li>
 </ul>
-Vous trouverez des informations sur les adaptations et les améliorations de l'expérience produit Parship dans nos <a href="https://www.parship.fr/updates/" target="_self">mises à jour de produits</a>.
-</p>
-<div id="ps_editorial_onOffBox">
+
+
+
+<p>Vous trouverez des informations sur les adaptations et les améliorations de l&rsquo;expérience produit Parship dans nos&nbsp;<a href="https://www.parship.fr/updates/">mises à jour de produits</a>.</p>
+
+
+
 <h3 id="tc04">4. Politique de protection des données, sécurité lors de l’utilisation de Parship, messages indésirables non sollicités</h3>
-<br />
-<p class="ps_standardText">
-4.1 Des informations complémentaires sur le traitement des données à caractère personnel et les droits du client en matière de protection des données sont disponibles dans la <a href="https://www.parship.fr/privacypolicy/" target="_self">Politique de protection des données</a>.
-</p> <br />
-<p class="ps_standardText">
-4.2 En utilisant le service Parship, les clients mettent leurs données personnelles à la disposition de Parship. Cette mise à disposition s’effectue en contrepartie de l’utilisation, dans la mesure où les clients utilisent Parship gratuitement. En d’autres termes, les clients utilisent Parship gratuitement et, en contrepartie, leurs données peuvent être traitées dans les limites de la politique de protection des données. Cette réciprocité ne doit pas empêcher le client d'exercer ses droits en matière de protection des données. Les clients ont plus particulièrement le droit de retirer tout consentement et/ou de s'opposer au traitement de leurs données aux termes de l’article 21 du règlement (UE) 2016/679. Toutefois, si la révocation des consentements et/ou l'opposition au traitement rend la poursuite de la relation contractuelle inacceptable, compte tenu de l'étendue du traitement des données encore autorisé et après avoir mis en balance les intérêts des deux parties, Parship peut résilier l'abonnement Basic sans préavis. Les éventuelles créances de Parship restent inchangées, même si le client exige des services payants dont la fourniture est impossible du fait de son exercice des droits à la protection des données. Tout remboursement est exclu.
-</p> <br />
-<p class="ps_standardText">
-4.3 Parship s'efforce constamment de protéger ses clients contre le harcèlement tels que les attaques de pirates informatiques, le spam et les arnaques amoureuses. Dans ce cadre, Parship a développé de nombreux standards techniques et organisationnels afin de détecter les violations des consignes d’utilisation, et en particulier de ne pas acheminer les messages abusifs au sens de l’article 7.8 de ces CGU. À cet égard, Parship est également en droit d’utiliser les logiciels de filtrage ou de validation appropriés. Avant d'utiliser le service Parship, il incombe au client de se familiariser avec les <a href="/tour/securite/" target="_blank">conseils en matière de sécurité</a> et de suivre ces conseils ainsi que les règles d'utilisation figurant à l’article 7 des présentes CGU. Si l'équipe de sécurité (« Trust and Safety Team ») de Parship prend contact avec le client suite à un problème, celui-ci est tenu de de prendre immédiatement position. Les mesures recommandées doivent être sérieusement prises en considération et ne doivent être écartées qu'en cas de motif important. Le client est également tenu de transmettre à Parship les contenus ou comportements problématiques via la fonctionnalité « Signaler ce profil ».
-</p>
-<p class="ps_standardText">
-4.4 Parship n’est pas tenu d’acheminer les messages dès lors que ceux-ci sont soupçonnés de contrevenir aux consignes d’utilisation mentionnées à l’article 7.8 et de présenter par conséquent un caractère abusif. Il n’y a notamment aucune obligation à acheminer les messages publicitaires non sollicités ou soupçonnés de l’être. Les messages indésirables qualifiés de « spams » sont considérés comme étant des e-mails publicitaires non sollicités. Le client a la possibilité de "supprimer" à des contacts. Le profil qui a pris congé est supprimé de la liste de contacts et les messages échangés sont effacés. Une nouvelle prise de contact n'est alors plus possible. De plus, Parship peut supprimer automatiquement les messages restants si ces derniers ont été envoyés par des profils ou à des profils qui sont identifiés comme spams ou comme des escroqueries amoureuses ou qui ont été supprimés par ailleurs.
-</p>
-<div class="ps_editorial_topSpacer">
-</div>
+
+
+
+<p>4.1 Des informations complémentaires sur le traitement des données à caractère personnel et les droits du client en matière de protection des données sont disponibles dans la&nbsp;<a href="https://www.parship.fr/privacypolicy/">Politique de protection des données</a>.</p>
+
+
+
+<p>4.2 En utilisant le service Parship, les clients mettent leurs données personnelles à la disposition de Parship. Cette mise à disposition s’effectue en contrepartie de l’utilisation, dans la mesure où les clients utilisent Parship gratuitement. En d’autres termes, les clients utilisent Parship gratuitement et, en contrepartie, leurs données peuvent être traitées dans les limites de la politique de protection des données. Cette réciprocité ne doit pas empêcher le client d&rsquo;exercer ses droits en matière de protection des données. Les clients ont plus particulièrement le droit de retirer tout consentement et/ou de s&rsquo;opposer au traitement de leurs données aux termes de l’article 21 du règlement (UE) 2016/679. Toutefois, si la révocation des consentements et/ou l&rsquo;opposition au traitement rend la poursuite de la relation contractuelle inacceptable, compte tenu de l&rsquo;étendue du traitement des données encore autorisé et après avoir mis en balance les intérêts des deux parties, Parship peut résilier l&rsquo;abonnement Basic sans préavis. Les éventuelles créances de Parship restent inchangées, même si le client exige des services payants dont la fourniture est impossible du fait de son exercice des droits à la protection des données. Tout remboursement est exclu.</p>
+
+
+
+<p>4.3 Parship s&rsquo;efforce constamment de protéger ses clients contre le harcèlement tels que les attaques de pirates informatiques, le spam et les arnaques amoureuses. Dans ce cadre, Parship a développé de nombreux standards techniques et organisationnels afin de détecter les violations des consignes d’utilisation, et en particulier de ne pas acheminer les messages abusifs au sens de l’article 7.8 de ces CGU. À cet égard, Parship est également en droit d’utiliser les logiciels de filtrage ou de validation appropriés. Avant d&rsquo;utiliser le service Parship, il incombe au client de se familiariser avec les&nbsp;<a href="https://www.parship.fr/tour/securite/" target="_blank" rel="noreferrer noopener">conseils en matière de sécurité</a>&nbsp;et de suivre ces conseils ainsi que les règles d&rsquo;utilisation figurant à l’article 7 des présentes CGU. Si l&rsquo;équipe de sécurité (« Trust and Safety Team ») de Parship prend contact avec le client suite à un problème, celui-ci est tenu de de prendre immédiatement position. Les mesures recommandées doivent être sérieusement prises en considération et ne doivent être écartées qu&rsquo;en cas de motif important. Le client est également tenu de transmettre à Parship les contenus ou comportements problématiques via la fonctionnalité « Signaler ce profil ».</p>
+
+
+
+<p>4.4 Parship n’est pas tenu d’acheminer les messages dès lors que ceux-ci sont soupçonnés de contrevenir aux consignes d’utilisation mentionnées à l’article 7.8 et de présenter par conséquent un caractère abusif. Il n’y a notamment aucune obligation à acheminer les messages publicitaires non sollicités ou soupçonnés de l’être. Les messages indésirables qualifiés de « spams » sont considérés comme étant des e-mails publicitaires non sollicités. Le client a la possibilité de « supprimer » à des contacts. Le profil qui a pris congé est supprimé de la liste de contacts et les messages échangés sont effacés. Une nouvelle prise de contact n&rsquo;est alors plus possible. De plus, Parship peut supprimer automatiquement les messages restants si ces derniers ont été envoyés par des profils ou à des profils qui sont identifiés comme spams ou comme des escroqueries amoureuses ou qui ont été supprimés par ailleurs.</p>
+
+
+
 <h3 id="tc05">5. Résiliation / Renouvellement</h3>
-<br />
-<p class="ps_standardText">
-5.1 Le client a, à tout moment et avec effet immédiat, le droit de résilier le contrat concernant l’abonnement gratuit Basic. La résiliation de l’abonnement Basic s’effectue sur le site web en cliquant sur le lien « ici » dans la rubrique <a href="https://www.parship.fr/settings/deleteprofile" target="_self">« Mon profil » / « Mes données » / « Gestion de votre profil » / « Statut du profil »</a>, et en confirmant cette opération par la saisie du mot de passe personnel.Pour tout abonnement Basic avec des biens virtuels activés (clés de déverrouillage de profils correspondants, par exemple), la résiliation revêt la forme écrite (e-mail envoyé au service clientèle à aide(at)parship.fr, par exemple) et ledit texte doit fournir l’adresse e-mail ou l’identifiant enregistrés chez Parship, ainsi que le mot de passe « service » afin d’être clairement affecté. Si le client supprime son abonnement Basic, tous les biens virtuels préalablement acquis (par exemple les clés de déverrouillage de profils correspondants) sont également supprimés. Les biens virtuels inutilisés ne sont pas remboursés. Les obligations de paiement établies demeurent inchangées sous réserve des règles de rétractation.
-</p> <br />
-<p class="ps_standardText">
-5.2 Le délai de la résiliation ordinaire de l’abonnement Premium, suite à un achat via le site web, est communiqué dans les « clauses relatives au produit » qui sont acceptées par le client au cours du processus de commande sur le site internet. De plus et suite à l’achat d’un abonnement Premium, le client est informé de ce délai de résiliation dans la confirmation de commande envoyée par e-mail. La résiliation est valable uniquement si la demande de résiliation est effectuée par écrit (par voie postale, par fax ou par e-mail).
-</p> <br />
-<p class="ps_standardText">
-Afin d’établir l'authenticité de l’identité de l’auteur et prévenir tout abus, la demande de résiliation du client doit contenir les deux informations suivantes:
-</p>
-<p class="ps_standardText">
-(1.) l’adresse e-mail indiquée dans le profil ou l’identifiant Parship, et<br />
-(2.) le mot de passe « service ».
-</p>
-<p class="ps_standardText">
-La résiliation effective de l’abonnement payant n’entraîne pas la résiliation automatique de l’abonnement gratuit Basic. Pour résilier ce dernier, il est nécessaire de procéder selon le paragraphe 5.1.
-</p> <br/>
-<p class="ps_standardText">
-5.3 Si le client a souscrit son abonnement Premium par l'intermédiaire de fournisseurs tiers tels qu'Apple ou Google Play, la résiliation de la relation contractuelle est régie par les dispositions de l’article 2.5. Si le client souhaite mettre fin à son abonnement Parship Premium acheté dans l'application, il doit le faire via son compte auprès du fournisseur tiers, s’y connecter et suivre les instructions du fournisseur tiers relatives à la résiliation. Des informations détaillées concernant la résiliation d'un abonnement Premium via les fournisseurs tiers sont disponibles via ce <a href="https://support.apple.com/fr-fr/HT202039" target="_self">lien</a> pour Apple et via ce <a href="https://support.google.com/googleplay/answer/7018481?hl=fr&co=GENIE.Platform" target="_self">lien</a> pour Google Play. La résiliation effective de l’abonnement Premium auprès d’un fournisseur tiers n’entraîne pas la résiliation automatique de l’abonnement Basic. Dans ce cas également, il est nécessaire de procéder comme indiqué à l’article 5.1.
-</p>
-<p class="ps_standardText"> <strong>
-5.4 En cas d’achat via Parship, le contrat d’abonnement payant Premium est automatiquement renouvelé, sauf si le client a dûment résilié son contrat conformément à l’article 5.2, en respectant le délai de préavis. La durée du renouvellement ainsi que son coût sont définis dans les clauses relatives au produit qui sont acceptées par le client au cours du processus de commande sur le site d’achat. Lors de l’achat d’un abonnement Premium, le client est également informé dans l’e-mail de confirmation de commande de la durée et du coût d’un éventuel renouvellement si la résiliation n’est pas effectuée dans les délais stipulés. Dans les deux premières semaines suivant le renouvellement du contrat, le client a la possibilité de faire à nouveau le test de personnalité Parship et d’obtenir un nouveau rapport de personnalité sous la forme d’un fichier PDF par e-mail.
-</strong> </p>
-<p class="ps_standardText">
-5.5 Conformément à l’article L. 215-4 du Code de la Consommation, le client est informé des dispositions des articles L. 215-1, L. 215-3 et L. 241-3 du Code de la Consommation qui sont intégralement reproduites ci-après. <br />
-En vertu de l’article L. 215-1 du Code de la Consommation : <br /> <br />
-<i>« Pour les contrats de prestations de services conclus pour une durée déterminée avec une clause de reconduction tacite, le professionnel prestataire de services informe le consommateur par écrit, par lettre nominative ou courrier électronique dédiés, au plus tôt trois mois et au plus tard un mois avant le terme de la période autorisant le rejet de la reconduction, de la possibilité de ne pas reconduire le contrat qu'il a conclu avec une clause de reconduction tacite. Cette information, délivrée dans des termes clairs et compréhensibles, mentionne, dans un encadré apparent, la date limite de non-reconduction. <br /> <br />
-Lorsque cette information ne lui a pas été adressée conformément aux dispositions du premier alinéa, le consommateur peut mettre gratuitement un terme au contrat, à tout moment à compter de la date de reconduction. <br /><br />
-Les avances effectuées après la dernière date de reconduction ou, s'agissant des contrats à durée indéterminée, après la date de transformation du contrat initial à durée déterminée, sont dans ce cas remboursées dans un délai de trente jours à compter de la date de résiliation, déduction faite des sommes correspondant, jusqu'à celle-ci, à l'exécution du contrat. <br /><br />
-Les dispositions du présent article s'appliquent sans préjudice de celles qui soumettent légalement certains contrats à des règles particulières en ce qui concerne l'information du consommateur. » <br /><br />
-En vertu de l’article L. 215-3 du Code de la Consommation : « Les dispositions du présent chapitre sont également applicables aux contrats conclus entre des professionnels et des non-professionnels. » <br /><br />
-En vertu de l’article L. 241-3 du Code de la Consommation : « Lorsque le professionnel n'a pas procédé au remboursement dans les conditions prévues à l'article L. 215-1, les sommes dues sont productives d'intérêts au taux légal. » </i>
-</p>
-<p class="ps_standardText">
-5.6 Parship informe ainsi les membres Premium par e-mail, envoyé au plus tard un mois avant le terme de la période autorisant l’annulation de la reconduction automatique, de la possibilité de ne pas reconduire le contrat en le résiliant dans le délai imparti. Faute de quoi le contrat est automatiquement prolongé tel que stipulé dans le contrat.
-</p>
-<p class="ps_standardText"> <strong>
-5.7 Si l'abonnement Premium a été souscrit via des fournisseurs tiers tels que Apple ou Google Play, la durée et le coût d'un éventuel renouvellement automatique découlent des dispositions dans le compte du fournisseur tiers ainsi que de la confirmation de commande envoyée au client à la conclusion du contrat.
-</strong> </p>
-<p class="ps_standardText">
-5.8 La résiliation extraordinaire est régie par les dispositions légales. Elle doit également être effectuée par écrit. Si l'abonnement Premium est souscrit via des fournisseurs tiers tels qu'Apple ou Google Play, les dispositions de l’article 5.3 s'appliquent.
-</p>
-<p class="ps_standardText">
-5.9 La résiliation de l’abonnement payant n’entraîne pas la résiliation automatique de l’abonnement gratuit. Pour résilier ce dernier, il est nécessaire de procéder selon le paragraphe 5.1.
-</p>
-<div id="ps_editorial_onOffBox">
+
+
+
+<p>5.1 Le client a, à tout moment et avec effet immédiat, le droit de résilier le contrat concernant l’abonnement gratuit Basic. La résiliation de l’abonnement Basic s’effectue sur le site web en cliquant sur le lien « ici » dans la rubrique&nbsp;<a href="https://www.parship.fr/settings/deleteprofile">« Mon profil » / « Mes données » / « Gestion de votre profil » / « Statut du profil »</a>, et en confirmant cette opération par la saisie du mot de passe personnel.Pour tout abonnement Basic avec des biens virtuels activés (clés de déverrouillage de profils correspondants, par exemple), la résiliation revêt la forme écrite (e-mail envoyé au service clientèle à aide(at)parship.fr, par exemple) et ledit texte doit fournir l’adresse e-mail ou l’identifiant enregistrés chez Parship, ainsi que le mot de passe « service » afin d’être clairement affecté. Si le client supprime son abonnement Basic, tous les biens virtuels préalablement acquis (par exemple les clés de déverrouillage de profils correspondants) sont également supprimés. Les biens virtuels inutilisés ne sont pas remboursés. Les obligations de paiement établies demeurent inchangées sous réserve des règles de rétractation.</p>
+
+
+
+<p>5.2 Le délai de la résiliation ordinaire de l’abonnement Premium, suite à un achat via le site web, est communiqué dans les « clauses relatives au produit » qui sont acceptées par le client au cours du processus de commande sur le site internet. De plus et suite à l’achat d’un abonnement Premium, le client est informé de ce délai de résiliation dans la confirmation de commande envoyée par e-mail. La résiliation est valable uniquement si la demande de résiliation est effectuée par écrit (par voie postale, par fax ou par e-mail).</p>
+
+
+
+<p>Afin d’établir l&rsquo;authenticité de l’identité de l’auteur et prévenir tout abus, la demande de résiliation du client doit contenir les deux informations suivantes:</p>
+
+
+
+<p>(1.) l’adresse e-mail indiquée dans le profil ou l’identifiant Parship, et<br>(2.) le mot de passe « service ».</p>
+
+
+
+<p>La résiliation effective de l’abonnement payant n’entraîne pas la résiliation automatique de l’abonnement gratuit Basic. Pour résilier ce dernier, il est nécessaire de procéder selon le paragraphe 5.1.</p>
+
+
+
+<p>5.3 Si le client a souscrit son abonnement Premium par l&rsquo;intermédiaire de fournisseurs tiers tels qu&rsquo;Apple ou Google Play, la résiliation de la relation contractuelle est régie par les dispositions de l’article 2.5. Si le client souhaite mettre fin à son abonnement Parship Premium acheté dans l&rsquo;application, il doit le faire via son compte auprès du fournisseur tiers, s’y connecter et suivre les instructions du fournisseur tiers relatives à la résiliation. Des informations détaillées concernant la résiliation d&rsquo;un abonnement Premium via les fournisseurs tiers sont disponibles via ce&nbsp;<a href="https://support.apple.com/fr-fr/HT202039">lien</a>&nbsp;pour Apple et via ce&nbsp;<a href="https://support.google.com/googleplay/answer/7018481?hl=fr&amp;co=GENIE.Platform">lien</a>&nbsp;pour Google Play. La résiliation effective de l’abonnement Premium auprès d’un fournisseur tiers n’entraîne pas la résiliation automatique de l’abonnement Basic. Dans ce cas également, il est nécessaire de procéder comme indiqué à l’article 5.1.</p>
+
+
+
+<p><strong>5.4 En cas d’achat via Parship, le contrat d’abonnement payant Premium est automatiquement renouvelé, sauf si le client a dûment résilié son contrat conformément à l’article 5.2, en respectant le délai de préavis. La durée du renouvellement ainsi que son coût sont définis dans les clauses relatives au produit qui sont acceptées par le client au cours du processus de commande sur le site d’achat. Lors de l’achat d’un abonnement Premium, le client est également informé dans l’e-mail de confirmation de commande de la durée et du coût d’un éventuel renouvellement si la résiliation n’est pas effectuée dans les délais stipulés. Dans les deux premières semaines suivant le renouvellement du contrat, le client a la possibilité de faire à nouveau le test de personnalité Parship et d’obtenir un nouveau rapport de personnalité sous la forme d’un fichier PDF par e-mail.</strong></p>
+
+
+
+<p>5.5 Conformément à l’article L. 215-4 du Code de la Consommation, le client est informé des dispositions des articles L. 215-1, L. 215-3 et L. 241-3 du Code de la Consommation qui sont intégralement reproduites ci-après.<br>En vertu de l’article L. 215-1 du Code de la Consommation :<br><br><em>« Pour les contrats de prestations de services conclus pour une durée déterminée avec une clause de reconduction tacite, le professionnel prestataire de services informe le consommateur par écrit, par lettre nominative ou courrier électronique dédiés, au plus tôt trois mois et au plus tard un mois avant le terme de la période autorisant le rejet de la reconduction, de la possibilité de ne pas reconduire le contrat qu&rsquo;il a conclu avec une clause de reconduction tacite. Cette information, délivrée dans des termes clairs et compréhensibles, mentionne, dans un encadré apparent, la date limite de non-reconduction.<br><br>Lorsque cette information ne lui a pas été adressée conformément aux dispositions du premier alinéa, le consommateur peut mettre gratuitement un terme au contrat, à tout moment à compter de la date de reconduction.<br><br>Les avances effectuées après la dernière date de reconduction ou, s&rsquo;agissant des contrats à durée indéterminée, après la date de transformation du contrat initial à durée déterminée, sont dans ce cas remboursées dans un délai de trente jours à compter de la date de résiliation, déduction faite des sommes correspondant, jusqu&rsquo;à celle-ci, à l&rsquo;exécution du contrat.<br><br>Les dispositions du présent article s&rsquo;appliquent sans préjudice de celles qui soumettent légalement certains contrats à des règles particulières en ce qui concerne l&rsquo;information du consommateur. »<br><br>En vertu de l’article L. 215-3 du Code de la Consommation : « Les dispositions du présent chapitre sont également applicables aux contrats conclus entre des professionnels et des non-professionnels. »<br><br>En vertu de l’article L. 241-3 du Code de la Consommation : « Lorsque le professionnel n&rsquo;a pas procédé au remboursement dans les conditions prévues à l&rsquo;article L. 215-1, les sommes dues sont productives d&rsquo;intérêts au taux légal. »</em></p>
+
+
+
+<p>5.6 Parship informe ainsi les membres Premium par e-mail, envoyé au plus tard un mois avant le terme de la période autorisant l’annulation de la reconduction automatique, de la possibilité de ne pas reconduire le contrat en le résiliant dans le délai imparti. Faute de quoi le contrat est automatiquement prolongé tel que stipulé dans le contrat.</p>
+
+
+
+<p><strong>5.7 Si l&rsquo;abonnement Premium a été souscrit via des fournisseurs tiers tels que Apple ou Google Play, la durée et le coût d&rsquo;un éventuel renouvellement automatique découlent des dispositions dans le compte du fournisseur tiers ainsi que de la confirmation de commande envoyée au client à la conclusion du contrat.</strong></p>
+
+
+
+<p>5.8 La résiliation extraordinaire est régie par les dispositions légales. Elle doit également être effectuée par écrit. Si l&rsquo;abonnement Premium est souscrit via des fournisseurs tiers tels qu&rsquo;Apple ou Google Play, les dispositions de l’article 5.3 s&rsquo;appliquent.</p>
+
+
+
+<p>5.9 La résiliation de l’abonnement payant n’entraîne pas la résiliation automatique de l’abonnement gratuit. Pour résilier ce dernier, il est nécessaire de procéder selon le paragraphe 5.1.</p>
+
+
+
 <h3 id="tc06">6. Responsabilité de Parship</h3>
-<br />
-<p class="ps_standardText">
-6.1 Parship s’efforce de mettre à disposition un service opérationnel sans discontinuité, 24 heures sur 24, 7 jours sur 7, avec une disponibilité de 99,5% en moyenne sur l’année. De ceci sont exclues les périodes d’immobilisation dues à la maintenance et aux mises à jour ainsi que les périodes pendant lesquelles l’accès via internet ou le fournisseur d'application est impossible en raison de problèmes techniques extérieurs à la sphère d’influence de Parship (force majeure, faute d’une tierce personne, etc.).6.2 Seules certaines fonctions restent accessibles sur le site Internet ou l’application mobile. Il est plus spécifiquement impossible de paramétrer les notifications Push sur le site Internet en passant par l’application mobile. Il est notamment impossible de visualiser certaines informations (en particulier l'échéancier de paiement stipulé au point 2.6 et le mot de passe « service »), d’en modifier (principalement le mot de passe, le statut, les données personnelles et les notifications par e-mail) et d'utiliser certaines fonctions (comme la vérification par SMS) en passant par l’application mobile. Actuellement, la suppression du profil est possible uniquement sur le site Internet et sur l’application iOS. Elle est impossible sur l’application Android.
-</p>
-<p class="ps_standardText">
-6.3 Pour utiliser le produit dans son intégralité, vous devez utiliser les technologies courantes les plus récentes (par exemple PDF Reader), les technologies de navigateur les plus récentes (par exemple JavaScript, cookies, pop-up) et une version à jour d’Android ou d’iOS, ou autoriser leur utilisation sur votre appareil. Si vous utilisez des versions ou des technologies plus anciennes ou non courantes, il est possible que vous puissiez utiliser le produit uniquement de manière limitée. L’installation de logiciels et d’applications usuels qui peuvent être acquis gratuitement auprès de prestataires tiers (par exemple PDF Reader) est également obligatoire pour utiliser le produit dans son intégralité.
-</p>
-<p class="ps_standardText">
-6.4 Si nous vous proposons des mises à jour du produit, y compris des mises à jour de nos applications Android et iOS, nous vous recommandons fortement de les installer dans les meilleurs délais. Il relève de votre responsabilité d’installer de telles mises à jour dans un délai raisonnable. Si vous omettez d’installer une mise à jour alors que nous vous avons informé de sa disponibilité et des conséquences de sa non-installation, nous déclinerons toute responsabilité en cas de dysfonctionnement du produit résultant de la non-installation de la mise à jour. Si vous n’êtes pas en mesure d'installer la mise à jour correctement sur la base des informations mises à votre disposition, vous vous engagez à nous en informer sans délai.
-</p>
-<p class="ps_standardText">
-6.5 Vous disposez d'un droit légal à garantie pendant la durée de tout abonnement Basic ou Premium et au cours des deux premières années suivant la mise à disposition de tout bien virtuel.
-</p>
-<p class="ps_standardText">
-6.6 Parship ne saurait être tenue responsable des fausses indications dans les inscriptions et/ou les questionnaires des clients. Par consequent, Parship n’assume aucune responsabilité concernant l'exactitude des résultats du test de personnalité ainsi que des contenus de l’expertise de personnalité pour laquelle ils ont servi de base.
-</p>
-<p class="ps_standardText">
-6.7 Parship fournit uniquement les services informatiques pour l’entremise automatique de contacts, pas leur réussite. Parship met uniquement à disposition le dispositif technique qui permet la prise de contact - aux conditions stipulées à l’article 3 -.
-</p>
-<p class="ps_standardText">
-6.8 En outre, Parship décline toute responsabilité en cas d'éventuelle utilisation abusive des informations. Il est possible que des clients, malgré l’interdiction, utilisent le service Parship de manière non autorisée ou illicite. Parship rejette toute responsabilité pour une telle utilisation. Parship décline également toute responsabilité en cas d’utilisation abusive par des tiers des indications et des informations que les clients ont divulguées eux-mêmes à ces tiers.
-</p>
-<p class="ps_standardText">
-6.9 Parship ne garantit pas le bon fonctionnement à tout moment ou l'utilisabilité ou l'accessibilité ininterrompue du service. En particulier, Parship n'est pas responsable des perturbations de la qualité de l'accès au service en raison d'un cas de force majeure ou d'événements dont Parship n'est pas responsable. En outre, Parship n'est pas responsable de la prise de connaissance non autorisée par des tiers de données personnelles de clients (par exemple par un accès non autorisé de "hackers" à la base de données).
-</p>
-</div>
-<div class="ps_editorial_topSpacer">
-</div>
-<h3 id="tc07">7. Responsabilité et devoirs du client </h3>
-<br />
-<p class="ps_standardText">
-7.1 Le client est tenu de régler tous les paiements dus à Parship ou aux fournisseurs tiers (cf. article 2.5) dans les délais fixés. En cas de retard de paiement, Parship est en droit de bloquer temporairement l'accès à la plateforme. Si le paiement échelonné est proposé et que le client commet un défaut de paiement sur plus de deux paiements consécutifs, toutes les demandes de paiements restées en suspens jusqu’au au prochain terme de résiliation possible sont exigibles immédiatement.
-</p> <br />
-<p class="ps_standardText">
-7.2 Le client est seul responsable de la teneur de son inscription et des informations qu’il met à disposition à cet effet. Le client garantit que les données correspondent à la vérité et le décrivent personnellement. Les indications intentionnellement mensongères et/ou dans une intention frauduleuse ou l'utilisation de l'identité d'un tiers ou d'une identité fictive peuvent également donner lieu à des poursuites judiciaires.
-</p> <br />
-<p class="ps_standardText">
-7.3 Le client s’engage de plus à n’utiliser le service Parship qu’à des fins exclusivement personnelles, par conséquent à ne pas utiliser le service à des fins commerciales et à ne pas utiliser les données des autres membres à des fins commerciales ou publicitaires. En particulier, il est interdit de lire les contenus des autres utilisateurs de manière systématique (par exemple à l’aide d’un programme ou par copie manuelle) dans le but d’utiliser ces données en dehors du service Parship. Il est en outre interdit de recourir à des programmes d’ordinateur permettant la lecture automatique de données, comme par exemple un robot d’indexation (« crawler »).
-</p> <br />
-<p class="ps_standardText">
-7.4 Le client s'engage à dédommager Parship de toutes sortes de réclamations, préjudices, pertes ou créances qui pourraient survenir par son inscription et/ou sa participation à ce service, dès lors que le client est en défaut. Ceci s’applique notamment aux dommages résultant de diffamation, injure, violation des droits de la personne, défaillance des services pour les autres clients, violation de ces CGU, d’un droit de propriété intellectuelle ou de tout autre droit. La demande de dédommagement est limitée au montant des frais nécessaires ou requis dans un but précis.
-</p> <br />
-<p class="ps_standardText">
-7.5 Le client s’engage à traiter les e-mails et autres messages de manière confidentielle et à ne pas les rendre accessibles à des tiers sans le consentement de leur auteur respectif ou en l’absence de motif valable. La même obligation s’applique aux noms, numéros de téléphone et de fax, adresses e-mail et de domicile et/ou URL ou toute autre donnée à caractère personnel des autres clients.
-</p> <br />
-<p class="ps_standardText">
-7.6 Le client s’engage à informer Parship immédiatement lorsqu’’il a un partenaire, s'il n'est plus intéressé par des propositions de partenaires pour toutes autres raisons, ou s'il ne veut plus être mentionné comme proposition de partenaire aux autres clients.
-</p> <br />
-<p class="ps_standardText">
-7.7 Le client est tenu de consulter les messages qui lui sont destinés ainsi que les données de son profil à intervalles réguliers et raisonnables et de les archiver au besoin sur son propre ordinateur ou sur d'autres médias de stockage. Parship est autorisée à supprimer sans avertissement les messages enregistrés sur le compte du client au bout de leur envoi ou réception. Parship est autorisée à supprimer sans avertissement les messages enregistrés sur le compte du client et restés sans réponse au bout de douze mois après leur envoi ou réception. Dans le cadre d'un abonnement toutes les données sont supprimées automatiquement au bout de vingt-quatre mois suivant la dernière connexion du client.
-</p> <br />
-<p class="ps_standardText">
-7.8 De plus, tout client s'engage à respecter le <a class="hideInNativeAppContext" href="https://www.parship.fr/communityguidelines/" target="_blank"> <span>Community Guidelines</span></a> et à ne pas utiliser le service de manière frauduleuse, en particulier:
-</p>
-<ul class="text">
-<li>diffuser de données ou photos à caractère illicite, obscène, pornographique ou politiquement radical;
-</li>
-<li>diffuser de matériel diffamatoire, choquant ou illicite, ni des informations de cette nature via le service;
-</li>
-<li>menacer ou importuner d'autres personnes, ni violer les droits des tiers (y compris les droits de la personne) ;
-</li>
-<li>télécharger sur le site des données contenant un virus (logiciel infecté), ou contenant un logiciel ou tout autre matériel protégé par un droit d’auteur à moins que le client n’en détienne les droits ou les accords nécessaires ;
-</li>
-<li>utiliser le service de quelque manière que ce soit qui affecterait la disponibilité des offres pour d'autres clients ;
-</li>
-<li>intercepter des e-mails ou des messages et/ou tenter de les intercepter ;
-</li>
-<li>envoyer d’e-mails ou de messages (y compris par chat vidéo) à d’autres clients à d’autres fins que communiquer et notamment pour proposer ou faire de la publicité de marchandises ou de prestations de services à d'autres clients ;
-</li>
-<li>envoyer d’e-mails ou de messages (y compris par chat vidéo) à d’autres clients à une fréquence déraisonnablement élevée ou importune, et à ne pas envoyer un message initial à un nombre déraisonnablement élevé de clients à intervalles rapprochés ; Parship se réserve à cet égard le droit de fixer certaines limites par les moyens techniques nécessaires pour garantir la sécurité et le sérieux de la plate-forme ;
-</li>
-<li>envoyer de messages « copier-coller » ou de chaînes de lettres ;
-</li>
-<li>envoyer de messages à des fins commerciales ;
-</li>
-<li>franchir la distance qui s’impose dans les entrées de profil, messages initiaux et demandes de contact, et par conséquent à ne pas communiquer de coordonnées telles que le nom, l’adresse, le numéro de téléphone ou de fax, l’adresse e-mail, etc. ;
-</li>
-<li>utiliser de filtres qui altèrent l'aspect naturel ;
-</li>
-<li>formuler de messages initiaux ou demandes de contact déraisonnablement courts ou longs ; Parship se réserve à cet égard le droit d’utiliser les moyens techniques nécessaires afin de définir la longueur minimum et maximum des messages.
-</li>
-</ul> <br />
-<p class="ps_standardText">
-7.9 Le non-respect d'une des obligations de conduite figurant aux articles 7,1 à 7.5 et 7.8 peut conduire aux sanctions suivantes : invitation à présenter des observations en cas d'infraction présumée au contrat ou à la législation, blocage de l'utilisation jusqu'à la clarification des faits (en particulier en cas de plaintes d'autres clients), avertissement d'un client, limitation/restriction dans l'utilisation des applications du Service Parship, suppression partielle de contenus. Le non-respect d'un des devoirs de conduite figurant aux articles 7.1 à 7.5 et 7.8 peut en outre entraîner la résiliation immédiate du contrat d'utilisation, voire des poursuites judiciaires (dans le domaine civil et pénal) pour le client. Le blocage d'un accès ne modifie pas l'obligation du client de payer les services commandés.
-</p>
-<div id="ps_editorial_onOffBox">
-<h3 id="tc08">8. Communication</h3>
-<br />
-<p class="ps_standardText">
-8.1 La communication sur la plateforme doit s’effectuer conformément aux présentes conditions générales de vente, en particulier des conditions relatives à la sécurité lors de l’utilisation de Parship (voir point 4) et du <a class="hideInNativeAppContext" href="https://www.parship.fr/communityguidelines/" target="_blank"> <span>Community Guidelines</span></a>. Il doit notamment respecter le principe de réciprocité applicable sur Parship. Si d'autres membres ne répondent pas à la communication d'un client, toute nouvelle prise de contact unilatérale est par principe exclue. Cette mesure s’applique, que les fonctions de communication du profil soient limitées ou non.
-</p>
-<p class="ps_standardText">
-8.2 Parship est un service en ligne. En tant que tel, Parship communique avec ses clients par le biais du profil lorsque le client est connecté ou par e-mail (par exemple envoi des suggestions de partenaires, du rapport de personnalité, de la confirmation de contrat ou des factures / rappels de paiement). Les communications par fax et par voie postale sont possibles, à condition qu’il s’agisse de questions relatives à la conclusion du contrat, au paiement ou à la communication par courrier électronique chiffré. Pour la fourniture des principaux services (le service de rencontre en ligne) ainsi que la conclusion du contrat elle-même, la communication par fax et par voie postale est exclue.
-</p>
-<p class="ps_standardText">
-Pour des raisons de nécessité d’authentification et de prévention d’abus quelconques, il est recommandé au client de fournir les informations suivantes dans les messages adressés à Parship : <br />
-(1.) L’adresse e-mail insérée dans le profil ou l’identifiant Parship (Chiffre), et<br />
-(2.) le mot de passe « service ».
-</p>
-<p class="ps_standardText">
-L’identifiant Parship et le mot de passe « service » sont attribués au client lors de son inscription et envoyés par email et peuvent être consultés en ligne à tout moment dans la rubrique du site web <a href="https://www.parship.fr/settings/dataandsettings" target="_self">« Mon profil » / « Mes données » / « Gestion de votre profil »</a>.
-</p> </div>
-<div class="ps_editorial_topSpacer">
-</div>
-<h3 id="tc09">9. Droits d'usage et droits d'auteur</h3>
-<br />
-<p class="ps_standardText">
-9.1 Vis-à-vis du client, Parship est le seul détenteur des droits de reproduction, de diffusion, de traitement et de tous les droits d'auteur, ainsi que du droit de cession immatérielle et de la reproduction du site web Parship, y compris chacun des contenus qu’il comprend. L'utilisation de tous les programmes et des contenus, documents, marques et noms commerciaux qu’ils comprennent, est autorisée exclusivement aux fins spécifiées dans les présentes Conditions Générales.
-</p>
-<div id="ps_editorial_onOffBox">
-<h3 id="tc10">10. Droit applicable, règlement alternatif des litiges</h3>
-<br />
-<p class="ps_standardText">
-10.1 Au regard des présentes Conditions Générales et pour les relations entre Parship et ses utilisateurs, le droit applicable est le droit français à l’exclusion de toutes autres règles en matière de conflit des lois. Si le client est un consommateur résidant dans l'Union européenne, le droit du pays dans lequel il réside peut également être applicable dans la mesure où il s’agit de dispositions d’ordre public.
-</p>
-<p class="ps_standardText">
-10.2 En vue du règlement amiable d’un litige opposant Parship et un client, et conformément aux règles applicables à la médiation de la consommation, le client doit s'adresser en priorité par écrit au service clientèle de Parship (par voie postale: PE Digital GmbH - Service Clientèle Parship France -, Speersort 10, 20095 Hambourg, Allemagne, ou par fax: +49 (0) 40 46 00 26-165 ou par e-mail: resiliation@parship.fr). Si une solution amiable n’a pas pu ainsi être trouvée, le client peut déposer une demande de médiation sur la <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=FR" target="_self">plateforme de règlement en ligne des litiges de consommation</a> proposée par la Commission Européenne. La réclamation du client auprès du service clientèle de Parship doit contenir les deux informations suivantes: (1.) l’adresse e-mail indiquée dans le profil ou le numéro d’identifiant Parship, et (2.) le mot de passe « service ».
-</p> </div>
-<div id="ps_editorial_onOffBox">
-<h3 id="tc11">11. Droit de rétractation</h3>
-<br />
-<p class="bold">
-11.1 Droit de rétractation
-</p>
-<p class="bold">
-Vous avez le droit de vous rétracter du présent contrat sans donner de motif dans un délai de quatorze jours.<br /><br />
-Le délai de rétractation expire quatorze jours après le jour de la conclusion du contrat. <br /><br />
-Pour exercer le droit de rétractation, vous devez nous notifier
-</p> <br />
-<p class="bold">par voie postale:</p>
-<p class="bold">
-PE Digital GmbH<br/>
-- Service Clientèle Parship France -<br/>
-Speersort 10<br/>
-20095 Hamburg<br/>
-Allemagne
-</p> <br />
-<p class="bold">
-ou par téléphone:<br /> +49 (0) 40 469 751 34 </p> <br />
-<p class="bold">
-ou par e-mail: <br />
-<a href="mailto:aide@parship.fr" target="_blank">aide@parship.fr</a></p> <br />
-<p class="bold">
-votre décision de rétractation du présent contrat au moyen d’une déclaration dénuée d’ambiguïté (par exemple, lettre envoyée par la poste ou courrier électronique). Vous pouvez utiliser le modèle de formulaire de rétractation (<a href="#widerruf" target="_blank">ici</a> ou <a href="https://parship.fr/static_cms/parship/static/Downloads/Modele-de-formulaire-de-retractation-FR.pdf" target="_blank">https://parship.fr/static_cms/parship/static/Downloads/Modele-de-formulaire-de-retractation-FR.pdf</a>) mais ce n’est pas obligatoire. <br /> Pour que le délai de rétractation soit respecté, il suffit que vous transmettiez votre communication relative à l’exercice du droit de rétractation avant l’expiration du délai de rétractation.
-</p>
-<br />
-<p class="bold">
-11.2 Effets de la rétractation
-</p>
-<p class="bold">
-En cas de rétractation de votre part du présent contrat, nous vous rembourserons tous les paiements reçus de vous, y compris les frais de livraison (à l’exception des frais supplémentaires découlant du fait que vous avez choisi, le cas échéant, un mode de livraison autre que le mode moins coûteux de livraison standard proposé par nous) sans retard excessif et, en tout état de cause, au plus tard quatorze jours à compter du jour où nous sommes informés de votre décision de rétractation du présent contrat. Nous procéderons au remboursement en utilisant le même moyen de paiement que celui que vous aurez utilisé pour la transaction initiale, sauf si vous convenez expressément d’un moyen différent ; en tout état de cause, ce remboursement n’occasionnera pas de frais pour vous.
-</p> <br />
-<p class="bold">
-Si vous avez demandé de commencer la prestation de services pendant le délai de rétractation, vous devrez nous payer un montant proportionnel à ce qui vous a été fourni jusqu’au moment où vous nous avez informé de votre rétractation du présent contrat, par rapport à l’ensemble des prestations prévues par le contrat.</p>
-<br />
-<p class="bold">
-Fin des informations sur la rétractation</p> <br />
-<p class="ps_standardText">
-11.3 Pour établir l'authenticité de l’auteur et prévenir tout abus, la demande de rétractation du client doit contenir les deux informations suivantes:
-</p>
-<p class="ps_standardText">
-(1.) l’adresse e-mail indiquée dans le profil ou le numéro d’identifiant Parship, et<br />
-(2.) le mot de passe « service ». <br />
-L’identifiant Parship et le mot de passe « service » sont attribués au client lors de son inscription et envoyés par email et peuvent être consultés en ligne à tout moment dans la rubrique du site web <a href="https://www.parship.fr/settings/dataandsettings" target="_self">« Mon profil » / « Mes données » / « Gestion de votre profil »</a>.
-</p>
-<p class="ps_standardText">
-11.4 Si le client a souscrit son abonnement Premium par l'intermédiaire de fournisseurs tiers tels qu'Apple ou Google Play, les dispositions énoncées à l’article 2.5 ci-dessus s’appliquent à la rétractation. Pour plus d’informations, cliquez <a href="https://support.apple.com/fr-fr/HT202039" target="_self">ici</a> pour Apple et <a href="https://support.google.com/googleplay/answer/2479637?hl=fr#apps" target="_self">ici</a> pour Google Play.
-</p>
-</div>
-<div class="ps_editorial_topSpacer">
-</div>
-<h3 id="tc12">12. Divers </h3>
-<br />
-<p class="ps_standardText">
-12.1 Parship est autorisée à faire appel à des prestataires de services tiers et des auxiliaires d'exécution pour traiter en partie ou en totalité l’éventail des prestations pour autant que le client n’en subisse aucun inconvénient.
-</p> <br />
-<p class="ps_standardText">
-12.2 Si une disposition du contrat ou des CGU est ou devient caduque ou si le contrat s’avère incomplet, le contrat n'est aucunement affecté dans le reste de son contenu. Les dispositions légales s'appliquent à titre complémentaire.
-</p> <br />
-<p class="ps_standardText">
-La langue du contrat est le français.
-</p> <br />
-<h3 id="widerruf">Modèle de formulaire de rétractation</h3> <br />
-<p class="ps_standardText">
-À l’attention de PE Digital GmbH, Service Clientèle Parship France, Speersort 10, 20095 Hambourg, Allemagne ; e-mail: aide@parship.fr:<br />
-</p>
-<p class="ps_standardText">
-Je/Nous (1) vous notifie/notifions (1) par la présente ma/notre (1) rétractation du contrat portant sur la vente du bien (1)/pour la prestation de service (1) ci-dessous
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-Commandé le (1)/reçu le (1)
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-Nom du (des) consommateur(s)
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-Adresse du (des) consommateur(s)
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-<br />
-<br />
-<br />
-</div>
-<p class="ps_standardText">
-Signature du (des) consommateur(s) (uniquement en cas de notification du présent formulaire sur papier)
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-Date
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-_________________________________________________________________________________________
-</p>
-<p class="ps_standardText">
-(1) Rayez la mention inutile.
-</p>
-<br />
-<p class="ps_standardText">
-Renseignements facultatifs :
-</p>
-<p class="ps_standardText">
-Identifiant Parship (“Chiffre”)
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<p class="ps_standardText">
-Adresse e-mail enregistrée dans votre profil
-</p>
-<div style="margin:0; margin-right:10px; border:2px solid #dfdfdf; padding: 0em 1em 1em 1em;text-align:center">
-</div>
-<div class="ps_rowSeparator"></div>
-<p></p> </div>
-</article>
-</div>
-<div class="secondaryCol">
-<article id="regFormCard" data-2column-position="secondary" class="t-noCardDesign">
-<form action="/profile/registration" method="post" id="formRegistration" autocomplete="off" novalidate="novalidate" class="hetero">
-<input type="hidden" name="terms" value="on">
-<h2>
-<span class="hideInSM">Inscrivez-vous et testez gratuitement.</span>
-<span class="hideInLXL">Inscrivez-vous gratuitement</span>
-</h2>
-<div id="mysexEssexRow" class="row">
-<div id="mysexRow" class="column">
-<h3>Je suis</h3>
-<div class="wdk-form-toggles">
-<input name="mysex" type="radio" id="mysexM" value="0">
-<label for="mysexM">
-un homme </label>
-</div>
-<div class="wdk-form-toggles">
-<input name="mysex" type="radio" id="mysexW" value="1">
-<label for="mysexW">
-une femme </label>
-</div>
-</div>
-<div id="essexRow" class="column">
-<input type="hidden" name="essex" id="hiddenEssex" value="">
-<h3>Je cherche</h3>
-<div class="wdk-form-toggles">
-<input name="" type="radio" id="essexM" value="0">
-<label for="essexM">
-un homme </label>
-</div>
-<div class="wdk-form-toggles">
-<input name="" type="radio" id="essexW" value="1">
-<label for="essexW">
-une femme </label>
-</div>
-</div>
-<div id="regsexError" class="wdk-styledHintBox t-error " aria-live="assertive" role="alert" aria-hidden="true" inert="true">
-<svg class="wdk-icon icon_warning " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_warning.svg?version=6.77.0/#icon_warning"></use>
-</svg>
-<div class="textWrapper">
-Veuillez spécifier votre <strong>civilité</strong>. </div>
-</div>
-</div>
-<div id="emailRow" class="row">
-<div class="wdk-form-text has-hiddenLabel">
-<span class="designWrapper">
-<label for="loginEmail"><span class="textWrapper">Adresse Email</span></label>
-<span class="inputWrapper t-icon">
-<svg class="wdk-icon icon_envelope " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_envelope.svg?version=6.77.0/#icon_envelope"></use>
-</svg>
-<input id="regFormEmail" type="email" name="email" autocomplete="email" placeholder="Adresse Email" aria-required="true">
-</span>
-</span>
-<div id="regEmailError" class="wdk-styledHintBox t-errorForm " aria-live="assertive" role="alert" aria-hidden="true" inert="true">
-<div class="textWrapper">
-Malheureusement, cette adresse e-mail ne peut pas être traitée. Veuillez entrer une autre adresse e-mail. </div>
-</div>
-</div>
-<div id="emailNoticeBox" style="display: none;" role="alert">
-<p>Vos données ne sont pas visibles et donc parfaitement protégées.</p>
-</div>
-</div>
-<div id="passwordRow" class="row">
-<div class="wdk-form-text has-hiddenLabel">
-<span class="designWrapper">
-<label for="regFormPassword"><span class="textWrapper">Mot de passe</span></label>
-<span class="inputWrapper t-icon">
-<svg class="wdk-icon icon_lock " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_lock.svg?version=6.77.0/#icon_lock"></use>
-</svg>
-<input id="regFormPassword" name="password" value="" type="password" autocomplete="off" class="checkPassword" placeholder="Mot de passe">
-</span>
-</span>
-<div id="regPasswordEmptyError" class="wdk-styledHintBox t-errorForm " aria-live="assertive" role="alert" aria-hidden="true" inert="true">
-<div class="textWrapper">
-Veuillez choisir un mot de passe. </div>
-</div>
-<div id="regPasswordNotValidError" class="wdk-styledHintBox t-errorForm " aria-live="assertive" role="alert" aria-hidden="true" inert="true">
-<div class="textWrapper">
-Votre mot de passe ne correspond pas aux conditions. </div>
-</div>
-</div>
-<div id="wdk-passwordRestrictionBox" class="t-regFormCard" style="display:none;" data-show-always="false" role="alert">
-<p>Pour votre sécurité, veuillez respecter les directives suivantes relatives au mot de passe :</p>
-<span class="visuallyHidden">
-<p>Minimum 8 caractères.</p>
-<p>Lettres ET chiffres/caractères spéciaux.</p>
-<p>Doit être différent de votre adresse e-mail.</p>
-</span>
-<ul aria-hidden="false">
-<li id="minCharacters" class="error">
-<svg class="wdk-icon icon_x " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use>
-</svg>
-<svg class="wdk-icon icon_check " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_check.svg?version=6.77.0/#icon_check"></use>
-</svg>
-<span>Minimum 8 caractères</span>
-</li>
-<li id="lettersAndNumbers" class="error">
-<svg class="wdk-icon icon_x " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use>
-</svg>
-<svg class="wdk-icon icon_check " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_check.svg?version=6.77.0/#icon_check"></use>
-</svg>
-<span>Lettres ET chiffres/caractères spéciaux</span>
-</li>
-<li id="partOfEmail" class="error">
-<svg class="wdk-icon icon_x " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use>
-</svg>
-<svg class="wdk-icon icon_check " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_check.svg?version=6.77.0/#icon_check"></use>
-</svg>
-<span>Doit être différent de votre adresse e-mail</span>
-</li>
-</ul>
-</div>
-</div>
-<div id="submitRow" class="row">
-<button id="regFormSubmit" class="wdk-button t-premiumSkin1 " type="submit" > <span class="text">Testez gratuitement</span> </button> </div>
-<div id="legalText" class="row">
-En poursuivant votre inscription, vous nous autorisez à traiter les informations relatives au sexe de la personne recherchée conformément à notre Politique de protection des données. Vous pouvez à tout moment révoquer ce consentement.<br><br>Les <a href="/termsandconditions" target="_blank" title="zu AGB">CGV</a> et la politique de <a href="/privacypolicy/" target="_blank">protection des données</a> s’appliquent. En étant membre non payant, vous recevez régulièrement des offres concernant les abonnements payants et d´autres produits de PE Digital GmbH par e-mail (la désinscription est possible à tout moment). </div>
-</form>
-</article>
-<article class="urcCard t-noCardDesign" data-2column-position="secondary" aria-hidden="true">
-<div class="js-loadURCviaAjax"
-data-slotname="pc_legal_pages"
-data-viewname="/urcontent/layout/image"
-data-show-in-viewports="S,M,L,XL"
-data-wrapper-template="/urcontent/slot_wrapper/urc_card">
-</div>
-</article>
-</div>
-</section>
-</main>
-<footer id="footerUnified" class="appLayout">
-<nav>
+
+
+
+<p>6.1 Parship s’efforce de mettre à disposition un service opérationnel sans discontinuité, 24 heures sur 24, 7 jours sur 7, avec une disponibilité de 99,5% en moyenne sur l’année. De ceci sont exclues les périodes d’immobilisation dues à la maintenance et aux mises à jour ainsi que les périodes pendant lesquelles l’accès via internet ou le fournisseur d&rsquo;application est impossible en raison de problèmes techniques extérieurs à la sphère d’influence de Parship (force majeure, faute d’une tierce personne, etc.).6.2 Seules certaines fonctions restent accessibles sur le site Internet ou l’application mobile. Il est plus spécifiquement impossible de paramétrer les notifications Push sur le site Internet en passant par l’application mobile. Il est notamment impossible de visualiser certaines informations (en particulier l&rsquo;échéancier de paiement stipulé au point 2.6 et le mot de passe « service »), d’en modifier (principalement le mot de passe, le statut, les données personnelles et les notifications par e-mail) et d&rsquo;utiliser certaines fonctions (comme la vérification par SMS) en passant par l’application mobile. Actuellement, la suppression du profil est possible uniquement sur le site Internet et sur l’application iOS. Elle est impossible sur l’application Android.</p>
+
+
+
+<p>6.3 Pour utiliser le produit dans son intégralité, vous devez utiliser les technologies courantes les plus récentes (par exemple PDF Reader), les technologies de navigateur les plus récentes (par exemple JavaScript, cookies, pop-up) et une version à jour d’Android ou d’iOS, ou autoriser leur utilisation sur votre appareil. Si vous utilisez des versions ou des technologies plus anciennes ou non courantes, il est possible que vous puissiez utiliser le produit uniquement de manière limitée. L’installation de logiciels et d’applications usuels qui peuvent être acquis gratuitement auprès de prestataires tiers (par exemple PDF Reader) est également obligatoire pour utiliser le produit dans son intégralité.</p>
+
+
+
+<p>6.4 Si nous vous proposons des mises à jour du produit, y compris des mises à jour de nos applications Android et iOS, nous vous recommandons fortement de les installer dans les meilleurs délais. Il relève de votre responsabilité d’installer de telles mises à jour dans un délai raisonnable. Si vous omettez d’installer une mise à jour alors que nous vous avons informé de sa disponibilité et des conséquences de sa non-installation, nous déclinerons toute responsabilité en cas de dysfonctionnement du produit résultant de la non-installation de la mise à jour. Si vous n’êtes pas en mesure d&rsquo;installer la mise à jour correctement sur la base des informations mises à votre disposition, vous vous engagez à nous en informer sans délai.</p>
+
+
+
+<p>6.5 Vous disposez d&rsquo;un droit légal à garantie pendant la durée de tout abonnement Basic ou Premium et au cours des deux premières années suivant la mise à disposition de tout bien virtuel.</p>
+
+
+
+<p>6.6 Parship ne saurait être tenue responsable des fausses indications dans les inscriptions et/ou les questionnaires des clients. Par consequent, Parship n’assume aucune responsabilité concernant l&rsquo;exactitude des résultats du test de personnalité ainsi que des contenus de l’expertise de personnalité pour laquelle ils ont servi de base.</p>
+
+
+
+<p>6.7 Parship fournit uniquement les services informatiques pour l’entremise automatique de contacts, pas leur réussite. Parship met uniquement à disposition le dispositif technique qui permet la prise de contact &#8211; aux conditions stipulées à l’article 3 -.</p>
+
+
+
+<p>6.8 En outre, Parship décline toute responsabilité en cas d&rsquo;éventuelle utilisation abusive des informations. Il est possible que des clients, malgré l’interdiction, utilisent le service Parship de manière non autorisée ou illicite. Parship rejette toute responsabilité pour une telle utilisation. Parship décline également toute responsabilité en cas d’utilisation abusive par des tiers des indications et des informations que les clients ont divulguées eux-mêmes à ces tiers.</p>
+
+
+
+<p>6.9 Parship ne garantit pas le bon fonctionnement à tout moment ou l&rsquo;utilisabilité ou l&rsquo;accessibilité ininterrompue du service. En particulier, Parship n&rsquo;est pas responsable des perturbations de la qualité de l&rsquo;accès au service en raison d&rsquo;un cas de force majeure ou d&rsquo;événements dont Parship n&rsquo;est pas responsable. En outre, Parship n&rsquo;est pas responsable de la prise de connaissance non autorisée par des tiers de données personnelles de clients (par exemple par un accès non autorisé de « hackers » à la base de données).</p>
+
+
+
+<h3 id="tc07">7. Responsabilité et devoirs du client</h3>
+
+
+
+<p>7.1 Le client est tenu de régler tous les paiements dus à Parship ou aux fournisseurs tiers (cf. article 2.5) dans les délais fixés. En cas de retard de paiement, Parship est en droit de bloquer temporairement l&rsquo;accès à la plateforme. Si le paiement échelonné est proposé et que le client commet un défaut de paiement sur plus de deux paiements consécutifs, toutes les demandes de paiements restées en suspens jusqu’au au prochain terme de résiliation possible sont exigibles immédiatement.</p>
+
+
+
+<p>7.2 Le client est seul responsable de la teneur de son inscription et des informations qu’il met à disposition à cet effet. Le client garantit que les données correspondent à la vérité et le décrivent personnellement. Les indications intentionnellement mensongères et/ou dans une intention frauduleuse ou l&rsquo;utilisation de l&rsquo;identité d&rsquo;un tiers ou d&rsquo;une identité fictive peuvent également donner lieu à des poursuites judiciaires.</p>
+
+
+
+<p>7.3 Le client s’engage de plus à n’utiliser le service Parship qu’à des fins exclusivement personnelles, par conséquent à ne pas utiliser le service à des fins commerciales et à ne pas utiliser les données des autres membres à des fins commerciales ou publicitaires. En particulier, il est interdit de lire les contenus des autres utilisateurs de manière systématique (par exemple à l’aide d’un programme ou par copie manuelle) dans le but d’utiliser ces données en dehors du service Parship. Il est en outre interdit de recourir à des programmes d’ordinateur permettant la lecture automatique de données, comme par exemple un robot d’indexation (« crawler »).</p>
+
+
+
+<p>7.4 Le client s&rsquo;engage à dédommager Parship de toutes sortes de réclamations, préjudices, pertes ou créances qui pourraient survenir par son inscription et/ou sa participation à ce service, dès lors que le client est en défaut. Ceci s’applique notamment aux dommages résultant de diffamation, injure, violation des droits de la personne, défaillance des services pour les autres clients, violation de ces CGU, d’un droit de propriété intellectuelle ou de tout autre droit. La demande de dédommagement est limitée au montant des frais nécessaires ou requis dans un but précis.</p>
+
+
+
+<p>7.5 Le client s’engage à traiter les e-mails et autres messages de manière confidentielle et à ne pas les rendre accessibles à des tiers sans le consentement de leur auteur respectif ou en l’absence de motif valable. La même obligation s’applique aux noms, numéros de téléphone et de fax, adresses e-mail et de domicile et/ou URL ou toute autre donnée à caractère personnel des autres clients.</p>
+
+
+
+<p>7.6 Le client s’engage à informer Parship immédiatement lorsqu’’il a un partenaire, s&rsquo;il n&rsquo;est plus intéressé par des propositions de partenaires pour toutes autres raisons, ou s&rsquo;il ne veut plus être mentionné comme proposition de partenaire aux autres clients.</p>
+
+
+
+<p>7.7 Le client est tenu de consulter les messages qui lui sont destinés ainsi que les données de son profil à intervalles réguliers et raisonnables et de les archiver au besoin sur son propre ordinateur ou sur d&rsquo;autres médias de stockage. Parship est autorisée à supprimer sans avertissement les messages enregistrés sur le compte du client au bout de leur envoi ou réception. Parship est autorisée à supprimer sans avertissement les messages enregistrés sur le compte du client et restés sans réponse au bout de douze mois après leur envoi ou réception. Dans le cadre d&rsquo;un abonnement toutes les données sont supprimées automatiquement au bout de vingt-quatre mois suivant la dernière connexion du client.</p>
+
+
+
+<p>7.8 De plus, tout client s&rsquo;engage à respecter le <a href="https://www.parship.fr/communityguidelines/" target="_blank" rel="noreferrer noopener">Community Guidelines</a> et à ne pas utiliser le service de manière frauduleuse, en particulier:</p>
+
+
+
 <ul>
-<li>
-<a id="footerLink1" href="//www.parship.fr/aboutus" rel="follow" >Informations légales</a>
-</li>
-<li>
-<a id="footerLink2" href="//www.parship.fr/termsandconditions" >Conditions Générales</a>
-</li>
-<li>
-<a id="footerLink3" href="//www.parship.fr/privacypolicy" rel="follow" >Protection des données</a>
-</li>
-<li>
-<a id="footerLink4" href="//www.parship.fr/customerservice?param=/app/home" rel="follow" >Aide et Contact</a>
-</li>
-<li>
-<a id="footerLink5" href="/cookiesandtracking" >Cookies</a>
-</li>
-<li>
-<a id="footerLink7" href="/prestations/index.htm" >Prix & prestations</a>
-</li>
-<li>
-<a id="footerLink9" href="/safety" >Sécurité</a>
-</li>
+<li>diffuser de données ou photos à caractère illicite, obscène, pornographique ou politiquement radical;</li>
+
+
+
+<li>diffuser de matériel diffamatoire, choquant ou illicite, ni des informations de cette nature via le service;</li>
+
+
+
+<li>menacer ou importuner d&rsquo;autres personnes, ni violer les droits des tiers (y compris les droits de la personne) ;</li>
+
+
+
+<li>télécharger sur le site des données contenant un virus (logiciel infecté), ou contenant un logiciel ou tout autre matériel protégé par un droit d’auteur à moins que le client n’en détienne les droits ou les accords nécessaires ;</li>
+
+
+
+<li>utiliser le service de quelque manière que ce soit qui affecterait la disponibilité des offres pour d&rsquo;autres clients ;</li>
+
+
+
+<li>intercepter des e-mails ou des messages et/ou tenter de les intercepter ;</li>
+
+
+
+<li>envoyer d’e-mails ou de messages (y compris par chat vidéo) à d’autres clients à d’autres fins que communiquer et notamment pour proposer ou faire de la publicité de marchandises ou de prestations de services à d&rsquo;autres clients ;</li>
+
+
+
+<li>envoyer d’e-mails ou de messages (y compris par chat vidéo) à d’autres clients à une fréquence déraisonnablement élevée ou importune, et à ne pas envoyer un message initial à un nombre déraisonnablement élevé de clients à intervalles rapprochés ; Parship se réserve à cet égard le droit de fixer certaines limites par les moyens techniques nécessaires pour garantir la sécurité et le sérieux de la plate-forme ;</li>
+
+
+
+<li>envoyer de messages « copier-coller » ou de chaînes de lettres ;</li>
+
+
+
+<li>envoyer de messages à des fins commerciales ;</li>
+
+
+
+<li>franchir la distance qui s’impose dans les entrées de profil, messages initiaux et demandes de contact, et par conséquent à ne pas communiquer de coordonnées telles que le nom, l’adresse, le numéro de téléphone ou de fax, l’adresse e-mail, etc. ;</li>
+
+
+
+<li>utiliser de filtres qui altèrent l&rsquo;aspect naturel ;</li>
+
+
+
+<li>formuler de messages initiaux ou demandes de contact déraisonnablement courts ou longs ; Parship se réserve à cet égard le droit d’utiliser les moyens techniques nécessaires afin de définir la longueur minimum et maximum des messages.</li>
 </ul>
-</nav>
-<p class="copyrightText">© 2023 Parship - Made with ❤</p>
+
+
+
+<p>7.9 Le non-respect d&rsquo;une des obligations de conduite figurant aux articles 7,1 à 7.5 et 7.8 peut conduire aux sanctions suivantes : invitation à présenter des observations en cas d&rsquo;infraction présumée au contrat ou à la législation, blocage de l&rsquo;utilisation jusqu&rsquo;à la clarification des faits (en particulier en cas de plaintes d&rsquo;autres clients), avertissement d&rsquo;un client, limitation/restriction dans l&rsquo;utilisation des applications du Service Parship, suppression partielle de contenus. Le non-respect d&rsquo;un des devoirs de conduite figurant aux articles 7.1 à 7.5 et 7.8 peut en outre entraîner la résiliation immédiate du contrat d&rsquo;utilisation, voire des poursuites judiciaires (dans le domaine civil et pénal) pour le client. Le blocage d&rsquo;un accès ne modifie pas l&rsquo;obligation du client de payer les services commandés.</p>
+
+
+
+<h3 id="tc08">8. Communication</h3>
+
+
+
+<p>8.1 La communication sur la plateforme doit s’effectuer conformément aux présentes conditions générales de vente, en particulier des conditions relatives à la sécurité lors de l’utilisation de Parship (voir point 4) et du <a href="https://www.parship.fr/communityguidelines/">Community Guidelines</a>. Il doit notamment respecter le principe de réciprocité applicable sur Parship. Si d&rsquo;autres membres ne répondent pas à la communication d&rsquo;un client, toute nouvelle prise de contact unilatérale est par principe exclue. Cette mesure s’applique, que les fonctions de communication du profil soient limitées ou non.</p>
+
+
+
+<p>8.2 Parship est un service en ligne. En tant que tel, Parship communique avec ses clients par le biais du profil lorsque le client est connecté ou par e-mail (par exemple envoi des suggestions de partenaires, du rapport de personnalité, de la confirmation de contrat ou des factures / rappels de paiement). Les communications par fax et par voie postale sont possibles, à condition qu’il s’agisse de questions relatives à la conclusion du contrat, au paiement ou à la communication par courrier électronique chiffré. Pour la fourniture des principaux services (le service de rencontre en ligne) ainsi que la conclusion du contrat elle-même, la communication par fax et par voie postale est exclue.</p>
+
+
+
+<p>Pour des raisons de nécessité d’authentification et de prévention d’abus quelconques, il est recommandé au client de fournir les informations suivantes dans les messages adressés à Parship :<br>(1.) L’adresse e-mail insérée dans le profil ou l’identifiant Parship (Chiffre), et<br>(2.) le mot de passe « service ».</p>
+
+
+
+<p>L’identifiant Parship et le mot de passe « service » sont attribués au client lors de son inscription et envoyés par email et peuvent être consultés en ligne à tout moment dans la rubrique du site web&nbsp;<a href="https://www.parship.fr/settings/dataandsettings">« Mon profil » / « Mes données » / « Gestion de votre profil »</a>.</p>
+
+
+
+<h3 id="tc09">9. Droits d&rsquo;usage et droits d&rsquo;auteur</h3>
+
+
+
+<p>9.1 Vis-à-vis du client, Parship est le seul détenteur des droits de reproduction, de diffusion, de traitement et de tous les droits d&rsquo;auteur, ainsi que du droit de cession immatérielle et de la reproduction du site web Parship, y compris chacun des contenus qu’il comprend. L&rsquo;utilisation de tous les programmes et des contenus, documents, marques et noms commerciaux qu’ils comprennent, est autorisée exclusivement aux fins spécifiées dans les présentes Conditions Générales.</p>
+
+
+
+<h3 id="tc10">10. Droit applicable, règlement alternatif des litiges</h3>
+
+
+
+<p>10.1 Au regard des présentes Conditions Générales et pour les relations entre Parship et ses utilisateurs, le droit applicable est le droit français à l’exclusion de toutes autres règles en matière de conflit des lois. Si le client est un consommateur résidant dans l&rsquo;Union européenne, le droit du pays dans lequel il réside peut également être applicable dans la mesure où il s’agit de dispositions d’ordre public.</p>
+
+
+
+<p>10.2 En vue du règlement amiable d’un litige opposant Parship et un client, et conformément aux règles applicables à la médiation de la consommation, le client doit s&rsquo;adresser en priorité par écrit au service clientèle de Parship (par voie postale: PE Digital GmbH &#8211; Service Clientèle Parship France -, Speersort 10, 20095 Hambourg, Allemagne, ou par fax: +49 (0) 40 46 00 26-165 ou par e-mail: resiliation@parship.fr). Si une solution amiable n’a pas pu ainsi être trouvée, le client peut déposer une demande de médiation sur la&nbsp;<a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&amp;lng=FR">plateforme de règlement en ligne des litiges de consommation</a>&nbsp;proposée par la Commission Européenne. La réclamation du client auprès du service clientèle de Parship doit contenir les deux informations suivantes: (1.) l’adresse e-mail indiquée dans le profil ou le numéro d’identifiant Parship, et (2.) le mot de passe « service ».</p>
+
+
+
+<h3 id="tc11">11. Droit de rétractation</h3>
+
+
+
+<p>11.1 Droit de rétractation</p>
+
+
+
+<p>Vous avez le droit de vous rétracter du présent contrat sans donner de motif dans un délai de quatorze jours.<br><br>Le délai de rétractation expire quatorze jours après le jour de la conclusion du contrat.<br><br>Pour exercer le droit de rétractation, vous devez nous notifier</p>
+
+
+
+<p>par voie postale:</p>
+
+
+
+<p>PE Digital GmbH<br>&#8211; Service Clientèle Parship France &#8211;<br>Speersort 10<br>20095 Hamburg<br>Allemagne</p>
+
+
+
+<p>ou par téléphone:<br>+49 (0) 40 469 751 34</p>
+
+
+
+<p>ou par e-mail:<br><a href="mailto:aide@parship.fr" target="_blank" rel="noreferrer noopener">aide@parship.fr</a></p>
+
+
+
+<p>votre décision de rétractation du présent contrat au moyen d’une déclaration dénuée d’ambiguïté (par exemple, lettre envoyée par la poste ou courrier électronique). Vous pouvez utiliser le modèle de formulaire de rétractation (<a href="https://www.parship.fr/termsandconditions/#widerruf" target="_blank" rel="noreferrer noopener">ici</a>&nbsp;ou<a href="https://parship.fr/static_cms/parship/static/Downloads/Modele-de-formulaire-de-retractation-FR.pdf" target="_blank" rel="noreferrer noopener">https://parship.fr/static_cms/parship/static/Downloads/Modele-de-formulaire-de-retractation-FR.pdf</a>) mais ce n’est pas obligatoire.<br>Pour que le délai de rétractation soit respecté, il suffit que vous transmettiez votre communication relative à l’exercice du droit de rétractation avant l’expiration du délai de rétractation.</p>
+
+
+
+<p>11.2 Effets de la rétractation</p>
+
+
+
+<p>En cas de rétractation de votre part du présent contrat, nous vous rembourserons tous les paiements reçus de vous, y compris les frais de livraison (à l’exception des frais supplémentaires découlant du fait que vous avez choisi, le cas échéant, un mode de livraison autre que le mode moins coûteux de livraison standard proposé par nous) sans retard excessif et, en tout état de cause, au plus tard quatorze jours à compter du jour où nous sommes informés de votre décision de rétractation du présent contrat. Nous procéderons au remboursement en utilisant le même moyen de paiement que celui que vous aurez utilisé pour la transaction initiale, sauf si vous convenez expressément d’un moyen différent ; en tout état de cause, ce remboursement n’occasionnera pas de frais pour vous.</p>
+
+
+
+<p>Si vous avez demandé de commencer la prestation de services pendant le délai de rétractation, vous devrez nous payer un montant proportionnel à ce qui vous a été fourni jusqu’au moment où vous nous avez informé de votre rétractation du présent contrat, par rapport à l’ensemble des prestations prévues par le contrat.</p>
+
+
+
+<p>Fin des informations sur la rétractation</p>
+
+
+
+<p>11.3 Pour établir l&rsquo;authenticité de l’auteur et prévenir tout abus, la demande de rétractation du client doit contenir les deux informations suivantes:</p>
+
+
+
+<p>(1.) l’adresse e-mail indiquée dans le profil ou le numéro d’identifiant Parship, et<br>(2.) le mot de passe « service ».<br>L’identifiant Parship et le mot de passe « service » sont attribués au client lors de son inscription et envoyés par email et peuvent être consultés en ligne à tout moment dans la rubrique du site web&nbsp;<a href="https://www.parship.fr/settings/dataandsettings">« Mon profil » / « Mes données » / « Gestion de votre profil »</a>.</p>
+
+
+
+<p>11.4 Si le client a souscrit son abonnement Premium par l&rsquo;intermédiaire de fournisseurs tiers tels qu&rsquo;Apple ou Google Play, les dispositions énoncées à l’article 2.5 ci-dessus s’appliquent à la rétractation. Pour plus d’informations, cliquez&nbsp;<a href="https://support.apple.com/fr-fr/HT202039">ici</a>&nbsp;pour Apple et&nbsp;<a href="https://support.google.com/googleplay/answer/2479637?hl=fr#apps">ici</a>&nbsp;pour Google Play.</p>
+
+
+
+<h3 id="tc12">12. Divers</h3>
+
+
+
+<p>12.1 Parship est autorisée à faire appel à des prestataires de services tiers et des auxiliaires d&rsquo;exécution pour traiter en partie ou en totalité l’éventail des prestations pour autant que le client n’en subisse aucun inconvénient.</p>
+
+
+
+<p>12.2 Si une disposition du contrat ou des CGU est ou devient caduque ou si le contrat s’avère incomplet, le contrat n&rsquo;est aucunement affecté dans le reste de son contenu. Les dispositions légales s&rsquo;appliquent à titre complémentaire.</p>
+
+
+
+<p>La langue du contrat est le français.</p>
+
+
+
+<h3 id="widerruf">Modèle de formulaire de rétractation</h3>
+
+
+
+<p>À l’attention de PE Digital GmbH, Service Clientèle Parship France, Speersort 10, 20095 Hambourg, Allemagne ; e-mail: aide@parship.fr:</p>
+
+
+
+<p>Je/Nous (1) vous notifie/notifions (1) par la présente ma/notre (1) rétractation du contrat portant sur la vente du bien (1)/pour la prestation de service (1) ci-dessous</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>Commandé le (1)/reçu le (1)</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>Nom du (des) consommateur(s)</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>Adresse du (des) consommateur(s)</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+<br>
+<br>
+<br>
+</div>
+
+
+
+<p>Signature du (des) consommateur(s) (uniquement en cas de notification du présent formulaire sur papier)</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>Date</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>_________________________________________________________________________________________</p>
+
+
+
+<p>(1) Rayez la mention inutile.</p>
+
+
+
+<p>Renseignements facultatifs :</p>
+
+
+
+<p>Identifiant Parship (“Chiffre”)</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+
+
+
+<p>Adresse e-mail enregistrée dans votre profil</p>
+
+
+
+<div style="margin:0;margin-right:10px;border:2px solid #dfdfdf;padding: 0em 1em 1em 1em;text-align:center">
+</div>
+</div>
+	</div>
+</article>
+
+
+
+</main>  
+	<div class="sidebar">
+		<div class="sticky-container">
+			
+<div class="widget-area widget-area-content">
+	<div class="widget-area-content__inner">
+				<div class="show-only-logged-out">
+			
+<form
+	class="psg-reg-form hetero preselect has-white-background-color default has-background has-white-background-color show-complete-form wp-block-psg-registration"	novalidate
+	method="post"
+	action="/profile/registration"
+	autocomplete="off"
+	data-bi-id="psg-regform"
+>
+
+	
+<input type="hidden" name="terms" value="on">
+
+	
+	
+	<div class="form-headline">Inscrivez-vous et testez gratuitement.</div>
+	
+
+
+	
+<div class="form-grid">
+	<span class="radio-group-label">Je suis</span>
+	<span class="radio-group-label">Je cherche</span>
+</div>
+
+
+<div class="gender-select form-grid" data-bi-id="gender-select">
+
+	<div class="gender-error form-error" role="alert">
+		Veuillez sp&eacute;cifier votre civilit&eacute;.	</div>
+
+	<fieldset>
+		<span class="form-input radio">
+			<input
+				id="mysexW-1"
+				name="mysex"
+				type="radio"
+				value="1"
+				aria-label="Je suis une femme"
+											>
+			<label for="mysexW-1" class="female">
+				une femme			</label>
+		</span>
+		<span class="form-input radio">
+			<input
+				id="mysexM-2"
+				name="mysex"
+				type="radio"
+				value="0"
+				aria-label="Je suis un homme"
+											>
+			<label for="mysexM-2" class="male">
+				un homme			</label>
+		</span>
+	</fieldset>
+
+	<fieldset>
+		<input type="hidden" name="essex" value="">
+
+		<span class="form-input radio">
+			<input
+				id="essexW-3"
+				name="essexW"
+				type="checkbox"
+				value="1"
+				aria-label="Je cherche une femme"
+											>
+			<label for="essexW-3" class="female">
+				une femme			</label>
+		</span>
+		<span class="form-input radio">
+			<input
+				id="essexM-4"
+				name="essexM"
+				type="checkbox"
+				value="0"
+				aria-label="Je cherche un homme"
+											>
+			<label for="essexM-4" class="male">
+				un homme			</label>
+		</span>
+	</fieldset>
+
+</div>
+
+	
+<fieldset>
+	<div class="form-row">
+		<div class="email-error form-error" role="alert" data-bi-id="email-error">
+			Veuillez indiquer votre adresse e-mail.		</div>
+		<div class="hidden" aria-hidden="true">
+			<div class="form-input email has-hidden-label">
+				<label for="email-5">
+					E-mail				</label>
+				<input
+					id="email-5"
+					class="reg-form-email"
+					type="email"
+					name="email"
+					value=""
+					placeholder="E-mail"
+					autocomplete="off"
+					disabled
+					data-bi-id="reg-email-input"
+				>
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div
+			id="password-restriction-info-7"
+			class="password-restriction-info form-notice"
+		>
+			<p>Pour votre s&eacute;curit&eacute;, veuillez respecter les directives suivantes relatives au mot de passe:</p>
+			<ul>
+				<li class="min-characters">
+					Minimum 8 caract&egrave;res				</li>
+				<li class="letters-and-numbers">
+					Lettres ET chiffres/caract&egrave;res sp&eacute;ciaux				</li>
+				<li class="part-of-email">
+					Doit être diff&eacute;rent de votre adresse e-mail				</li>
+			</ul>
+		</div>
+
+		<div class="password-empty-error form-error" role="alert" data-bi-id="password-empty-error">
+			Veuillez choisir un mot de passe.		</div>
+		<div
+			class="password-invalid-error form-error"
+			role="alert"
+			data-bi-id="password-invalid-error"
+		>
+			Mot de passe non conforme.		</div>
+
+		<div class="hidden" aria-hidden="true">
+			<div class="form-input password has-hidden-label">
+				<label
+					for="password-6">Mot de passe</label>
+				<input
+					id="password-6"
+					class="reg-form-password"
+					type="password"
+					name="password"
+					value=""
+					placeholder="Mot de passe"
+					autocomplete="new-password"
+					aria-describedby="password-restriction-info-7"
+					disabled
+					data-bi-id="reg-password-input"
+				>
+			</div>
+		</div>
+	</div>
+</fieldset>
+
+	
+	
+<fieldset>
+	<button type="submit" class="wp-block-button wp-block-button__width-100 is-style-premium" data-bi-id="reg-submit-button">
+		<span class="wp-block-button__link">Testez gratuitement</span>
+	</button>
+</fieldset>
+
+	
+<div class="hidden">
+
+			<input type="hidden" name="socialProvider">
+		<input type="hidden" name="socialAccessToken">
+		<input type="hidden" name="socialEmailAddress">
+		<div class="social-sign-on-separator">
+			<span class="separator-text">ou</span>
+		</div>
+	
+			<div class="facebook-reg-container">
+			<div class="facebook-generic-error"></div>
+			<button type="button" class="facebook-reg-button" aria-label="Facebook login"
+					data-bi-id="facebook-reg-button">
+				Inscrire avec Facebook				<a href="#" class="facebook-info" role="button" aria-label="Info">
+					<span>i</span>
+				</a>
+			</button>
+		</div>
+	
+	
+</div>
+
+			<p class="terms hidden" aria-hidden="true"></p>
+	
+	
+</form>
+		</div>
+			</div>
+</div>
+		</div>
+	</div>
+
+
+</div>  
+<div class="inner">
+	<nav class="breadcrumbs"><span><span><a title="www.parship.fr" href="https://www.parship.fr/" class="home">www.parship.fr</a></span> &gt; <span aria-current="page">CGU</span></span></nav></div>
+
+<footer class="footer row">
+	
+<div class="widget-area widget-area-footer">
+	<ul class="inner">
+		<li id="nav_menu-2" class="widget widget_nav_menu"><div class="menu-footer-parship-container"><ul id="menu-footer-parship" class="menu"><li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63 menu-item--depth-0"><a href="https://www.parship.fr/privacypolicy" class=" menu-item__link menu-item__link--depth-0">Protection des données</a></li>
+<li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-64 menu-item--depth-0"><a href="https://www.parship.fr/termsandconditions" aria-current="page" class=" menu-item__link menu-item__link--depth-0">Conditions générales</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65 menu-item--depth-0"><a href="https://www.parship.fr/safety" class=" menu-item__link menu-item__link--depth-0">Sécurité</a></li>
+<li id="menu-item-66" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66 menu-item--depth-0"><a href="https://www.parship.fr/aboutus" class=" menu-item__link menu-item__link--depth-0">Informations légales</a></li>
+</ul></div></li>	</ul>
+</div>
+
+<section class="footer__outro">
+
+			<div class="socials-wrapper inner">
+			
+							<div class="col apps">
+					<p class="headline">Parship Apps</p>
+					<ul class="horizontal-list">
+													<li>
+								<a href="https://itunes.apple.com/fr/app/parship/id377700730?mt=8" title="iPhone App" rel="noopener follow" target="_blank">
+									<img src="/wp-content/themes/parship-theme/assets/libs/icons/custom/apple.svg" loading="lazy" width="26" height="26" alt="">									<span class="visually-hidden">iPhone App</span>
+								</a>
+							</li>
+													<li>
+								<a href="https://play.google.com/store/apps/details?id=com.parship.android&hl=fr&gl=fr" title="Android App" rel="noopener follow" target="_blank">
+									<img src="/wp-content/themes/parship-theme/assets/libs/icons/custom/android.svg" loading="lazy" width="26" height="26" alt="">									<span class="visually-hidden">Android App</span>
+								</a>
+							</li>
+											</ul>
+				</div>
+					</div>
+	
+			<p> © 2023 Parship - Made with ❤</p>
+	
+</section>
 </footer>
-</div>
-<div id="pageGlobal">
-<div id="webtracking" data-encodedptr="6XLQ6eHN28%2FC18zX0%2Bis2eK13ZR%2FkKu3zbXGuJGaY%2BLJp83C4uXR6M%2Fe4L2DrJXfztJ1kYXlzuiwxO2%2F39dnqIXi5dHoz97grpCQZtTa4N7i09LTkIqDo6aci5x1ydLfxt25h7No5um8nNPT6%2BPc0t%2Bcp%2BCGcIfS6efV5sjS3cXP5uXhi6p1q7WUkZbA2N644%2Bu104Wsm9bd2%2BLitdfRqcTZ2%2BzZ6NjhkHyD4erWzuKy0cTgzOmszN5oqZSLwIWem9Xi35GoY97Ws8mFnpvS5srd0nKblOPbi5x12tXexOSs2eFoqZRqoKnm3uLh3NDcpdHTssnM5uLf4tyUoJaD7w%3D%3D"></div>
-<script defer src="/static_cms/parship/static/peg_utils/tracking/pegtracking_combined.js?v=4" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
-<div id="hostId" style="display: none;">Sapp4</div>
-<div id="domPageVars"
-data-owner-id="134"
-data-js-path="/static_app/parship/6.77.0/js/"
-data-brand-id="ps"
-></div>
-<script src="/static_cms/parship/static/peg_utils/peg_external_modifier/peg_external_modifier_combined.js?v=4" nonce='f1Ke/KAW4ElVvCcH3uIZtQ=='></script>
-<div id="techErrorMessages" style="display: none;">
-<noscript>
-<div id="JSError" class="topInfoBar">
-<div class="textWrapper">
-<p class="withWarning">
-<svg class="wdk-icon icon_warning " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_warning.svg?version=6.77.0/#icon_warning"></use>
+
+<div class="navigation-mobile__wrapper"><a id="navigation__toggle" class="navigation__toggle" title="Menue"><svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 24 24">
+  <defs>
+    <symbol id="icon_burger_menu" viewBox="0 0 24 24">
+      <path id="icon_burger_menu-a" d="M22,17.6666667 C22,17.7638894 21.9609379,17.8437497 21.8828125,17.90625 C21.8046871,17.9687503 21.7048617,18 21.5833333,18 L2.41666667,18 C2.29513828,18 2.19531289,17.9687503 2.1171875,17.90625 C2.03906211,17.8437497 2,17.7638894 2,17.6666667 L2,16.3333333 C2,16.2361106 2.03906211,16.1562503 2.1171875,16.09375 C2.19531289,16.0312497 2.29513828,16 2.41666667,16 L21.5833333,16 C21.7048617,16 21.8046871,16.0312497 21.8828125,16.09375 C21.9609379,16.1562503 22,16.2361106 22,16.3333333 L22,17.6666667 Z M22,11.3333333 C22,11.2361106 21.9609379,11.1562503 21.8828125,11.09375 C21.8046871,11.0312497 21.7048617,11 21.5833333,11 L2.41666667,11 C2.29513828,11 2.19531289,11.0312497 2.1171875,11.09375 C2.03906211,11.1562503 2,11.2361106 2,11.3333333 L2,12.6666667 C2,12.7638894 2.03906211,12.8437497 2.1171875,12.90625 C2.19531289,12.9687503 2.29513828,13 2.41666667,13 L21.5833333,13 C21.7048617,13 21.8046871,12.9687503 21.8828125,12.90625 C21.9609379,12.8437497 22,12.7638894 22,12.6666667 L22,11.3333333 Z M22,6.33333333 C22,6.23611062 21.9609379,6.15625031 21.8828125,6.09375 C21.8046871,6.03124969 21.7048617,6 21.5833333,6 L2.41666667,6 C2.29513828,6 2.19531289,6.03124969 2.1171875,6.09375 C2.03906211,6.15625031 2,6.23611062 2,6.33333333 L2,7.66666667 C2,7.76388938 2.03906211,7.84374969 2.1171875,7.90625 C2.19531289,7.96875031 2.29513828,8 2.41666667,8 L21.5833333,8 C21.7048617,8 21.8046871,7.96875031 21.8828125,7.90625 C21.9609379,7.84374969 22,7.76388938 22,7.66666667 L22,6.33333333 Z"/>
+    </symbol>
+  </defs>
+  <use fill="#fff" fill-rule="evenodd" xlink:href="#icon_burger_menu-a"/>
 </svg>
-<b>Note : </b>Veuillez activer JavaScript pour utiliser Parship. </p>
+</a><div id="navigation-mobile__overlay" class="navigation-mobile__overlay"></div><nav class="navigation navigation-mobile"><div class="navigation-mobile__logo"><a href="https://www.parship.fr/"><svg width="92" height="22" class="logo" viewBox="0 0 92 22">
+			<use href="#parship-white" xlink:href="#parship-white" />
+		</svg></a></div><ul id="menu-mobile-navigation" class="menu navigation-mobile__menu"><li id="menu-item-69" class="icon icon-keys menu-item menu-item-type-custom menu-item-object-custom menu-item-69 menu-item--depth-0"><a href="/login/" class=" menu-item__link menu-item__link--depth-0">Accès</a></li>
+<li id="menu-item-70" class="icon icon-circle_ok_2 menu-item menu-item-type-custom menu-item-object-custom menu-item-70 menu-item--depth-0"><a href="/profile/registration/" class=" menu-item__link menu-item__link--depth-0">Inscription</a></li>
+<li id="menu-item-71" class="icon icon-compass menu-item menu-item-type-custom menu-item-object-custom menu-item-71 menu-item--depth-0"><a href="/tour/" class=" menu-item__link menu-item__link--depth-0">A propos de Parship</a></li>
+</ul></nav></div><div class="visually-hidden">
+	<svg xmlns="http://www.w3.org/1999/xlink">
+		<g id="parship-white">
+			<path d="M5.66,10.78H3.78v5.86H0V1.05H5.77c3.45,0,6.11,1.22,6.11,4.81S8.94,10.78,5.66,10.78ZM5.44,4.09H3.78v3.7H5.39c1.44,0,2.72-.44,2.72-1.88S6.77,4.09,5.44,4.09Zm6.89,3.1a7.12,7.12,0,0,1,4.88-1.83c3.72,0,5.05,1.83,5.05,5.81v5.52H18.93V15.48h-.05a3.74,3.74,0,0,1-3.11,1.43c-1.72,0-4-.88-4-3.42,0-3.15,3.89-3.71,7.11-3.71V9.62c0-1.11-.89-1.6-2-1.6a4.14,4.14,0,0,0-2.72,1.1ZM19,11.88h-.45c-1.61,0-3.38.23-3.38,1.5,0,.83.83,1.1,1.55,1.1A2.09,2.09,0,0,0,19,12.22Zm11.6-3.26a2.9,2.9,0,0,0-.94-.11A2.52,2.52,0,0,0,27,11v5.64H23.43V5.69h3.5V7.3H27a3.28,3.28,0,0,1,3-1.88,1.67,1.67,0,0,1,.78.11Zm7.89.28a3.49,3.49,0,0,0-2.28-1c-.67,0-1.39.23-1.39.89s.61.77,2,1.1c1.67.39,3.5,1.22,3.5,3.38C40.31,16,37.87,17,35.59,17a7,7,0,0,1-4.78-1.72l2.06-2.15a3.72,3.72,0,0,0,2.72,1.21c.61,0,1.33-.22,1.33-.94s-.66-.88-2.16-1.27S31.54,11.06,31.54,9c0-2.59,2.5-3.7,4.55-3.7A6.85,6.85,0,0,1,40.53,6.8Zm10.1,7.74V10.72c0-1.21-.33-2.32-1.61-2.32S45,9.45,45,10.72v5.92H41.42V0H45V7.08h0a3.58,3.58,0,0,1,3.17-1.72c3,0,4,2.27,4,4.48v6.8ZM55.24,4.15a2,2,0,0,1-2.05-2,2,2,0,0,1,2.05-2,2,2,0,1,1,0,4ZM53.41,16.64V5.69H57v11ZM65.24,17a4.12,4.12,0,0,1-3.33-1.49h-.06V22H58.24V5.69h3.44V7h.06a4.37,4.37,0,0,1,3.5-1.66c3.22,0,5.22,2.71,5.22,5.75S68.51,17,65.24,17Zm-.89-8.62a2.76,2.76,0,0,0-2.67,2.82A2.69,2.69,0,0,0,64.35,14,2.64,2.64,0,0,0,67,11.17,2.62,2.62,0,0,0,64.35,8.35Z" fill="#fff"/>
+			<path d="M92,4.59a3.57,3.57,0,0,0-3.55-3.54,3.44,3.44,0,0,0-2.84,1.44L83,6.08l-.56-.5-.06,0A3.38,3.38,0,0,0,80,4.59a3.57,3.57,0,0,0-3.56,3.54,3.73,3.73,0,0,0,1.11,2.59l6.44,6L91.33,6.63A3.58,3.58,0,0,0,92,4.59Z" fill="#fff"/>
+		</g>
+		<g id="parship-app-icon">
+			<path fill="#D70005" d="M132.154 43.967h25.52c5.094 0 9.223-4.13 9.223-9.224V9.224c0-5.094-4.13-9.224-9.224-9.224h-25.519c-5.094 0-9.224 4.13-9.224 9.224v25.52c0 5.094 4.13 9.223 9.224 9.223" transform="translate(-574 -20) translate(468 20) translate(106)"/>
+			<path fill="#FFFFFE" d="M8.864 14.781H6.162V20.8h2.594c2.306 0 4.432-.685 4.432-3.099 0-2.45-2.126-2.919-4.324-2.919zm.36 10.918H6.162v9.62H0V9.81h9.369c5.585 0 9.98 2.018 9.98 7.855 0 5.91-4.792 8.035-10.125 8.035zM30.918 27.5h-.756c-2.595 0-5.513.325-5.513 2.451 0 1.37 1.37 1.838 2.558 1.838 2.378 0 3.711-1.442 3.711-3.676v-.612zm-10.845-7.675c2.09-1.981 5.08-3.026 7.999-3.026 6.018 0 8.251 2.955 8.251 9.476v9.045h-5.405v-1.91h-.108c-.9 1.478-2.955 2.342-5.08 2.342-2.847 0-6.522-1.405-6.522-5.621 0-5.189 6.306-6.054 11.53-6.054v-.288c0-1.765-1.405-2.594-3.243-2.594-1.693 0-3.35.829-4.432 1.838l-2.99-3.208zM49.837 22.204c-.54-.144-1.045-.18-1.513-.18-3.171 0-4.216 2.594-4.216 4.071v9.225h-5.91V17.375h5.694v2.595h.072c.9-1.802 2.666-3.099 4.864-3.099.468 0 .973.036 1.261.144l-.252 5.189M62.666 22.672c-.937-.9-2.306-1.621-3.747-1.621-1.117 0-2.234.396-2.234 1.44 0 1.01.973 1.298 3.28 1.803 2.737.613 5.728 1.981 5.728 5.477 0 4.54-4 6.125-7.675 6.125-2.918 0-5.945-.972-7.82-2.774l3.316-3.496c1.045 1.154 2.666 2.018 4.396 2.018.973 0 2.126-.396 2.126-1.55 0-1.116-1.117-1.477-3.567-2.053-2.487-.576-5.225-1.837-5.225-5.225 0-4.287 4.036-6.017 7.459-6.017 2.666 0 5.44.865 7.206 2.522l-3.243 3.351M79.134 35.32v-9.73c0-2.017-.504-3.782-2.63-3.782-2.054 0-3.207 1.693-3.207 3.819v9.693h-5.91V8.079h5.91v11.567h.072c.793-1.442 2.666-2.775 5.153-2.775 4.864 0 6.558 3.747 6.558 7.35V35.32h-5.946M86.99 35.32h5.91V17.375h-5.91V35.32zm2.955-20.43c-1.909 0-3.387-1.478-3.387-3.244 0-1.73 1.478-3.243 3.387-3.243 1.874 0 3.388 1.441 3.388 3.243 0 1.838-1.514 3.243-3.388 3.243zM104.828 21.7c-2.667 0-4.324 2.341-4.324 4.611 0 2.343 1.657 4.613 4.324 4.613 2.81 0 4.215-2.307 4.215-4.649 0-2.306-1.405-4.576-4.215-4.576zm1.404 14.124c-2.197 0-4.323-.936-5.44-2.486h-.072v10.63h-5.91V17.374h5.621v2.198h.109c1.08-1.44 3.099-2.702 5.729-2.702 5.225 0 8.504 4.396 8.504 9.404 0 5.01-3.135 9.55-8.54 9.55zM157.207 15.567c0-3.18-2.579-5.76-5.759-5.76-1.91 0-3.598.935-4.645 2.366l-.004-.003-4.287 5.868-.883-.823c-.036-.037-.075-.07-.112-.105l-.044-.04c-1.03-.963-2.409-1.557-3.93-1.557-3.18 0-5.758 2.578-5.758 5.757 0 1.663.71 3.157 1.836 4.208l-.008.008 10.536 9.834 11.949-16.357-.005-.004c.697-.952 1.114-2.122 1.114-3.392" transform="translate(-574 -20) translate(468 20) translate(106)"/>
+		</g>
+	</svg>
 </div>
-</div>
-</noscript>
-<div id="cookieError" class="topInfoBar" style="display:none;">
-<div class="textWrapper">
-<p class="withWarning">
-<svg class="wdk-icon icon_warning " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_warning.svg?version=6.77.0/#icon_warning"></use>
-</svg>
-Veuillez accepter les cookies dans votre navigateur Internet, afin de pouvoir utiliser Parship </p>
-</div>
-</div>
-<div id="legacyBrowser" class="topInfoBar" style="display:none;">
-<div class="textWrapper">
-<p class="withWarning">
-<svg class="wdk-icon icon_warning " role="presentation">
-<use xlink:href="/static_app/parship/img/icons/single_color/icon_warning.svg?version=6.77.0/#icon_warning"></use>
-</svg>
-<strong>Malheureusement le navigateur que vous utilisez est obsolète.</strong><br />
-Afin de pouvoir utiliser Parship et pour des raisons de sécurité, Parship vous recommande de télécharger une version actuelle. </p>
-</div>
-<ul class="browserButtons">
-<li><a href="https://www.google.com/chrome" class="buttonStyle chrome" target="_blank"><span class="browsericon"></span><span>Google<br />Chrome</span></a></li>
-<li><a href="https://www.mozilla.org/firefox/new" class="buttonStyle firefox" target="_blank"><span class="browsericon"></span><span>Mozilla<br />Firefox</span></a></li>
-<li><a href="https://www.microsoft.com/edge" class="buttonStyle ie" target="_blank"><span class="browsericon"></span><span>Microsoft<br />Edge</span></a></li>
-</ul>
-<a class="wdk-button t-plainSkin4 hideInfoBar " href=# > <span class="icon"> <svg class="wdk-icon icon_x " role="presentation"> <use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use> </svg> </span> <span class="text"></span> </a> </div>
-<div id="timeoutNotification" class="wdk-toast t-small" aria-hidden="true">
-Veuillez réessayer plus tard. </div>
-<div id="errorModalbox500" class="wdk-modalbox has-smallContent" data-close-on-bg-click="true" data-close-on-esc="true" role="dialog" aria-modal="true" aria-hidden="true" inert="true"
->
-<div class="modalboxContent">
-<a class="wdk-button t-plainSkin4 closeX js-closeModalbox " href=# aria-label='Fermer' > <span class="icon"> <svg class="wdk-icon icon_x " role="presentation"> <use xlink:href="/static_app/parship/img/icons/single_color/icon_x.svg?version=6.77.0/#icon_x"></use> </svg> </span> <span class="text"></span> </a> <header>
-<h3>Une erreur s’est produite</h3>
-</header>
-<article>
-<p>L’action demandée ne peut être exécutée</p>
-</article>
-<footer>
-<a class="wdk-button t-primarySkin1 js-closeModalbox " href=# > <span class="text">Fermer la fenêtre</span> </a> </footer>
-</div>
-</div>
-<div id="errorModalboxSessionExpired" class="wdk-modalbox has-smallContent" data-close-on-bg-click="true" data-close-on-esc="false" role="dialog" aria-modal="true" aria-hidden="true" inert="true"
->
-<div class="modalboxContent">
-<header>
-<h3>Votre session a expiré</h3>
-</header>
-<article>
-<i class="bg-icon_circle_arrows spinRight"></i>
-</article>
-</div>
-</div>
-</div>
-<div id="errorOnMediaServer" style="position:fixed; top: 0; font-size: 20px;">Error with static Resources (Error: 418) </div>
-<div id="offlineError" class="noDisplay">
-<p> Tu es hors ligne. Vérifie ta connexion Internet.
-</p>
-</div>
-<div id="lieFiNotification" class="noDisplay">
-<p>Ta connexion semble être lente. Nous livrons une page déjà téléchargée.</p>
-<div>
-<a class="wdk-button t-plainSkin2 t-size_75 " href=# > <span class="text">Réessayer </span> </a></div>
-</div>
-</div>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" nonce="f1Ke/KAW4ElVvCcH3uIZtQ==" data-cf-beacon='{"rayId":"792132afd93e9226","token":"f6ba5c343b2f453781a8e286b7a926e1","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+
+
+<link rel='stylesheet' id='psg-registration-form-css' href='/wp-content/plugins/psg-registration-form/assets/dist/css/registration-form-parship-editorial.css?ver=2.8.8' type='text/css' media='all' />
+<script type='text/javascript' id='parship-loginState-js-extra'>
+/* <![CDATA[ */
+var ParshipLoginState = {"ajax":{"url":"https:\/\/www.parship.fr\/loggedin\/ping"}};
+/* ]]> */
+</script>
+<script>(()=>{var t={757:(t,r,e)=>{t.exports=e(666)},666:t=>{var r=function(t){"use strict";var r,e=Object.prototype,n=e.hasOwnProperty,o="function"==typeof Symbol?Symbol:{},i=o.iterator||"@@iterator",a=o.asyncIterator||"@@asyncIterator",c=o.toStringTag||"@@toStringTag";function u(t,r,e){return Object.defineProperty(t,r,{value:e,enumerable:!0,configurable:!0,writable:!0}),t[r]}try{u({},"")}catch(t){u=function(t,r,e){return t[r]=e}}function s(t,r,e,n){var o=r&&r.prototype instanceof d?r:d,i=Object.create(o.prototype),a=new S(n||[]);return i._invoke=function(t,r,e){var n=h;return function(o,i){if(n===p)throw new Error("Generator is already running");if(n===y){if("throw"===o)throw i;return T()}for(e.method=o,e.arg=i;;){var a=e.delegate;if(a){var c=_(a,e);if(c){if(c===v)continue;return c}}if("next"===e.method)e.sent=e._sent=e.arg;else if("throw"===e.method){if(n===h)throw n=y,e.arg;e.dispatchException(e.arg)}else"return"===e.method&&e.abrupt("return",e.arg);n=p;var u=f(t,r,e);if("normal"===u.type){if(n=e.done?y:l,u.arg===v)continue;return{value:u.arg,done:e.done}}"throw"===u.type&&(n=y,e.method="throw",e.arg=u.arg)}}}(t,e,a),i}function f(t,r,e){try{return{type:"normal",arg:t.call(r,e)}}catch(t){return{type:"throw",arg:t}}}t.wrap=s;var h="suspendedStart",l="suspendedYield",p="executing",y="completed",v={};function d(){}function g(){}function m(){}var w={};u(w,i,(function(){return this}));var x=Object.getPrototypeOf,b=x&&x(x(P([])));b&&b!==e&&n.call(b,i)&&(w=b);var L=m.prototype=d.prototype=Object.create(w);function E(t){["next","throw","return"].forEach((function(r){u(t,r,(function(t){return this._invoke(r,t)}))}))}function j(t,r){function e(o,i,a,c){var u=f(t[o],t,i);if("throw"!==u.type){var s=u.arg,h=s.value;return h&&"object"==typeof h&&n.call(h,"__await")?r.resolve(h.__await).then((function(t){e("next",t,a,c)}),(function(t){e("throw",t,a,c)})):r.resolve(h).then((function(t){s.value=t,a(s)}),(function(t){return e("throw",t,a,c)}))}c(u.arg)}var o;this._invoke=function(t,n){function i(){return new r((function(r,o){e(t,n,r,o)}))}return o=o?o.then(i,i):i()}}function _(t,e){var n=t.iterator[e.method];if(n===r){if(e.delegate=null,"throw"===e.method){if(t.iterator.return&&(e.method="return",e.arg=r,_(t,e),"throw"===e.method))return v;e.method="throw",e.arg=new TypeError("The iterator does not provide a 'throw' method")}return v}var o=f(n,t.iterator,e.arg);if("throw"===o.type)return e.method="throw",e.arg=o.arg,e.delegate=null,v;var i=o.arg;return i?i.done?(e[t.resultName]=i.value,e.next=t.nextLoc,"return"!==e.method&&(e.method="next",e.arg=r),e.delegate=null,v):i:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,v)}function O(t){var r={tryLoc:t[0]};1 in t&&(r.catchLoc=t[1]),2 in t&&(r.finallyLoc=t[2],r.afterLoc=t[3]),this.tryEntries.push(r)}function k(t){var r=t.completion||{};r.type="normal",delete r.arg,t.completion=r}function S(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(O,this),this.reset(!0)}function P(t){if(t){var e=t[i];if(e)return e.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var o=-1,a=function e(){for(;++o<t.length;)if(n.call(t,o))return e.value=t[o],e.done=!1,e;return e.value=r,e.done=!0,e};return a.next=a}}return{next:T}}function T(){return{value:r,done:!0}}return g.prototype=m,u(L,"constructor",m),u(m,"constructor",g),g.displayName=u(m,c,"GeneratorFunction"),t.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===g||"GeneratorFunction"===(r.displayName||r.name))},t.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,m):(t.__proto__=m,u(t,c,"GeneratorFunction")),t.prototype=Object.create(L),t},t.awrap=function(t){return{__await:t}},E(j.prototype),u(j.prototype,a,(function(){return this})),t.AsyncIterator=j,t.async=function(r,e,n,o,i){void 0===i&&(i=Promise);var a=new j(s(r,e,n,o),i);return t.isGeneratorFunction(e)?a:a.next().then((function(t){return t.done?t.value:a.next()}))},E(L),u(L,c,"Generator"),u(L,i,(function(){return this})),u(L,"toString",(function(){return"[object Generator]"})),t.keys=function(t){var r=[];for(var e in t)r.push(e);return r.reverse(),function e(){for(;r.length;){var n=r.pop();if(n in t)return e.value=n,e.done=!1,e}return e.done=!0,e}},t.values=P,S.prototype={constructor:S,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=r,this.done=!1,this.delegate=null,this.method="next",this.arg=r,this.tryEntries.forEach(k),!t)for(var e in this)"t"===e.charAt(0)&&n.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=r)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(t){if(this.done)throw t;var e=this;function o(n,o){return c.type="throw",c.arg=t,e.next=n,o&&(e.method="next",e.arg=r),!!o}for(var i=this.tryEntries.length-1;i>=0;--i){var a=this.tryEntries[i],c=a.completion;if("root"===a.tryLoc)return o("end");if(a.tryLoc<=this.prev){var u=n.call(a,"catchLoc"),s=n.call(a,"finallyLoc");if(u&&s){if(this.prev<a.catchLoc)return o(a.catchLoc,!0);if(this.prev<a.finallyLoc)return o(a.finallyLoc)}else if(u){if(this.prev<a.catchLoc)return o(a.catchLoc,!0)}else{if(!s)throw new Error("try statement without catch or finally");if(this.prev<a.finallyLoc)return o(a.finallyLoc)}}}},abrupt:function(t,r){for(var e=this.tryEntries.length-1;e>=0;--e){var o=this.tryEntries[e];if(o.tryLoc<=this.prev&&n.call(o,"finallyLoc")&&this.prev<o.finallyLoc){var i=o;break}}i&&("break"===t||"continue"===t)&&i.tryLoc<=r&&r<=i.finallyLoc&&(i=null);var a=i?i.completion:{};return a.type=t,a.arg=r,i?(this.method="next",this.next=i.finallyLoc,v):this.complete(a)},complete:function(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),v},finish:function(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e.finallyLoc===t)return this.complete(e.completion,e.afterLoc),k(e),v}},catch:function(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e.tryLoc===t){var n=e.completion;if("throw"===n.type){var o=n.arg;k(e)}return o}}throw new Error("illegal catch attempt")},delegateYield:function(t,e,n){return this.delegate={iterator:P(t),resultName:e,nextLoc:n},"next"===this.method&&(this.arg=r),v}},t}(t.exports);try{regeneratorRuntime=r}catch(t){"object"==typeof globalThis?globalThis.regeneratorRuntime=r:Function("r","regeneratorRuntime = r")(r)}}},r={};function e(n){var o=r[n];if(void 0!==o)return o.exports;var i=r[n]={exports:{}};return t[n](i,i.exports,e),i.exports}e.n=t=>{var r=t&&t.__esModule?()=>t.default:()=>t;return e.d(r,{a:r}),r},e.d=(t,r)=>{for(var n in r)e.o(r,n)&&!e.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:r[n]})},e.o=(t,r)=>Object.prototype.hasOwnProperty.call(t,r),(()=>{"use strict";var t=e(757),r=e.n(t);function n(t,r){for(var e=0;e<r.length;e++){var n=r[e];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}var o=function(t,r,e,n){return new(e||(e=Promise))((function(o,i){function a(t){try{u(n.next(t))}catch(t){i(t)}}function c(t){try{u(n.throw(t))}catch(t){i(t)}}function u(t){var r;t.done?o(t.value):(r=t.value,r instanceof e?r:new e((function(t){t(r)}))).then(a,c)}u((n=n.apply(t,r||[])).next())}))};new(function(){function t(r){!function(t,r){if(!(t instanceof r))throw new TypeError("Cannot call a class as a function")}(this,t),this.url=r}var e,i,a;return e=t,a=[{key:"setBodyData",value:function(t){document.body.dataset.portalLoggedIn=t}}],(i=[{key:"getStatus",value:function(){var e;return o(this,void 0,void 0,r().mark((function n(){var o,i;return r().wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return o="portal-logged-in",t.setBodyData(null!==(e=localStorage.getItem(o))&&void 0!==e?e:"false"),r.next=4,this.getApiLoginStatus();case 4:i=r.sent,t.setBodyData(i),localStorage.setItem(o,i);case 7:case"end":return r.stop()}}),n,this)})))}},{key:"getApiLoginStatus",value:function(){return o(this,void 0,void 0,r().mark((function t(){return r().wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,fetch(this.url,{method:"GET",cache:"no-cache",headers:{"Content-Type":"application/json"}}).then((function(t){return t.json()})).then((function(t){return String(t.loggedin)})).catch((function(){return"false"}));case 2:return t.abrupt("return",t.sent);case 3:case"end":return t.stop()}}),t,this)})))}}])&&n(e.prototype,i),a&&n(e,a),t}())(window.ParshipLoginState.ajax.url).getStatus()})()})();</script><script type='text/javascript' src='https://www.parship.fr/static_cms/parship/static/peg_utils/pmg_social_sign_on/pmg-social-sign-on.js' id='pmg-social-sign-on-js' defer></script>
+<script type='text/javascript' src='https://www.parship.fr/static_cms/parship/static/peg_utils/peg_logger/peg_logger.js' id='external-logger-js' defer></script>
+<script type='text/javascript' src='/wp-content/themes/parship-theme/assets/dist/js/main.js?ver=1674005240' id='main-js' defer></script>
+<script type='text/javascript' src='/wp-content/plugins/psg-registration-form/assets/dist/js/registration-form.js?ver=2.8.8' id='psg-registration-form-js' defer></script>
+
+		<div id="pegTrackingContainer" style="display: none;" >
+			<script> var ptr = {"owner_id":134,"owner_country":"FR","owner_language":"FR","owner_orientation":"HETERO","domain":"www.parship.fr","brand":"ps","env":"prod","site_type":"editorial"};</script>
+							<script defer src="/static_cms/parship/static/peg_utils/tracking/pegtracking_combined.js"></script>
+					</div>
+
+		
 </body>
 </html>
