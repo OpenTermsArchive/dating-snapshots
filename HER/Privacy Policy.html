@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head ><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
 	
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">-->
 
-
-<script type="rocketlazyloadscript">
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'linkSentToMobile'
-});
-</script>
-<!-- anti-flicker snippet -->
-<style>.async-hide { opacity: 0 !important} </style>
-<script type="rocketlazyloadscript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
-{'GTM-TQR3526':true});</script>
-<script type="rocketlazyloadscript" id="nsc_bara_blocking_scripts_inline" data-pagespeed-no-defer data-cfasync data-no-optimize="1"> var nsc_bara_cookie_consent_user = {"cookieconsent_status":"nochoice","cookieconsent_status_tech":"allow","cookieconsent_status_marketing":"allow"}; var nsc_bara_blocked_services = [];</script>
-<script type="rocketlazyloadscript" data-minify="1" id="nsc_bara_blocking_scripts" data-pagespeed-no-defer data-cfasync data-no-optimize="1" data-rocket-type="text/javascript" src="https://weareher.com/wp-content/cache/min/1/wp-content/plugins/beautiful-and-responsive-cookie-consent-addon/public/js/blockScripts.js?ver=1673251535" defer></script>
+	<script type="rocketlazyloadscript" id="nsc_bara_blocking_scripts_inline" data-pagespeed-no-defer data-cfasync data-no-optimize="1"> var nsc_bara_cookie_consent_user = {"cookieconsent_status":"nochoice","cookieconsent_status_tech":"allow","cookieconsent_status_marketing":"allow"}; var nsc_bara_blocked_services = [];</script>
+<script type="rocketlazyloadscript" data-minify="1" id="nsc_bara_blocking_scripts" data-pagespeed-no-defer data-cfasync data-no-optimize="1" data-rocket-type="text/javascript" src="https://weareher.com/wp-content/cache/min/1/wp-content/plugins/beautiful-and-responsive-cookie-consent-addon/public/js/blockScripts.js?ver=1675953336" defer></script>
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
 <!-- Google Tag Manager for WordPress by gtm4wp.com -->
@@ -67,7 +54,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
-<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1673251535' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1675953335' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
 <link rel='preload'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=6.1.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
 <link rel='preload'  href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=6.1.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
 <link rel='preload'  href='https://weareher.com/wp-content/plugins/beautiful-and-responsive-cookie-consent/public/cookieNSCconsent.min.css?ver=2.11.0' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
@@ -75,8 +62,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <style id='ez-toc-inline-css' type='text/css'>
 div#ez-toc-container p.ez-toc-title {font-size: 22px;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 18px;}div#ez-toc-container nav ul ul li ul li {font-size: px!important;}
 </style>
-<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/modules-style.css?ver=1673251535' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
-<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.css?ver=1673251535' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/modules-style.css?ver=1675953335' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.css?ver=1675953336' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
 <style id='rocket-lazyload-inline-css' type='text/css'>
 .rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://weareher.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
 </style>
@@ -84,8 +71,8 @@ div#ez-toc-container p.ez-toc-title {font-size: 22px;}div#ez-toc-container p.ez-
 <script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='ez-toc-scroll-scriptjs-js-after'>window.addEventListener('DOMContentLoaded', function() {
 jQuery(document).ready(function(){document.querySelectorAll(".ez-toc-section").forEach(t=>{t.setAttribute("ez-toc-data-id","#"+decodeURI(t.getAttribute("id")))}),jQuery("a.ez-toc-link").click(function(){let t=jQuery(this).attr("href"),e=jQuery("#wpadminbar"),i=0;90>30&&(i=90),e.length&&(i+=e.height()),jQuery('[ez-toc-data-id="'+decodeURI(t)+'"]').length>0&&(i=jQuery('[ez-toc-data-id="'+decodeURI(t)+'"]').offset().top-i),jQuery("html, body").animate({scrollTop:i},500)})});
 });</script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.js?ver=1673251535' id='swiper-js-js' defer></script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/js/main.js?ver=1673251535' id='main-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.js?ver=1675953336' id='swiper-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/js/main.js?ver=1675953336' id='main-js-js' defer></script>
 <link rel="https://api.w.org/" href="https://weareher.com/wp-json/" /><link rel="alternate" type="application/json" href="https://weareher.com/wp-json/wp/v2/pages/107" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://weareher.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://weareher.com/wp-includes/wlwmanifest.xml" />
 <link rel='shortlink' href='https://weareher.com/?p=107' />
@@ -129,91 +116,97 @@ setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(ena
 var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
 if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
 else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
-</script>
+</script>	<script type="rocketlazyloadscript">
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'linkSentToMobile'
+		});
+	</script>
 </head>
+
 <body class="page-template-default page page-id-107">
 
 
-<div class="mobile-menu">
-	<div class="top-line">
-		<div class="logo">
-			<a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
-		</div>
-		<div class="h-col-2">
-						<div class="header-btn-wrap hide-on-desktop">
-				<a  class="primary" href="https://links.weareher.com/XKUPX2dxBob">Download HER</a>
+	<div class="mobile-menu">
+		<div class="top-line">
+			<div class="logo">
+				<a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
+			</div>
+			<div class="h-col-2">
+								<div class="header-btn-wrap hide-on-desktop">
+					<a class="primary" href="https://links.weareher.com/XKUPX2dxBob">Download HER</a>
+				</div>
+			</div>
+			<div class="close-menu h-col-3">
+				<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="3.12549" width="39" height="4" transform="rotate(45 3.12549 0)" fill="#282424" />
+					<rect y="27.5771" width="39" height="4" transform="rotate(-45 0 27.5771)" fill="#282424" />
+				</svg>
 			</div>
 		</div>
-		<div class="close-menu h-col-3">
-			<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<rect x="3.12549" width="39" height="4" transform="rotate(45 3.12549 0)" fill="#282424"/>
-			<rect y="27.5771" width="39" height="4" transform="rotate(-45 0 27.5771)" fill="#282424"/>
-			</svg>
-		</div>
-	</div>
-	<div class="mobile-menu__container">
-		<ul id="menu-main-menu" class=""><li id="menu-item-24596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat/">Chat</a></li>
+		<div class="mobile-menu__container">
+			<ul id="menu-main-menu" class=""><li id="menu-item-24596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat/">Chat</a></li>
 <li id="menu-item-30912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30912"><a href="https://support.weareher.com/hc/en-us">Support</a></li>
 <li id="menu-item-25139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25139"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
 <li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://weareher.com/blog/">Blog</a></li>
-</ul>	</div>
-	<div class="social-links">
-					<div class="social-link">
-					<a target="_blank" href="https://twitter.com/HerSocialApp">
+</ul>		</div>
+		<div class="social-links">
+								<div class="social-link">
+						<a target="_blank" href="https://twitter.com/HerSocialApp">
 							<img width="32" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2024'%3E%3C/svg%3E" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/tw1.svg"><noscript><img width="32" height="24" src="https://weareher.com/wp-content/uploads/2022/04/tw1.svg"></noscript>
-					</a>
-			</div>
-						<div class="social-link">
-					<a target="_blank" href="https://www.instagram.com/hersocialapp/">
+						</a>
+					</div>
+								<div class="social-link">
+						<a target="_blank" href="https://www.instagram.com/hersocialapp/">
 							<img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/inst1.svg"><noscript><img width="24" height="24" src="https://weareher.com/wp-content/uploads/2022/04/inst1.svg"></noscript>
-					</a>
-			</div>
-						<div class="social-link">
-					<a target="_blank" href="https://www.youtube.com/channel/UC5ezhWop2QDIBco04CeQxVA">
+						</a>
+					</div>
+								<div class="social-link">
+						<a target="_blank" href="https://www.youtube.com/channel/UC5ezhWop2QDIBco04CeQxVA">
 							<img width="30" height="22" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2022'%3E%3C/svg%3E" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/youtube1.svg"><noscript><img width="30" height="22" src="https://weareher.com/wp-content/uploads/2022/04/youtube1.svg"></noscript>
-					</a>
-			</div>
-						<div class="social-link">
-					<a target="_blank" href="https://www.tiktok.com/@hersocialapp">
+						</a>
+					</div>
+								<div class="social-link">
+						<a target="_blank" href="https://www.tiktok.com/@hersocialapp">
 							<img width="22" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2022%2024'%3E%3C/svg%3E" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/tikto1.svg"><noscript><img width="22" height="24" src="https://weareher.com/wp-content/uploads/2022/04/tikto1.svg"></noscript>
-					</a>
-			</div>
-				</div>
-</div>
-<div class="mobile_header wp_left" id="myHeader1">
-	<div class="h-col-1">
-		<a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
+						</a>
+					</div>
+					</div>
 	</div>
-	<div class="h-col-2">
-				<div class="header-btn-wrap hide-on-desktop">
-			<a  class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
+	<div class="mobile_header wp_left" id="myHeader1">
+		<div class="h-col-1">
+			<a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a>
+		</div>
+		<div class="h-col-2">
+			<div class="header-btn-wrap hide-on-desktop">
+				<a class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
+			</div>
+		</div>
+		<div class="h-col-3 ">
+			<div class="menu-btn">
+				<span></span>
+				<span></span>
+			</div>
+			</a>
 		</div>
 	</div>
-	<div class="h-col-3 ">
-				<div class="menu-btn">
-					<span></span>
-					<span></span>
-				</div>
-			</a>
+	<div class="fixed-cta">
+		<a class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
 	</div>
-</div>
-<div class="fixed-cta">
-	<a  class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
-</div>
-<div class="header_wrapper wp_left black" id="myHeader">
-        <div class="logo"> <a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a> </div>
-				<div class="left-part">
-					<div class="main_menu wp_left">
-					<ul id="menu-main-menu-1" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat/">Chat</a></li>
+	<div class="header_wrapper wp_left black" id="myHeader">
+		<div class="logo"> <a href="https://weareher.com"><img width="94" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2094%2093'%3E%3C/svg%3E" alt="Her Logo" class="img-responsive mobile_logo" data-lazy-src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" /><noscript><img width="94" height="93" src="https://weareher.com/wp-content/uploads/2022/04/logoher.svg" alt="Her Logo" class="img-responsive mobile_logo" /></noscript></a> </div>
+		<div class="left-part">
+			<div class="main_menu wp_left">
+				<ul id="menu-main-menu-1" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24596"><a href="https://weareher.com/lesbian-chat/">Chat</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30912"><a href="https://support.weareher.com/hc/en-us">Support</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25139"><a href="https://weareher.com/sales-and-partnerships/">Partnerships</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://weareher.com/blog/">Blog</a></li>
-</ul>					</div>
-					<div class="header-btn-wrap">
-						<a  class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
-					</div>
-				</div>
-</div>
+</ul>			</div>
+			<div class="header-btn-wrap">
+				<a class="primary" href="https://links.weareher.com/XKUPX2dxBob" target="_blank">Download HER</a>
+			</div>
+		</div>
+	</div>
 
 
     </div>
@@ -800,13 +793,13 @@ San Francisco, CA, 94114</p>
 <!-- GTM Container placement set to footer -->
 <!-- Google Tag Manager (noscript) -->
 				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQR3526" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1673251535' id='swv-js' defer></script>
+<!-- End Google Tag Manager (noscript) --><script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1675953336' id='swv-js' defer></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
 /* <![CDATA[ */
 var wpcf7 = {"api":{"root":"https:\/\/weareher.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
 /* ]]> */
 </script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1673251535' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1675953336' id='contact-form-7-js' defer></script>
 <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=6.1.1' id='nbcpf-intlTelInput-script-js' defer></script>
 <script type='text/javascript' id='nbcpf-countryFlag-script-js-extra'>
 /* <![CDATA[ */
@@ -911,13 +904,12 @@ window.addEventListener("DOMContentLoaded",function(){window.cookieconsent.initi
     "dismissOnScroll": 500
 })});
 </script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1673251535' id='gtm4wp-form-move-tracker-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1675953336' id='gtm4wp-form-move-tracker-js' defer></script>
 <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/themes/her/js/draggin.min.js?ver=_S_VERSION' id='dragging-js-js' defer></script>
 <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://weareher.com/wp-content/plugins/wp-rocket/assets/js/heartbeat.js?ver=3.12.4' id='heartbeat-js' defer></script>
 <script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
 if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
 images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://weareher.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='wp-block-library-css' href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='classic-theme-styles-css' href='https://weareher.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1673251535' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-intlTelInput-style-css' href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-countryFlag-style-css' href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='nsc_bar_nice-cookie-consent-css' href='https://weareher.com/wp-content/plugins/beautiful-and-responsive-cookie-consent/public/cookieNSCconsent.min.css?ver=2.11.0' type='text/css' media='all' /><link rel='stylesheet' id='ez-toc-css' href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.45.1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='modules-styles-css' href='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/modules-style.css?ver=1673251535' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='swiper-css-css' href='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.css?ver=1673251535' type='text/css' media='all' /></noscript></body>
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://weareher.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='wp-block-library-css' href='https://weareher.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='classic-theme-styles-css' href='https://weareher.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://weareher.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1675953335' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-intlTelInput-style-css' href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='nbcpf-countryFlag-style-css' href='https://weareher.com/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=6.1.1' type='text/css' media='all' /><link rel='stylesheet' id='nsc_bar_nice-cookie-consent-css' href='https://weareher.com/wp-content/plugins/beautiful-and-responsive-cookie-consent/public/cookieNSCconsent.min.css?ver=2.11.0' type='text/css' media='all' /><link rel='stylesheet' id='ez-toc-css' href='https://weareher.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.45.1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='modules-styles-css' href='https://weareher.com/wp-content/cache/min/1/wp-content/themes/her/css/modules-style.css?ver=1675953335' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='swiper-css-css' href='https://weareher.com/wp-content/cache/min/1/swiper/swiper-bundle.min.css?ver=1675953336' type='text/css' media='all' /></noscript></body>
 </html>
-
 <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
