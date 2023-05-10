@@ -44,6 +44,9 @@
   
   
   
+  <link rel="stylesheet" href="/assets/css/cta-banner.css">
+  
+  
   <!-- OneTrust Cookies Consent Notice start for grindr.com -->
   <script type="text/javascript" src="https://cdn.cookielaw.org/consent/9e16a97b-843a-45b0-b439-8c199bf3bdd1/OtAutoBlock.js"></script>
   <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="9e16a97b-843a-45b0-b439-8c199bf3bdd1"></script>
@@ -308,7 +311,24 @@ margin-top: 0px;
                       #ot-sdk-btn-floating.ot-floating-button{position:fixed;bottom:10px;opacity:0;width:50px;height:50px;line-height:15px;cursor:pointer;background-color:rgba(0,0,0,0);transition:all 300ms ease;z-index:2147483646;animation:otFloatingBtnIntro 800ms ease 0ms 1 forwards}#ot-sdk-btn-floating.ot-floating-button.ot-hide{display:none}#ot-sdk-btn-floating.ot-floating-button::before,#ot-sdk-btn-floating.ot-floating-button::after{text-transform:none;line-height:1;user-select:none;pointer-events:none;position:absolute;transform:scale(0);opacity:0;transition:all 300ms ease;display:block;height:auto}#ot-sdk-btn-floating.ot-floating-button::before{content:"";border:5px solid rgba(0,0,0,0);z-index:1001;top:50%;border-left-width:0;border-right-color:#333;right:calc(0em - 5px);transform:translate(10px, -50%)}#ot-sdk-btn-floating.ot-floating-button::after{content:attr(title);position:absolute;text-align:center;top:50%;left:calc(100% + 5px);transform:translate(10px, -50%);font-size:.75rem;min-width:3em;max-width:21em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:5px;border-radius:.3ch;box-shadow:0 1em 2em -0.5em rgba(0,0,0,.35);background:#333;color:#fff;z-index:2147483645}#ot-sdk-btn-floating.ot-floating-button:hover::before,#ot-sdk-btn-floating.ot-floating-button:hover::after{opacity:1}#ot-sdk-btn-floating.ot-floating-button:hover::before{transform:translate(0.5em, -50%) scale(1)}#ot-sdk-btn-floating.ot-floating-button:hover::after{transform:translate(0.5em, -50%) scale(1)}#ot-sdk-btn-floating.ot-floating-button.ot-pc-open .ot-floating-button__front{transform:rotateY(-180deg)}#ot-sdk-btn-floating.ot-floating-button.ot-pc-open .ot-floating-button__back{transform:rotateY(0)}#ot-sdk-btn-floating .ot-floating-button__front,#ot-sdk-btn-floating .ot-floating-button__back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:#6aaae4;border-radius:10px;box-shadow:0 4px 8px 0 rgba(0,0,0,.2);transition:transform .6s;transform-style:preserve-3d}#ot-sdk-btn-floating .ot-floating-button__front{background-color:#6aaae4;transform:rotateY(0)}#ot-sdk-btn-floating .ot-floating-button__front.custom-persistent-icon{background-position:center center;background-repeat:no-repeat;background-size:100%;border-radius:100px}#ot-sdk-btn-floating .ot-floating-button__front svg{width:30px;height:37px}#ot-sdk-btn-floating .ot-floating-button__back{background-color:#69c;transform:rotateY(-180deg)}#ot-sdk-btn-floating .ot-floating-button__back.custom-persistent-icon{background-position:center center;background-repeat:no-repeat;background-size:100%;border-radius:100px}#ot-sdk-btn-floating .ot-floating-button__back svg{width:24px;height:24px}#ot-sdk-btn-floating.ot-floating-button button{background-color:rgba(0,0,0,0);border:0;width:100%;height:100%;cursor:pointer}@keyframes otFloatingBtnIntro{0%{opacity:0;left:-75px}100%{opacity:1;left:1%}}@keyframes otFloatingBtnImageIntro{0%{opacity:0;transform:scale(0) rotate(-270deg)}100%{opacity:100%;transform:scale(0.95) rotate(0deg)}}</style></head>
 
 
-  <body>
+  <body class="proto-override">
+     <section id="cta_banner" role="banner">
+  <div>
+    <span class="flair">New</span>
+    <a class="cta-banner-link" href="https://web.grindr.com" target="_blank">
+      <span>Try Grindr on the&nbsp;</span>
+      <span>Web</span>
+      <img src="/assets/images/icon-external-link.svg" alt="Go to Grindr Web">
+    </a>
+    <div id="value_add_block" style="width: 10em;">
+      <span class="entering">Browse bigger</span>
+      <span>Chat faster</span>
+      <span>Use on any device</span>
+      <span class="exiting">No download required</span>
+    </div>
+  </div>
+</section>
+ 
     
     <div class="outer-container">
       <div id="navigation">
@@ -1133,6 +1153,9 @@ margin-top: 0px;
     <script src="/assets/js/gtag.js"></script>
     <!-- End Google Analytics -->
     <script src="/assets/js/common.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/cta-banner.js" nonce=""></script>
+    
      
     <script type="text/javascript" src="/assets/js/privacy-policy.js"></script>
      
