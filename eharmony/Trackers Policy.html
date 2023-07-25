@@ -15,7 +15,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
 <link rel='stylesheet' id='theme-css' href='/wp-content/themes/eharmony-theme/assets/dist/css/theme.css?ver=1.16.0' type='text/css' media='all' />
-<script type='text/javascript' nonce="73c3f7772b6097edb45139001c0cfc01" src='https://www.eharmony.co.uk/common/dynamicconf' id='dynamicconf-js'></script>
+<script type='text/javascript' nonce="2a97f9ccc6c819a22effb7820caf66ec" src='https://www.eharmony.co.uk/common/dynamicconf' id='dynamicconf-js'></script>
 
 
 <title>eharmony Cookies &amp; Tracking</title>
@@ -28,7 +28,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <meta property="og:url" content="https://www.eharmony.co.uk/cookiesandtracking/" />
 <meta property="og:image" content="https://www.eharmony.co.uk/wordpress" />
-<script type="application/ld+json" nonce="73c3f7772b6097edb45139001c0cfc01">
+<script type="application/ld+json" nonce="2a97f9ccc6c819a22effb7820caf66ec">
 [{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.eharmony.co.uk/cookiesandtracking/"},"headline":"Cookies &amp; Tracking Policy when using eharmony","datePublished":"2022-11-28T13:34:20+00:00","dateModified":"2023-01-30T13:53:00+00:00","author":{"@type":"Person","name":"Eharmony Editorial Team","familyName":"Editorial Team","givenName":"Eharmony"},"publisher":{"@context":"https://schema.org","@type":"Organization","@id":"https://www.eharmony.co.uk/cookiesandtracking/#organization","name":"eHarmony","url":"https://www.eharmony.co.uk","logo":{"@type":"ImageObject","url":"https://www.eharmony.co.uk/wp-content/plugins/parship-seo/assets/img/rich_snippet_logo_eharmony.png"},"sameAs":[]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","name":"eharmony","url":"https://www.eharmony.co.uk","@id":"https://www.eharmony.co.uk"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","name":"Cookies &amp; Tracking Policy when using eharmony","url":"https://www.eharmony.co.uk/cookiesandtracking","@id":"https://www.eharmony.co.uk/cookiesandtracking"}}],"@id":"https://www.eharmony.co.uk/cookiesandtracking/#breadcrumb"}]
 </script>
 
@@ -666,6 +666,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				name="mysex"
 				type="radio"
 				value="1"
+				data-gender="FEMALE"
 				aria-label="I am a woman"
 											>
 			<label for="mysexW-1" class="female">
@@ -677,42 +678,48 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				name="mysex"
 				type="radio"
 				value="0"
+				data-gender="MALE"
 				aria-label="I am a man"
 											>
 			<label for="mysexM-2" class="male">
 				a man			</label>
 		</span>
-	</fieldset>
+
+			</fieldset>
 
 	<fieldset>
 		<input type="hidden" name="essex" value="">
+		<input type="hidden" name="searchGenders" value="">
 
 		<span class="form-input radio">
 			<input
-				id="essexW-3"
+				id="essexW-4"
 				name="essexW"
 				data-bi-id="essexW"
 				type="checkbox"
 				value="1"
+				data-gender="FEMALE"
+				class="essex-input"
 				aria-label="I am looking for a woman"
 											>
-			<label for="essexW-3" class="female">
+			<label for="essexW-4" class="female">
 				a woman			</label>
 		</span>
 		<span class="form-input radio">
 			<input
-				id="essexM-4"
+				id="essexM-5"
 				name="essexM"
 				data-bi-id="essexM"
 				type="checkbox"
 				value="0"
+				data-gender="MALE"
+				class="essex-input"
 				aria-label="I am looking for a man"
 											>
-			<label for="essexM-4" class="male">
+			<label for="essexM-5" class="male">
 				a man			</label>
 		</span>
-	</fieldset>
-
+			</fieldset>
 </div>
 
 <fieldset>
@@ -721,10 +728,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			Please supply your email address.		</div>
 		<div class="hidden" aria-hidden="true">
 			<div class="form-input email has-hidden-label">
-				<label for="email-5">
+				<label for="email-7">
 					Your Email				</label>
 				<input
-					id="email-5"
+					id="email-7"
 					class="reg-form-email"
 					type="email"
 					name="email"
@@ -739,7 +746,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 	</div>
 	<div class="form-row">
 		<div
-			id="password-restriction-info-7"
+			id="password-restriction-info-9"
 			class="password-restriction-info form-notice"
 		>
 			<p>For your security, use the following password format:</p>
@@ -764,17 +771,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 		<div class="hidden" aria-hidden="true">
 			<div class="form-input password has-hidden-label">
-				<label for="password-6">
+				<label for="password-8">
 					Create your password				</label>
 				<input
-					id="password-6"
+					id="password-8"
 					class="reg-form-password"
 					type="password"
 					name="password"
 					value=""
 					placeholder="Create your password"
 					autocomplete="new-password"
-					aria-describedby="password-restriction-info-7"
+					aria-describedby="password-restriction-info-9"
 					disabled
 					data-bi-id="reg-password-input"
 				>
@@ -1068,17 +1075,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		</g>
 	</svg>
 </div>
-<link rel='stylesheet' id='psg-registration-form-css' href='/wp-content/plugins/psg-registration-form/assets/dist/css/registration-form-eharmony.css?ver=2.10.6' type='text/css' media='all' />
-<script type='text/javascript' nonce="73c3f7772b6097edb45139001c0cfc01" src='https://www.eharmony.co.uk/static_cms/eharmony/static/peg_utils/pmg_social_sign_on/pmg-social-sign-on.js' id='pmg-social-sign-on-js' defer></script>
-<script type='text/javascript' nonce="73c3f7772b6097edb45139001c0cfc01" src='https://www.eharmony.co.uk/static_cms/eharmony/static/peg_utils/peg_logger/peg_logger.js' id='external-logger-js'></script>
-<script type='text/javascript' nonce="73c3f7772b6097edb45139001c0cfc01" src='/wp-content/themes/eharmony-theme/assets/dist/js/theme.js?ver=1.16.0' id='theme-js' defer></script>
-<script type='text/javascript' nonce="73c3f7772b6097edb45139001c0cfc01" src='/wp-content/plugins/psg-registration-form/assets/dist/js/registration-form.js?ver=2.10.6' id='psg-registration-form-js' defer></script>
+<link rel='stylesheet' id='psg-registration-form-css' href='/wp-content/plugins/psg-registration-form/assets/dist/css/registration-form-eharmony.css?ver=2.11.0' type='text/css' media='all' />
+<script type='text/javascript' nonce="2a97f9ccc6c819a22effb7820caf66ec" src='https://www.eharmony.co.uk/static_cms/eharmony/static/peg_utils/pmg_social_sign_on/pmg-social-sign-on.js' id='pmg-social-sign-on-js' defer></script>
+<script type='text/javascript' nonce="2a97f9ccc6c819a22effb7820caf66ec" src='https://www.eharmony.co.uk/static_cms/eharmony/static/peg_utils/peg_logger/peg_logger.js' id='external-logger-js'></script>
+<script type='text/javascript' nonce="2a97f9ccc6c819a22effb7820caf66ec" src='/wp-content/themes/eharmony-theme/assets/dist/js/theme.js?ver=1.16.0' id='theme-js' defer></script>
+<script type='text/javascript' nonce="2a97f9ccc6c819a22effb7820caf66ec" src='/wp-content/plugins/psg-registration-form/assets/dist/js/registration-form.js?ver=2.11.0' id='psg-registration-form-js' defer></script>
 
 		<div id="pegTrackingContainer" style="display: none;" >
-			<script type="text/javascript" nonce="73c3f7772b6097edb45139001c0cfc01">
+			<script type="text/javascript" nonce="2a97f9ccc6c819a22effb7820caf66ec">
 var ptr = {"owner_id":2089,"owner_country":"GB","owner_language":"EN","owner_orientation":"HETERO","domain":"www.eharmony.co.uk","brand":"eh","env":"prod","site_type":"editorial"};
 </script>
-<script defer="defer" src="/static_cms/eharmony/static/peg_utils/tracking/pegtracking_combined.js" type="text/javascript" nonce="73c3f7772b6097edb45139001c0cfc01"></script>
+<script defer="defer" src="/static_cms/eharmony/static/peg_utils/tracking/pegtracking_combined.js" type="text/javascript" nonce="2a97f9ccc6c819a22effb7820caf66ec"></script>
 		</div>
 
 		</body>
