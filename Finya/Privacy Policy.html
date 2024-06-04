@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="de" translate="no">
+<head>
+    <script>
+        (function() {
+            var Cookies = (function(document, Date) {
+    var setCookie = function(name, value, millisecondDuration) {
+        var d = new Date();
+        d.setTime(d.getTime() + millisecondDuration);
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    };
+    var getCookie = function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    return {
+        set: setCookie,
+        get: getCookie
+    };
+})(document, Date)
+;
+            var hasFromAppParam = document.location.search.substring(1).split('&').some((part) => part.indexOf('from_app') === 0);
+            var hasFromAppCookie = Cookies.get('from_app') === '1';
+
+            if (hasFromAppParam && !hasFromAppCookie) {
+                var millisecondsADay = 86400000;
+                Cookies.set('from_app', '1', millisecondsADay);
+            }
+
+            if (hasFromAppCookie && !hasFromAppParam) {
+                document.location.href = document.location.href + (document.location.search ? '&' : '?') + 'from_app=1';
+            }
+        })()
+    </script>
+
+    <meta name="google" content="nopagereadaloud">
+    <link rel="alternate" href="https://www.finya.de/Legal/privacy/" hreflang="de-de">
+    <link rel="alternate" href="https://www.finya.at/Legal/privacy/" hreflang="de-at">
+    <link rel="alternate" href="https://www.finya.ch/Legal/privacy/" hreflang="de-ch">
+    <title>Datenschutz — Finya</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="Finya">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Finya">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Datenschutz — Finya">
+        <meta property="og:description" content="Informationen zum Datenschutz und zur Privatsphäre bei Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta itemprop="name" content="Finya">
+    <meta itemprop="description" content="Informationen zum Datenschutz und zur Privatsphäre bei Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta name="description" content="Informationen zum Datenschutz und zur Privatsphäre bei Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+        <link rel="icon" href="/assets/img/finya-favicon-144x144.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-6.3.0.all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/v/b55435d688edfde563702da9c99d4d6b/css/public.css">
+        
+    </head>
+<body class="public" data-locale="de_DE">
+            <header>
+            <div class="logo-wrapper">
+                <a href="/"><img src="/assets/img/finya-logo-2c-legacyblue-pos-500w.png" height="60"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Registration/signup/" class="header-link header-link-btn is--public">Kostenlos registrieren</a></div>
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Auth/signin/" class="header-link header-link-btn header-link-signin is--public">Login</a></div>
+            </div>
+        </header>
+        <div class="content">
+        
+<main style="word-break: break-word">
+    
+<h1>Datenschutzerklärung</h1>
+<p>des unter www.finya.de abrufbaren Internetdiensts der Finya GmbH &amp; Co. KG</p>
+
+<h2>1. Allgemeine Hinweise und Grundsätze der Datenverarbeitung</h2>
+<p>
+    Wir freuen uns, dass Sie unsere Website besuchen. Der Schutz Ihrer Privatsphäre und der Schutz Ihrer persönlichen
+    Daten, der sog. personenbezogenen Daten, bei der Nutzung unserer Website ist uns ein wichtiges Anliegen.
+</p>
+<p>
+    Personenbezogene Daten sind nach Art. 4 Nr. 1 DS-GVO alle Informationen, die sich auf eine identifizierte oder
+    identifizierbare natürliche Person beziehen. Hierzu fallen beispielsweise Informationen wie Ihre E-Mail-Adresse,
+    aber auch eine IP-Adresse.
+</p>
+<p>
+    Daten bei denen kein Bezug zu Ihrer Person herstellbar ist, wie beispielsweise durch eine Anonymisierung, sind keine
+    personenbezogenen Daten. Die Verarbeitung (z.&nbsp;B. Erheben, Speicherung, Auslesen, Abfragen, Verwendung,
+    Übermittlung, Löschen oder Vernichtung) personenbezogener Daten nach Art. 4 Nr. 2 DS-GVO bedarf immer einer
+    gesetzlichen Rechtsgrundlage oder einer Einwilligung. Verarbeitete personenbezogene Daten müssen gelöscht werden,
+    sobald der Zweck der Verarbeitung erreicht wurde und keine gesetzlich vorgeschriebenen Aufbewahrungspflichten mehr
+    zu wahren sind.
+</p>
+<p>
+    <b>Finya geht verantwortungsvoll mit Ihren sensiblen Daten um und gibt diese niemals an Dritte weiter.</b>
+</p>
+<p>
+    Hier finden Sie Informationen über den Umgang mit Ihren personenbezogenen Daten beim Besuch unserer Website. Zur
+    Bereitstellung der Funktionen und Dienste unserer Website ist es erforderlich, dass wir personenbezogene Daten über
+    Sie erheben.
+</p>
+<p>
+    Wir erläutern Ihnen im folgenden jeweils Art und den Umfang, Zweck, Rechtsgrundlage sowie die Speicherdauer der
+    jeweiligen Datenverarbeitung.
+</p>
+
+<h2>2. Verantwortliche Stelle</h2>
+<p>
+    Verantwortlich für die Verarbeitung von personenbezogenen Daten auf dieser Website ist (vgl. <a
+            href="/Legal/about/">Impressum</a>):
+</p>
+<p>
+    Finya GmbH & Co. KG<br>
+    Kehrwieder 11<br>
+    20457 Hamburg<br>
+    Deutschland<br>
+</p>
+<h2>3. Datenschutzbeauftragter</h2>
+<p>
+    Sie können sich bei Fragen zum Datenschutz auch jederzeit an unseren Datenschutzbeauftragten wenden:
+</p>
+<p>
+    Finya GmbH & Co. KG<br>
+    Datenschutzbeauftragter<br>
+    Kehrwieder 11<br>
+    20457 Hamburg<br>
+    Deutschland
+</p>
+<p>
+    E-Mail: datenschutz@finya.de
+</p>
+
+<h2>4. Bereitstellung und Nutzung der Website / Server Logfiles</h2>
+<h3>a) Art und Umfang der Datenverarbeitung</h3>
+<p>
+    Wenn Sie unsere Website aufrufen (also bei der bloßen Betrachtung ohne eine Registrierung und ohne dass Sie uns
+    anderweitig Informationen mitteilen) verarbeiten wir folgende personenbezogene Daten, welche Ihr Browser automatisch
+    an unseren Server übermittelt:
+</p>
+<ul class="compact">
+    <li>Datum und Uhrzeit der Anfrage</li>
+    <li>Zeitzonendifferenz zur Greenwich Mean Time (GMT)
+    <li>Inhalt der Anforderung (besuchte Seite)</li>
+    <li>Zugriffsstatus/HTTP-Statuscode</li>
+    <li>Jeweils übertragene Datenmenge</li>
+    <li>Internet-Adresse, von der aus die Seite bzw. Datei abgerufen bzw. die gewünschte Funktion veranlasst wurde
+        (Referrer URL)
+    </li>
+    <li>IP-Adresse</li>
+    <li>Verwendeter Browser</li>
+    <li>Sprache und Version der Browsersoftware</li>
+    <li>Betriebssystem</li>
+</ul>
+
+<h3>b) Zweck der Datenverarbeitung</h3>
+<p>
+    Diese oben beschriebenen Daten sind technisch erforderlich, um Ihnen die Nutzung unserer Website zu ermöglichen.
+    Zudem sind die Daten technisch erforderlich, um die Stabilität der Website und die IT-Sicherheit zu gewährleisten,
+    insbesondere zum Schutz unserer IT-Systeme vor Missbrauch und zur Abwehr von Angriffen.
+</p>
+
+<h3>c) Rechtsgrundlage</h3>
+<p>
+    Rechtsgrundlage für die Verarbeitung dieser Daten ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO bzw.
+    § 25 Abs. 2 Nr. 2 Telekommunikation-Telemedien-Datenschutz-Gesetz (TTDSG).
+</p>
+
+<h3>d) Speicherdauer</h3>
+<p>
+    Die zuvor genannten Daten werden für die Dauer des Kommunikationsvorgangs gespeichert, die IP-Adresse darüber hinaus
+    für die Gewährleistung der IT-Sicherheit für den erforderlichen Zeitraum.
+</p>
+
+<h3>e) Widerspruchsrecht</h3>
+<p>
+    Sie haben im Falle einer Verarbeitung Ihrer personenbezogenen Daten gemäß Art. 6 Abs. 1 S. 1 lit. f DS-GVO
+    grundsätzlich ein Widerspruchsrecht gemäß Art. 21 DS-GVO. Bei dem konkreten Datenverarbeitungsvorgang haben wir
+    allerdings zwingende schutzwürdige Gründe für die Verarbeitung der Daten, denn ohne Verarbeitung dieser Daten können
+    wir unsere Website nicht bereitstellen und betreiben.
+</p>
+
+<h2>5. Einsatz von Cookies (Cookie-Richtlinie)</h2>
+<p>
+    Wir verwenden Cookies. Cookies sind kleine Textdateien oder Informationen in einer Datenbank, die auf Ihrem Gerät
+    gespeichert werden. Cookies können von dem von Ihnen verwendeten Browser zugeordnet werden, sodass der Stelle, die
+    das Cookie setzt, bestimmte Informationen zufließen können. Cookies können keine Programme ausführen und keine Viren
+    enthalten. Auf unserer Website werden verschiedene Arten von Cookies verwendet, deren Art und Funktion im Folgenden
+    erläutert wird.
+</p>
+<p>
+    Einige Funktionen unserer Website können ohne den Einsatz technisch notwendiger Cookies nicht angeboten werden.
+    Andere Cookies ermöglichen uns dagegen verschiedene Analysen. So können einige Cookies den von Ihnen verwendeten
+    Browser bei einem erneuten Besuch unserer Website wiedererkennen und verschiedene Informationen an uns übermitteln.
+    Wir verwenden Cookies, um die Benutzung unserer Website zu erleichtern und zu verbessern. So können wir durch
+    Cookies unter anderem unser Internet-Angebot für Sie nutzerfreundlicher und effektiver gestalten, indem wir
+    beispielsweise Ihre Nutzung unserer Website nachvollziehen und Ihre bevorzugten Einstellungen (bspw. Länder- und
+    Spracheneinstellungen) feststellen. Sofern Dritte über Cookies Informationen verarbeiten, erheben diese die
+    Informationen direkt über Ihren Browser. Cookies richten auf Ihrem Endgerät keinen Schaden an.
+</p>
+<p>
+    Sofern im Rahmen von Datenverarbeitungen auf dieser Website Cookies oder cookieähnliche Technologien eingesetzt
+    werden, erfolgt die Speicherung von Informationen in der Endeinrichtung des Endnutzers oder der Zugriff auf bereits
+    in der Endeinrichtung des Endnutzers gespeicherte Information aufgrund Ihrer Einwilligung gemäß § 25 Abs. 1 S. 1
+    Telekommunikations-Telemedien-Datenschutz-Gesetz (TTDSG) in Verbindung mit den Voraussetzung einer
+    datenschutzrechtlichen Einwilligung gemäß Art. 4 Nr. 11, 7 DS-GVO.
+</p>
+<p>
+    Falls die Cookie-Nutzung der alleinige Zweck der Speicherung von Informationen in der Endeinrichtung des Endnutzers
+    oder der alleinige Zweck des Zugriffs auf bereits in der Endeinrichtung des Endnutzers gespeicherte Informationen
+    die Durchführung der Übertragung einer Nachricht über ein öffentliches Telekommunikationsnetz ist oder die
+    Speicherung von Informationen in der Endeinrichtung des Endnutzers oder der Zugriff auf bereits in der
+    Endeinrichtung des Endnutzers gespeicherte Informationen unbedingt erforderlich ist, damit der Anbieter eines
+    Telemediendienstes einen vom Nutzer ausdrücklich gewünschten Telemediendienst zur Verfügung stellen kann, erfolgen
+    die Datenverarbeitungen auf dieser Website aufgrund von Cookies oder cookieähnliche Technologien auf Grundlage von §
+    25 Abs. 2 TTDSG.
+</p>
+<p>
+    Für die nachfolgenden Verarbeitungen personenbezogener Daten sind wiederum die allgemeinen Vorgaben der DS-GVO gemäß
+    Art. 6 Abs. 1 DS-GVO zu beachten:
+</p>
+<ul class="compact">
+    <li>Sofern Sie eine Einwilligung erteilt haben ist die Rechtsgrundlage für die nachfolgende Verarbeitung
+        personenbzogener Daten Art. 6 Abs. 1 S. 1 lit. a DS-GVO.
+    </li>
+    <li>Sofern die Verarbeitung personebezogener Daten aufgrund unseres berechtigten Interesses erforderlich ist, ist
+        die Rechtsgrundlage für die nachfolgende Verarbeitung personenbzogener Daten Art. 6 Abs. 1 S. 1 lit. f DS-GVO.
+    </li>
+</ul>
+<h3>a) Temporäre Cookies / Session-Cookies</h3>
+<p>
+    Auf unserer Website werden sog. temporäre Cookies bzw. Session-Cookies verwendet, die automatisch gelöscht werden,
+    sobald Sie Ihren Browser schließen. Durch diese Art von Cookies ist es möglich, Ihre Session-ID zu erfassen. Dadurch
+    lassen sich verschiedene Anfragen Ihres Browsers einer gemeinsamen Sitzung zuordnen und es ist möglich, Ihr Endgerät
+    bei späteren Websitenbesuchen wiederzuerkennen. Diese Session-Cookies verfallen spätestens nach 30 Tagen.
+</p>
+
+<h3>b) Permanente Cookies</h3>
+<p>
+    Auf unserer Website werden sog. Permanente Cookies eingesetzt. Permanente Cookies sind Cookies, die über einen
+    längeren Zeitraum in Ihrem Browser gespeichert werden und Informationen übermitteln können. Die jeweilige
+    Speicherdauer unterscheidet sich je nach Cookie. Sie können permanente Cookies eigenständig über Ihre
+    Browsereinstellungen einsehen und löschen.
+</p>
+
+<h3>c) Konfiguration der Browsereinstellungen</h3>
+<p>
+    Die meisten Webbrowser sind so voreingestellt, dass Cookies automatisch akzeptiert werden. Sie können Ihren
+    jeweiligen Browser jedoch so konfigurieren, dass er nur noch bestimmte oder auch gar keine Cookies mehr akzeptiert.
+    Wir weisen Sie jedoch darauf hin, dass Sie dann möglicherweise nicht mehr alle Funktionen unserer Website nutzen
+    können. Über Ihre Browsereinstellungen können Sie zudem auch bereits in Ihrem Browser gespeicherte Cookies
+    löschen. Des Weiteren ist es möglich, Ihren Browser so einzustellen, dass er Sie benachrichtigt, bevor Cookies
+    gespeichert werden. Da sich die verschiedenen Browser in ihren jeweiligen Funktionsweisen unterscheiden können,
+    bitten wir Sie, das jeweilige Hilfemenü Ihres Browsers für die entsprechenden Konfigurationsmöglichkeiten in
+    Anspruch zu nehmen.
+</p>
+
+<h3>d) Cookie-Einwilligung</h3>
+<p>Unsere Webseite verwendet ein Consent-Management-System, um Ihre Einwilligung zur Speicherung von Cookies in Ihrem
+    Browser einzuholen und diese datenschutzkonform zu dokumentieren.
+</p>
+<p>
+    Beim Betreten der Webseite speichert unser Consent-Management-System ein Cookie in Ihrem Browser, in dem die von
+    Ihnen erteilten Einwilligungen bzw. Widerrufe der Einwilligungen dokumentiert werden. Hierbei handelt es sich um ein
+    notwendiges Cookie, welches keiner Einwilligung bedarf.
+</p>
+<p>
+    Rechtsgrundlage für die Datenverarbeitung ist § 25 Abs. 2 Nr. 2 TTDSG bzw. Art. 6 Abs. 1 S. 1 lit. f DS-GVO. Wir
+    haben ein berechtigtes Interesse daran, den Nachweis für ein datenschutzkonformes Einwilligungsmanagement erbringen
+    zu können.
+</p>
+<p>
+    Die Cookies werden so lange gespeichert, bis Sie uns auffordern, diese Daten zu löschen, Sie das Cookie selbst
+    löschen oder die Speicherung für den Zweck der Datenverarbeitung nicht mehr erforderlich ist.
+</p>
+<p>
+    Sie können Ihre Cookie-Einstellungen unter folgenden Link jederzeit ändern:<br>
+    <a href="javascript:void(0);" onclick="cookieConsent.showCookieBanner();">Cookies verwalten</a>
+</p>
+
+<h3>e) Cookie-Kategorien</h3>
+<p>
+    Wir verwenden folgende Kategorien von Cookies:
+</p>
+
+<h4>Erforderliche Cookies</h4>
+<p>
+    Erforderliche Cookies gewährleisten Funktionen ohne die unsere Website nicht wie vorgesehen genutzt werden kann.
+    Diese unbedingt notwendigen Cookies dienen zum Beispiel dazu, dass angemeldete Nutzer bei Zugriff auf verschiedene
+    Unterseiten stets angemeldet bleiben. Es handelt sich um sog. Erstanbieter-Cookies (First Party Cookies), diese
+    Cookies werden ausschließlich von uns verwendet. Da diese technisch erforderlich sind, bedürfen diese Cookies keiner
+    Einwilligung. Rechtsgrundlage für die Verarbeitung Ihrer personenbezogenen Daten ist § 25 Abs. 2 Nr. 2 TTDSG bzw.
+    Art. 6 Abs. 1 S. 1 lit. f DS-GVO, da wir ein berechtigtes Interesse in der Aufrechterhaltung der Funktionalität
+    unseres Webseitauftritts haben. Sobald die Cookies für die beschriebenen Zwecke nicht mehr erforderlich sind,
+    werden diese gelöscht. Ihnen steht grundsätzlich ein Widerspruchsrecht nach Maßgabe von Art. 21 DS-GVO zu. Bei
+    technisch notwendigen Cookies haben wir allerdings zwingende schutzwürdige Gründe für die Verarbeitung der Daten,
+    denn ohne Verarbeitung dieser Daten können wir unsere Website bzw. die jeweilige Funktionalität nicht oder nicht
+    ordnungsgemäß bereitstellen.
+</p>
+
+<h4>Statistik-Cookies</h4>
+<p>
+    Statistik-Cookies sammeln Informationen über die Nutzungsweise einer Website um deren Attraktivität, Inhalt und
+    Funktionalität zu verbessern. So werden z.&nbsp;B. folgende Daten gesammelt:
+</p>
+<ul class="compact">
+    <li>Anzahl der Zugriffe auf eine Seite bzw. Unterseite</li>
+    <li>Verweildauer auf der Website</li>
+    <li>Reihenfolge der besuchten Seiten</li>
+    <li>Suchbegriffe</li>
+    <li>Land, Region, Stadt, aus der der Zugriff erfolgt</li>
+    <li>Anteil von mobilen Endgeräten, die auf unsere Websiten zugreifen</li>
+    <li>Analyse, welche Bereiche unserer Website Sie besonders interessieren</li>
+</ul>
+<p>
+    Rechtsgrundlage für die Verarbeitung dieser personenbezogenen Daten ist Ihre Einwilligung gemäß § 25 Abs. 1 S. 1
+    TTDSG in Verbindung mit Art. 4 Nr. 11, 7 DS-GVO bzw. Art. 6 Abs. 1 S. 1 lit. a DS-GVO für die nachfolgende
+    Verarbeitung personenbezogener Daten. Sobald die Cookies für die beschriebenen Zwecke nicht mehr erforderlich sind,
+    die Speicherdauer endet oder Sie Ihre Einwilligung widerrufen, werden diese Cookies gelöscht.
+</p>
+
+<h2>6. Dienste mit erforderlichen Cookies</h2>
+<p>
+    Neben unserer Consent-Management-System (siehe oben) setzen wir folgende Dienste mit erforderlichen Cookies ein:
+</p>
+
+<h3>Google reCAPTCHA</h3>
+<h4>a) Art und Umfang der Datenverarbeitung</h4>
+<p>
+    Wir verwenden reCAPTCHA, einen Dienst des Unternehmens Google Ireland Limited, Gordon House, Barrow Street, Dublin
+    4, Ireland, Tel: +353 1 543 1000, Fax: +353 1 686 5660, ("Google").
+</p>
+<p>
+    Hierbei werden IP-Adressen sowie das Nutzerverhalten (Verweildauer des Webseitenbesuchers oder vom Nutzer getätigte
+    Mausbewegungen) verarbeitet und an Google übermittelt.
+</p>
+<p>
+    Wir weisen darauf hin, dass der Europäische Gerichtshof (EuGH) Zweifel an der Angemessenheit des Datenschutzniveaus
+    in den USA hat. Es besteht insbesondere das Risiko, dass personenbezogene Daten durch die staatlichen Behörden zu
+    Kontroll- und Überwachungszwecken, möglicherweise auch ohne Rechtsbehelfsmöglichkeiten, verarbeitet werden können.
+</p>
+<h4>b) Zweck der Datenverarbeitung</h4>
+<p>
+    Zweck der Verwendung von Google reCAPTCHA, ist die Datensicherheit bei der Übermittlung von Formularen zu
+    gewährleisten. Dies dient vor allem zur Unterscheidung, ob die Eingabe durch eine natürliche Person erfolgt oder
+    missbräuchlich durch maschinelle und automatisierte Verarbeitung (sog. Bot).
+</p>
+
+<h4>c) Rechtsgrundlage</h4>
+<p>
+    Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO. Unser berechtigtes Interesse liegt in der Datensicherheit
+    unseres Webseitauftritts und in der Abwehr unerwünschter, automatisierter Zugriffe und von Spam.
+</p>
+
+<h4>d) Speicherdauer</h4>
+<p>
+    Die gespeicherten Daten werden gelöscht, sobald diese zur Zweckerfüllung nicht mehr benötigt werden.
+</p>
+
+<h4>e) Widerspruchsrecht</h4>
+<p>
+    Ihnen steht grundsätzlich ein Widerspruchsrecht nach Maßgabe von Art. 21 DS-GVO zu. Wir haben allerdings zwingende
+    schutzwürdige Gründe für die Verarbeitung der Daten, denn ohne Verarbeitung dieser Daten können wir Datensicherheit
+    der Webseite nicht gewährleisten.
+</p>
+
+<h4>f) Weitere Informationen</h4>
+<p>
+    Weitere Informationen zur Datenverarbeitung können Sie der Datenschutzerklärung von Google unter
+    http://www.google.de/intl/de/privacy entnehmen.
+</p>
+
+<h2>7. Dienste mit Statistik-Cookies</h2>
+
+<h3>ScorecardResearch</h3>
+
+<h4>a) Art und Umfang der Datenverarbeitung</h4>
+<p>
+    Wir setzen auf unser Website ScorecardResearch ein, einen Dienst des Unternehmens Full Circle Studies, Inc., 11950
+    Democracy Drive, Reston, VA 20190, USA.
+</p>
+<p>
+    ScorecardResearch erhebt Daten über sog. Web Tags. Hierbei handelt es sich um einen Code, der auf Websiten platziert
+    wird und welcher Informationen über allgemeine Besuchsmuster sammelt. Darüber hinaus verarbeitet Cookies, die auf
+    Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website ermöglichen. Hierbei werden Ihre
+    IP-Adresse und Ihr Nutzerverhalten verarbeitet.
+</p>
+<p>
+    Wir weisen darauf hin, dass der Europäische Gerichtshof (EuGH) Zweifel an der Angemessenheit des Datenschutzniveaus
+    in den USA hat. Es besteht insbesondere das Risiko, dass personenbezogene Daten durch die staatlichen Behörden zu
+    Kontroll- und Überwachungszwecken, möglicherweise auch ohne Rechtsbehelfsmöglichkeiten, verarbeitet werden können.
+</p>
+<h4>b) Zweck der Datenverarbeitung</h4>
+<p>
+    Der Dienst dient zur Analyse des Nutzungsverhaltens unseres Internetauftritts.
+</p>
+<h4>c) Rechtsgrundlage</h4>
+<p>
+    Rechtsgrundlage für die Verwendung von ScorecardResearch ist Ihre Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a DS-GVO.
+</p>
+<h4>d) Speicherdauer</h4>
+<p>
+    Die gespeicherten Daten werden gelöscht, sobald die Laufzeit des Cookies abläuft oder Sie einen Widerruf erteilen.
+    Die Cookies wird längstens zwei Jahre gespeichert.
+</p>
+
+<h4>e) Widerrufsrecht</h4>
+<p>
+    Die gespeicherten Daten werden gelöscht, sobald Sie einen Widerruf erteilen, indem Sie unter „<a
+            href="javascript:void(0);" onclick="cookieConsent.showCookieBanner();">Cookies verwalten</a>“
+    auf die Schaltfläche „Ablehnen“ klicken.
+</p>
+<h4>f) Weitere Informationen</h4>
+<p>
+    Nähere Informationen zur Datenverarbeitung durch ScorecardResearch finden Sie in den Datenschutzhinweisen unter
+    http://www.fullcirclestudies.com/privacy.aspx
+</p>
+
+<h2>8. Zendesk Support</h2>
+
+<h3>a) Art und Umfang der Datenverarbeitung</h3>
+<p>
+    Auf unserer Website ermöglichen wir Ihnen, uns über ein Ticketsystem Support-Anfragen zukommen zu lassen. Wir nutzen
+    für Kundenanfragen das Ticketsystem der Kundenserviceplattform Zendesk, Inc, 1019 Market Street in San Francisco, CA
+    94103 USA. Um diesen Dienst nutzen zu können, müssen Sie eine korrekte E-Mail-Adresse angeben. Die Eingabe der
+    sonstigen Informationen ist freiwillig.
+</p>
+<p>
+    Die Nutzung des Dienstes von Zendesk ist optional. Sollten Sie nicht einverstanden damit sein, dass Zendesk Ihre
+    Daten erhebt, bieten wir Ihnen alternative Kontaktmöglichkeiten zur Einreichung von Service-Anfragen per Telefon
+    oder Post.
+</p>
+<h3>b) Zweck</h3>
+<p>
+    Wenn Sie Zedesk eine Anfrage senden, werden Ihre personenbezogenen Daten verarbeitet, soweit sie zur Bearbeitung
+    Ihrer Anfrage benötigt werden.
+</p>
+
+<h3>c) Rechtsgrundlage</h3>
+<p>
+    Die Rechtsgrundlage für die Nutzung dieses Dienstes ist Art. 6 Abs. 1 Satz. 1 lit. b DS-GVO zur Erfüllung eines
+    Vertrages.
+</p>
+<h3>d) Speicherdauer</h3>
+<p>
+    Die Daten werden so lange gespeichert, wie Sie zur Support-Anfrage erforderlich sind. Hiervon bleiben zwingende
+    gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen nach dem Handelsgesetzbuch (HGB) oder der
+    Abgabenordnung (AO) – unberührt.
+</p>
+<h3>e) Kategorien von Empfängern</h3>
+<p>
+    Die Zendesk übernimmt in unserem Namen die Betreuung und den Support des. Im Zusammenhang mit Ihrer Supprt Anfrage
+    erfolgt eine Weitergabe Ihrer Daten an Zendesk. Eine darüber hinausgehende Weitergabe an Dritte erfolgt nicht.
+</p>
+<h3>f) Weitere Informationen</h3>
+<p>
+    Weitere Informationen erhalten Sie in der Datenschutzerklärung von Zendesk unter
+    https://www.zendesk.de/company/customers-partners/privacy-policy/.
+</p>
+<h2>9. Registrierungsmöglichkeit</h2>
+
+<h3>a) Art und Umfang der Datenverarbeitung</h3>
+<p>
+    Auf unserer Website können Sie sich registrieren. Wenn Sie sich registrieren, erheben und speichern wir die Daten,
+    die Sie in die Eingabemaske eingeben (z.&nbsp;B. Pseudonym, Alter, Wohnort, E-Mail-Adresse). Eine Weitergabe an
+    Dritte findet nicht statt.
+</p>
+<p>
+    Darüber hinaus kann es im Rahmen der Anmeldung Ihres Benutzerkontos zum Zweck der Validierung für Sie
+    erforderlich sein, eine Zwei-Faktor-Authentifizierung (2FA) durchzuführen. Hierzu erhalten Sie einen Code per SMS an
+    Ihr Mobilfunkgerät. Nach erfolgreicher Eingabe dieses Codes auf unserer Website speichern und verknüpfen
+    wir Ihre Mobilfunknummer mit Ihrem Benutzerkonto.
+</p>
+<p>
+    Für die Nutzung der Zwei-Faktor-Authentifizierung benötigen Sie ein Mobilfunkgerät (z.B. Smartphone), das für den
+    SMS-Empfang geeignet ist. Es können ausschließlich Mobilfunknummern aus den Ländern Deutschland, Österreich, Schweiz
+    (DACH-Region) verwendet werden.
+</p>
+<p>
+    Sollte die Zwei-Faktor-Authentifizierung bei Ihrer Registrierung nicht erforderlich sein, haben Sie ggf. dennoch die
+    Möglichkeit, diese zu einem späteren Zeitpunkt auf unserer Website selbstständig zu konfigurieren.
+</p>
+
+<h3>b) Zweck der Datenverarbeitung</h3>
+<p>
+    Ihre Registrierung ist für die Nutzung bestimmter Inhalte und Leistungen auf unserer Website bzw. für die Erfüllung
+    eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen erforderlich. Nach der Registrierung steht es Ihnen
+    frei, die bei der Registrierung angegebenen personenbezogenen Daten jederzeit abzuändern oder vollständig aus dem
+    Datenbestand des für die Verarbeitung Verantwortlichen löschen zu lassen.
+</p>
+
+<h3>c) Rechtsgrundlage</h3>
+<p>
+    Rechtsgrundlage für die Verarbeitung ist im Falle einer Einwilligung Art. 6 Abs.1 S. 1 lit. a
+    DS-GVO. Dient Ihre Registrierung der Vorbereitung eines Vertragsabschlusses, ist Art. 6 Abs.1 S. 1 lit. b DS-GVO
+    zusätzliche Rechtsgrundlage.
+</p>
+<h3>d) Speicherdauer</h3>
+<p>
+    Die bei der Registrierung erfassten Daten werden von uns gespeichert, solange Sie auf unserer Website registriert
+    sind. Gesetzliche Aufbewahrungsfristen bleiben unberührt.
+</p>
+<h2>10. Datenübermittlung</h2>
+<p>
+    Wir geben Ihre personenbezogenen Daten nur an Dritte weiter, wenn,
+</p>
+<ol type="a">
+    <li>
+        Sie hierzu Ihre ausdrückliche Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a DS-GVO erteilt haben;
+    </li>
+    <li>
+        dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 lit. b DS-GVO zur Erfüllung eines Vertragsverhältnisses
+        mit Ihnen oder der Durchführung vorvertraglicher Maßnahmen erforderlich ist;
+    </li>
+    <li>
+        nach Art. 6 Abs. 1 S. 1 lit. c DS-GVO für die Weitergabe eine rechtliche Verpflichtung besteht. Gesetzlich
+        verpflichtet sind wir zur Übermittlung von Daten an staatliche Behörden, z.&nbsp;B. Steuerbehörden,
+        Sozialversicherungsträgern, Krankenkassen, Aufsichtsbehörden und Strafverfolgungsbehörden;
+    </li>
+    <li>
+        die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DS-GVO zur Wahrung berechtigter Unternehmensinteressen, sowie zur
+        Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist und kein Grund zur Annahme
+        besteht, dass Sie ein überwiegendes schutzwürdiges Interesse an der Nichtweitergabe Ihrer Daten haben;
+    </li>
+    <li>
+        wir gemäß Art. 28 Abs. 3 DS-GVO bei der Verarbeitung personenbezogener Daten externe Dienstleister (sog.
+        Auftragsverarbeiter) einsetzen. Diese wurden von uns sorgfältig ausgewählt und durch einen
+        Auftragsverarbeitungsvertrag zum datenschutzkonformen Umgang mit personenbezogenen Daten verpflichtet. Wir
+        setzen solche externen Dienstleister in den folgenden Bereichen ein:
+        <ul class="compact">
+            <li>IT</li>
+            <li>Telekommunikation</li>
+        </ul>
+
+    </li>
+</ol>
+<p>
+    Bei der Übermittlung personenbezogener Daten in sog. Drittländer, d.h. außerhalb der EU bzw. des EWR, stellen wir
+    sicher, dass Ihre personenbezogenen Daten mit der gleichen Sorgfalt behandelt werden, wie innerhalb der EU bzw. des
+    EWR. Wir übermitteln personenbezogene Daten nur in Drittländer, bei denen die EU-Kommission ein angemessenes
+    Datenschutzniveau bestätigt hat oder wenn wir den sorgfältigen Umgang mit den personenbezogenen Daten durch
+    vertragliche Vereinbarungen oder andere geeignete Garantien sichergestellt haben.
+</p>
+
+<h2>11. Kontaktmöglichkeiten per E-Mail</h2>
+
+<h3>a) Art und Umfang der Datenverarbeitung</h3>
+<p>
+    Sie können sich an uns per E-Mail wenden. Unsere Datenerhebung beschränkt sich dabei auf die E-Mail-Adresse des von
+    Ihnen zur Kontaktaufnahme verwendeten E-Mail-Accounts sowie auf die von Ihnen im Rahmen der Kontaktaufnahme beliebig
+    zur Verfügung gestellten personenbezogenen Daten. Wenn Sie uns eine E-Mail unverschlüsselt versenden, ist die
+    E-Mail gegen unbefugte Kenntnisnahme oder auch Veränderung durch Dritte während der Übertragung nicht geschützt.
+</p>
+
+<h3>b) Zweck der Datenverarbeitung</h3>
+<p>
+    Zweck der Datenverarbeitung ist die Möglichkeit, Ihr Anliegen sachgerecht beantworten zu können.
+</p>
+
+<h3>c) Rechtsgrundlage</h3>
+<p>
+    Die Rechtsgrundlage hierfür ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO. Es besteht ein berechtigtes Interesse an der
+    Verarbeitung der oben genannten personenbezogenen Daten, um Ihr Anliegen sachgerecht bearbeiten zu können, z.&nbsp;B.
+    die Beantwortung Ihrer Anfrage oder Erfüllung Ihres Informationswunschs.
+</p>
+
+<h3>d) Speicherdauer</h3>
+<p>
+    Die Dauer der Speicherung der oben genannten Daten ist abhängig vom Hintergrund Ihrer Kontaktaufnahme. Eine
+    Löschung Ihrer personenbezogenen Daten erfolgt regelmäßig, sofern der verfolgte Zweck der Kommunikation entfallen
+    und eine Speicherung nicht mehr erforderlich ist.
+</p>
+
+<h2>12. Datensicherheit und Sicherungsmaßnahmen </h2>
+<p>
+    Wir verpflichten uns, Ihre Privatsphäre zu schützen und Ihre personenbezogenen Daten vertraulich zu behandeln.
+    Dazu treffen wir umfangreiche technische und organisatorische Sicherheitsvorkehrungen, welche regelmäßig
+    überprüft und dem technologischen Fortschritt angepasst werden.
+</p>
+<p>
+    Hierzu gehört unter anderem die Verwendung anerkannter Verschlüsselungsverfahren (SSL oder TLS). Unverschlüsselt
+    preisgegebene Daten, beispielsweise wenn dies per unverschlüsselter E-Mail erfolgt, können aber eventuell von
+    Dritten mitgelesen werden. Darauf haben wir keinen Einfluss. Es liegt im Verantwortungsbereich des jeweiligen
+    Nutzers, die von ihm zur Verfügung gestellten Daten durch Verschlüsselung oder in sonstiger Weise gegen Missbrauch
+    zu schützen.
+</p>
+
+<h2>13. Ihre Rechte als Betroffener</h2>
+<p>
+    Hier finden Sie Ihre Rechte in Bezug auf Ihre personenbezogenen Daten. Einzelheiten dazu ergeben sich aus den
+    Artikeln 7, 15-22 und 77 DS-GVO. Sie können sich diesbezüglich an die verantwortliche Stelle (Ziff. 2) oder den
+    Datenschutzbeauftragten (Ziff. 3) wenden.
+</p>
+<h3>a) Recht auf Widerruf Ihrer datenschutzrechtlichen Einwilligung nach Art. 7 Abs. 3 S. 1 DS-GVO</h3>
+<p>
+    Sie können eine Einwilligung in die Verarbeitung Ihrer personenbezogenen Daten jeder-zeit mit Wirkung für die
+    Zukunft widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung wird davon nicht berührt.
+</p>
+
+<h3>b) Auskunftsrecht nach Art. 15 DS-GVO i.V.m. § 34 BDSG</h3>
+<p>
+    Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob wir personenbezogene Daten verarbeiten, die Sie
+    betreffen. Ist dies der Fall, so haben Sie das Recht auf Aus-kunft über diese personenbezogenen Daten sowie auf
+    weitere Informationen, z.&nbsp;B. die Verarbeitungszwecke, die Kategorien verarbeiteter personenbezogener Daten, die
+    Empfänger und die geplante Dauer der Speicherung bzw. die Kriterien für die Festlegung der Dauer.
+</p>
+<h3>c) Recht auf Berichtigung und Vervollständigung nach Art. 16 DS-GVO</h3>
+<p>
+    Sie haben das Recht, unverzüglich die Berichtigung unrichtiger Daten zu verlangen. Unter Berücksichtigung der Zwecke
+    der Verarbeitung haben Sie das Recht, die Vervoll-ständigung unvollständiger Daten zu verlangen.
+</p>
+<h3>d) Recht auf Löschung („Recht auf Vergessenwerden“) nach Art. 17 DS-GVO i.V.m. § 35 BDSG</h3>
+<p>
+    Sie haben ein Recht zur Löschung, soweit die Verarbeitung nicht erforderlich ist. Dies ist beispielsweise der Fall,
+    wenn Ihre Daten für die ursprünglichen Zwecke nicht mehr notwendig sind, Sie Ihre datenschutzrechtliche
+    Einwilligungserklärung widerrufen haben oder die Daten unrechtmäßig verarbeitet wurden.
+</p>
+
+<h3>e) Recht auf Einschränkung der Verarbeitung nach Art. 18 DS-GVO</h3>
+<p>
+    Sie haben ein Recht auf Einschränkung der Verarbeitung, z.&nbsp;B. wenn Sie der Meinung sind, die personenbezogenen
+    Daten seien unrichtig.
+</p>
+<h3>f) Recht auf Datenübertragbarkeit nach Art. 20 DS-GVO</h3>
+<p>
+    Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem struk-turierten, gängigen und
+    maschinenlesbaren Format zu erhalten.
+</p>
+<h3>g) Widerspruchsrecht nach Art. 21 DS-GVO</h3>
+<p>
+    Sie können einer Datenverarbeitung aus Gründen, die sich aus Ihrer besonderen Situation ergeben, widersprechen. Dies
+    gilt jedoch lediglich in solchen Fällen, in denen wir eine Datenverarbeitung zur Erfüllung eines berechtigten
+    Interesses vornehmen. Falls Sie einen solchen Grund vortragen können und wir kein zwingendes, schutzwürdiges
+    Interesse an der weiteren Verarbeitung geltend machen können, werden wir diese Daten für den jeweiligen Zweck nicht
+    mehr verarbeiten.
+</p>
+<h3>h) Automatisierte Entscheidung im Einzelfall einschließlich Profiling nach Art. 22 DS-GVO</h3>
+<p>
+    Sie werden keiner ausschließlich auf einer automatisierten Verarbeitung Ihrer Daten einschließlich Profiling
+    beruhenden Entscheidung unterworfen, die Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise
+    erheblich beeinträchtigt.
+</p>
+<h3>i) Beschwerde bei einer Datenschutzaufsichtsbehörde nach Art. 77 DS-GVO</h3>
+<p>
+    Sie können jederzeit Beschwerde bei einer Datenschutzaufsichtsbehörde einlegen, beispielsweise wenn Sie der Meinung
+    sind, dass die Datenverarbeitung nicht im Einklang mit den datenschutzrechtlichen Vorschriften steht.
+</p>
+<p>
+    Zuständige Datenschutzaufsichtsbehörde:
+</p>
+<p>
+    Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit der Freien und Hansestadt Hamburg<br>
+    Ludwig-Erhard-Str. 22<br>
+    20459 Hamburg<br>
+    Deutschland<br>
+</p>
+<p>
+    Tel.: 040 42854 - 4040<br>
+    Fax: 040 42854 - 4000
+</p>
+<p>
+    E-Mail: mailbox@datenschutz.hamburg.de<br>
+    Homepage: https://datenschutz-hamburg.de
+</p>
+<h2>14. Änderungen der Datenschutzerklärung </h2>
+<p>
+    Unsere Datenschutzerklärung dient der Erfüllung gesetzlicher Informationspflichten.
+    Wir aktualisieren unsere Datenschutzerklärung, soweit dies erforderlich wird.
+</p>
+<p>
+    <br>Stand: Juni 2021
+</p>
+
+    <div style="margin-top: 30px">
+        <b>Weitere Links:</b><br>
+        <li><a href="/Legal/terms/">Nutzungsbedingungen</li>
+        <li><a href="/Legal/about/">Kontakt</a></li>
+                <li><a href="/Legal/about/">Impressum</a></li>
+    </div>
+</main>
+    </div>
+    
+<footer>
+    <div class="footer-content">
+        <div class="footer-linklist">
+            <div class="linklist-title">Finya</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/?q=101">Über uns</a></li>
+                <li><a href="/Registration/signup/">Kostenlos registrieren</a></li>
+                <li><a href="/Auth/signin/">Login</a></li>
+                <li><a href="/Legal/privacy/?p=de">Datenschutz</a></li>
+                <li><a href="javascript:void(0);" onclick="cookieConsent.showCookieBanner();">Cookies verwalten</a></li>
+                <li><a href="/Legal/terms/">Nutzungsbedingungen</a></li>
+                <li><a href="/Legal/about/">Impressum</a></li>
+                <li>&nbsp;</li>
+                                    <li><a href="https://www.finya.de/Misc/chLocale/?l=de_DE" hreflang="de-de">Finya Deutschland</a></li>
+                    <li><a href="https://www.finya.at/Misc/chLocale/?l=de_AT" hreflang="de-at">Finya Österreich</a></li>
+                    <li><a href="https://www.finya.ch/Misc/chLocale/?l=de_CH" hreflang="de-ch">Finya Schweiz</a></li>
+                                                </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Häufige Fragen</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/" rel="help">Hilfe und FAQ</a></li>
+                <li><a href="/Help/faq/?q=101">Was ist Finya?</a></li>
+                <li><a href="/Help/faq/?q=001">Warum ist Finya kostenlos?</a></li>
+                <li><a href="/Help/faq/?q=108">Kostenlos und seriös: wie geht das?</a></li>
+                <li>&nbsp;</li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://apps.apple.com/de/app/finya/id1584652796/?fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/app-store-badge.png" height="40" alt="Finya im App Store laden">
+                                            </a>
+                </li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://play.google.com/store/apps/details?id=com.finya.app%26fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/google-play-badge.png" height="40" alt="Finya bei Google Play laden">
+                                            </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Weitere Infos</div>
+            <ul class="linklist-items">
+                                    <li><a href="/Blog/">Blog</a></li>
+                    <li><a href="/Singles/">Singles</a></li>
+                
+                                    <li><a href="/Singles/aus/Berlin/">Singles in Berlin</a></li>
+                    <li><a href="/Singles/aus/Hamburg/">Singles in Hamburg</a></li>
+                    <li><a href="/Singles/aus/M%C3%BCnchen/">Singles in München</a></li>
+                    <li><a href="/Singles/aus/K%C3%B6ln/">Singles in Köln</a></li>
+                    <li><a href="/Singles/aus/Frankfurt%20am%20Main/">Singles in Frankfurt</a></li>
+                    <li>&nbsp;</li>
+                
+                                    <li><a href="https://www.facebook.com/finya">Finya bei Facebook</a></li>
+                    <li><a href="https://www.twitter.com/finya_DE">Finya bei Twitter</a></li>
+                    <li>&nbsp;</li>
+                                <li><a href="#top" onclick="document.querySelector('a[name=top]').scrollIntoView({'behavior':'smooth'});return false;"><i class="far fa-arrow-up"></i> Seitenanfang</a></li>
+            </ul>
+        </div>
+        <div class="footer-end">
+            Copyright &copy; 2001-2024 Finya GmbH &amp; Co. KG. Alle Rechte vorbehalten.<br>
+            Hand-crafted with <i class="fas fa-heart"></i> in Hamburg.        </div>
+    </div>
+</footer>
+    <style>
+  .cookie-consent-banner {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    width: calc(100% - 10px);
+    padding: 2em;
+    background-color: #1B9DFF;
+    color: #ffffff;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner {
+      flex-direction: column;
+    }
+  }
+
+  .cookie-consent-banner.visible {
+    display: flex;
+  }
+
+  .cookie-consent-banner__text {
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner__text {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .cookie-consent-banner__buttons {
+    display: flex;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+
+  .cookie-consent-banner__buttons__button:hover {
+    background-color: #eceff1;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.3);
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button {
+      flex-basis: auto;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+<script>
+  const cookieConsent = (function(document, location) {
+    const cookies = [
+      'ccStatistics',
+      // 'ccSocialMedia',
+    ]
+
+    let currentSelection = {}
+
+    const getCookie = (name) => {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    // const setCookieSelection = (name, value) => {
+    //   if (value !== undefined) {
+    //     document.querySelector(`input[name="${name}"][value="${value ? '1' : '-1'}"]`).checked = true
+    //   }
+    // }
+
+    const saveCookieSettings = (name, value) => {
+      let selectionCount = 0
+      let acceptedCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+        if (currentSelection[cookies[i]] === true) {
+          acceptedCount ++
+        }
+      }
+
+      let durationDays
+      if (acceptedCount === cookies.length) {
+        durationDays = 365
+      } else {
+        durationDays = 30
+      }
+
+      const d = new Date();
+      d.setTime(d.getTime() + (durationDays * 24 * 60 * 60 * 1000))
+      let expires = "expires="+ d.toUTCString()
+
+      document.cookie = `fyCcDecision=${JSON.stringify(currentSelection)}; ${expires}; path=/;`
+
+      if (selectionCount > 0) {
+        hideCookieBanner()
+      }
+    }
+
+    // const resetInput = (name) => {
+    //   const elements = document.querySelectorAll(`input[name="${name}"]`)
+    //   for(var i=0; i < elements.length; i++) {
+    //     elements[i].checked = false
+    //   }
+    // }
+
+    const hideCookieBanner = () => {
+      document.getElementsByClassName('cookie-consent-banner')[0].classList.remove('visible')
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const json = getCookie('fyCcDecision')
+      if (json) {
+        currentSelection = JSON.parse(json)
+      }
+
+      let selectionCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+      }
+
+      if (selectionCount === 0) {
+        cookieConsent.showCookieBanner()
+      }
+    })
+
+    return {
+      showCookieBanner: () => {
+        document.getElementsByClassName('cookie-consent-banner')[0].classList.add('visible')
+      },
+
+      // openCookieLayer: () => {
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.add('visible')
+      //   for(var i=0; i < cookies.length; i++) {
+      //     setCookieSelection(cookies[i], currentSelection[cookies[i]])
+      //   }
+      // },
+
+      // closeCookieLayer: () => {
+      //   saveCookieSettings()
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.remove('visible')
+      // },
+
+      acceptCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = true
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      declineCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = false
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      // onCookieSelectionChange: (name) => {
+      //   var value = document.querySelector(`input[name="${name}"]:checked`).value
+      //   currentSelection[name] = value === '1' ? true : false
+      // },
+
+      // resetAllCookies: () => {
+      //   for(var i=0; i < cookies.length; i++) {
+      //     resetInput(cookies[i])
+      //   }
+      //   currentSelection = {}
+      //   document.cookie = `fyCcDecision=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      // }
+    }
+  })(window.document, window.location)
+</script>
+
+<div class="cookie-consent-banner">
+  <div class="cookie-consent-banner__text">
+      Wir verwenden optionale Statistik-Cookies, um unsere Dienste auf Grundlage Ihrer Aktivitäten zu optimieren. Um
+diese Dienste verwenden zu dürfen, benötigen wir Ihre Einwilligung. Ihre Einwilligung können Sie jederzeit
+widerrufen, indem Sie diesen Banner über den Link „Cookies verwalten“ in der Fußzeile dieser Webseite
+erneut aufrufen und auf „Alle ablehnen“ klicken. Wenn Sie optionale Statistik-Cookies ablehnen, werden nur die Cookies
+verwendet, die zur Bereitstellung unserer Dienste technisch erforderlich sind. Weitere Informationen, unter
+anderem zu den verarbeiteten Daten, können Sie unserer <a href="/Legal/privacy/?p=de">Datenschutzerklärung</a> entnehmen.  </div>
+
+  <div class="cookie-consent-banner__buttons">
+    <a class="cookie-consent-banner__buttons__button" href="" onclick="cookieConsent.acceptCookies()">Annehmen</a>
+    <a class="cookie-consent-banner__buttons__button" href="javascript:void(0)" onclick="cookieConsent.declineCookies()">Alle ablehnen</a>
+      </div>
+</div>
+<script>
+    (function(document, location) {
+        var getCookie = function(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(";");
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==" ") c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return "";
+};
+var getQuery = function(name) {
+    var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(location.href);
+    if (!results || !results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if (!getCookie("msfcid0") && document.referrer) {
+    document.cookie = "msfcid0=" + document.referrer + "; path=/;";
+}
+if (getQuery("fycid")) {
+    document.cookie = "msfcid00=" + getQuery("fycid") + "; path=/;";
+} else if (getQuery("fy_campaign")) {
+    document.cookie = "msfcid00=" + getQuery("fy_campaign") + "; path=/;";
+}
+    })(window.document, window.location);
+</script>
+</body>
+</html>
+<!-- v1.144.113 -->
