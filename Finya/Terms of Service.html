@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de" translate="no">
+<head>
+    <script>
+        (function() {
+            var Cookies = (function(document, Date) {
+    var setCookie = function(name, value, millisecondDuration) {
+        var d = new Date();
+        d.setTime(d.getTime() + millisecondDuration);
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    };
+    var getCookie = function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    return {
+        set: setCookie,
+        get: getCookie
+    };
+})(document, Date)
+;
+            var hasFromAppParam = document.location.search.substring(1).split('&').some((part) => part.indexOf('from_app') === 0);
+            var hasFromAppCookie = Cookies.get('from_app') === '1';
+
+            if (hasFromAppParam && !hasFromAppCookie) {
+                var millisecondsADay = 86400000;
+                Cookies.set('from_app', '1', millisecondsADay);
+            }
+
+            if (hasFromAppCookie && !hasFromAppParam) {
+                document.location.href = document.location.href + (document.location.search ? '&' : '?') + 'from_app=1';
+            }
+        })()
+    </script>
+
+    <meta name="google" content="nopagereadaloud">
+    <link rel="alternate" href="https://www.finya.de/Legal/terms/" hreflang="de-de">
+    <link rel="alternate" href="https://www.finya.at/Legal/terms/" hreflang="de-at">
+    <link rel="alternate" href="https://www.finya.ch/Legal/terms/" hreflang="de-ch">
+    <title>Nutzungsbedingungen — Finya</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="Finya">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Finya">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nutzungsbedingungen — Finya">
+        <meta property="og:description" content="Die Nutzungsbedingungen von Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta itemprop="name" content="Finya">
+    <meta itemprop="description" content="Die Nutzungsbedingungen von Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta name="description" content="Die Nutzungsbedingungen von Finya — dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+        <link rel="icon" href="/assets/img/finya-favicon-144x144.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-6.3.0.all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/v/b55435d688edfde563702da9c99d4d6b/css/public.css">
+        
+    </head>
+<body class="public" data-locale="de_DE">
+            <header>
+            <div class="logo-wrapper">
+                <a href="/"><img src="/assets/img/finya-logo-2c-legacyblue-pos-500w.png" height="60"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Registration/signup/" class="header-link header-link-btn is--public">Kostenlos registrieren</a></div>
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Auth/signin/" class="header-link header-link-btn header-link-signin is--public">Login</a></div>
+            </div>
+        </header>
+        <div class="content">
+        
+<main style="word-break: break-word">
+    <h1>Nutzungsbedingungen</h1>
+
+    <p>Stand: 7. Mai 2014</p>
+<h3>1. Gegenstand dieser Nutzungsbedingungen</h3>
+<p>1.1. Die Finya GmbH &amp; Co. KG ("Finya") betreibt im Internet als technischer Dienstleister ein Angebot ("Plattform"), auf dem natürliche Personen ("Nutzer") nach erfolgreicher Registrierung elektronische Selbstbeschreibungen ("Profile") von sich erstellen, über die Plattform veröffentlichen, andere Nutzer anhand bestimmter Kriterien innerhalb des Portals suchen und/oder mit diesen innerhalb des Portals kommunizieren können. Im Rahmen der Plattform werden insbesondere folgende Leistungen angeboten:</p>
+<p>1.1.1. Die Plattform umfasst das gesamte über die Internetadresse www.finya.de abrufbare Angebot, sofern dieses von Finya verantwortet und/oder betrieben wird. Werbung, Promotion, Gewinnspiele und Kooperationen, welche durch Dritte über Werbemittel und Links bereitgestellt werden und auf externe Angebote verlinken, sind nicht Gegenstand der von Finya betriebenen Plattform.</p>
+<p>1.1.2. Für die Nutzung des Angebots legt der Nutzer unter einem Pseudonym ein Profil zum Zweck der Selbstdarstellung an. Hierfür sind einige Angaben zwingend erforderlich – z. B. Pseudonym, Geschlecht, Wohnort, Geburtsdatum und E-Mail-Adresse – und andere freiwillig, z. B. Größe, Haarfarbe, Präferenzen, ein persönliches Motto, Fotos u. a.</p>
+<p>1.1.3. Über verschiedene Suchfunktionen können Nutzer sich über die Angabe bestimmter Kriterien wechselseitig finden und die über das Profil eingestellten Informationen abrufen und miteinander Kontakt innerhalb der Plattform aufnehmen.</p>
+<p>1.1.4. Die Nutzer können nach erfolgter Kontaktaufnahme über das Portal Nachrichten austauschen und Echtzeitgespräche in Textform führen ("Chat").</p>
+<p>1.2. Für die Nutzung der Plattform gelten ausschließlich diese Nutzungsbedingungen. Abweichende, entgegenstehende oder ergänzende Geschäftsbedingungen des Nutzers finden keine Anwendung.</p>
+<h3>2. Registrierung / Zugang zum Portal</h3>
+<p>2.1. Voraussetzung für die Nutzung des Portals ist eine erfolgreiche Registrierung durch den Nutzer, bei der dieser ein Pseudonym, ein persönliches Kennwort sowie weitere Daten angibt, die zum Betrieb des Portals erforderlich sind. Diese Daten werden zu dem Profil des Nutzers gespeichert.</p>
+<p>2.2. Nur diejenige Person, die sich auf diese Weise auf der Plattform registriert hat, ist auch berechtigt, das entsprechende Profil zu nutzen. Eine Nutzung durch mehrere Personen ist nicht zulässig. Der Nutzer versichert gegenüber Finya, dass seine anlässlich der Registrierung angegebenen Daten vollständig sind und der Wahrheit entsprechen.</p>
+<p>2.3. Voraussetzung für die Nutzung der Plattform ist ein Mindestalter des Nutzers von 18 Jahren. Finya ist berechtigt, in diesem Zusammenhang Stichproben durchzuführen und in Einzelfällen einen Altersnachweis anzufordern. Profile von Nutzern unter 18 Jahren können von Finya unverzüglich gelöscht werden.</p>
+<p>2.4. Mit der Registrierung erklärt der Nutzer sein Einverständnis mit der Geltung dieser Nutzungsbedingungen. Ein Anspruch auf Registrierung bzw. auf Zugang zur Plattform besteht nicht. </p>
+<p>2.5. Finya ist berechtigt, Nutzer bei einem vermuteten oder nachgewiesenen Verstoß gegen diese Nutzungsbedingungen vom weiteren Zugang zum Portal auszuschließen und eine Nutzung zu unterbinden. </p>
+<h3>3. Vergütung</h3>
+<p>3.1. Die Nutzung der Plattform ist für den Nutzer kostenlos.</p>
+<p>3.2. Dem Nutzer steht es frei, nach seinem Belieben Finya eine sog. remuneratorische (»belohnende«) Schenkung (§ 516 BGB) als Anerkennung für die in der Vergangenen seitens Finya im Zusammenhang mit dem kostenlosen Betrieb der Plattform erbrachten Leistungen zukommen zu lassen. Diese Zahlung ist freiwillig und nicht an einen bestimmten Zweck gebunden.</p>
+<p>3.3. Eigene Kosten und Aufwendungen, die durch die Nutzung der Plattform direkt beim Nutzer anfallen (z. B. Einwahlkosten, Kosten einer Internetverbindung usw.) trägt allein der Nutzer.</p>
+<p>3.4. Das Portal wird ausschließlich durch Werbung finanziert. Anhand der durch den Nutzer getätigten Angaben wird die Schaltung individualisierter Werbung innerhalb des Nutzerprofils erfolgen, insbesondere durch Einbindung von auf die Interessen des Nutzers angepassten werblichen Angeboten. Einzelheiten hierzu enthält die <a href="/Legal/privacy">Datenschutzerklärung</a> von Finya.</p>
+<h3>4. Pflichten des Nutzers</h3>
+<p>4.1. Die Nutzung des Portals ist nur unter Beachtung der gesetzlichen Bestimmungen und der Regelungen dieser Nutzungsbedingungen zulässig.</p>
+<p>4.2. Die Nutzung der Plattform ist ausschließlich dem Zweck vorbehalten, die eigene Person mithilfe des angebotenen Funktionsumfangs darzustellen und mit anderen Mitgliedern über die auf der Plattform angebotenen Funktionen zu interagieren.</p>
+<p>4.3. Der Nutzer ist für den Inhalt seiner Registrierung und für alle Informationen, die er über sich bereitstellt, allein verantwortlich. Er versichert, jeweils nur wahrheitsgemäße Angaben zu machen und keine geschäftlichen Absichten zu verfolgen. Er wird die ihm innerhalb des Portals anvertrauten Daten Dritter nicht zu gewerblichen Zwecken verwenden.</p>
+<p>4.4. Es dürfen durch den Nutzer über die Plattform keine Inhalte angeboten, verbreitet, zugänglich gemacht und/oder durch Links verknüpft werden, die gegen geltendes Recht oder diese Nutzungsbedingungen verstoßen. Dies gilt insbesondere für beleidigende, Gewalt verherrlichende, diskriminierende, anstößige oder rechtswidrige Inhalte bzw. für strafbare Handlungen.</p>
+<p>4.5. Der Nutzer ist verpflichtet, Nachrichten oder andere Inhalte, die er von Dritten im Zusammenhang mit der Nutzung der Plattform erhält, vertraulich zu behandeln und diese nicht ohne Zustimmung ihres Urhebers Dritten zugänglich zu machen.</p>
+<p>4.6. Es ist dem Nutzer untersagt, eigene oder fremde personenbezogene Daten (Namen, Anschrift, Telefon-, Fax- und SMS-Nummern, E-Mail-Adressen) und andere Kontaktinformationen (wie z. B. Pseudonyme anderer Mitglieder dieser Plattform oder anderer Dienste) in ein Profil zu stellen.</p>
+<p>4.7. Die Nennung von Internetadressen (Links) zu anderen Websites ist im Profil gestattet, sofern das Ziel des Links reine Selbstdarstellungszwecke verfolgt.</p>
+<p>4.8. Der Nutzer verpflichtet sich, das Portal nicht auf missbräuchliche Weise zu verwenden. Es ist ihm insoweit insbesondere untersagt, </p>
+<p>4.8.1. andere Nutzer oder Dritte zu belästigen, zu bedrohen, zu täuschen oder zu schädigen; </p>
+<p>4.8.2. ein Profil zu erstellen bzw. ein Pseudonym zu verwenden, das Rechte Dritter verletzt, nicht ausschließlich der Selbstbeschreibung dient, die Schreibweise anderer Pseudonyme zu Zwecken der Irrführung anderer Mitglieder imitiert oder sexuell oder kommerziell ausgerichtet ist; </p>
+<p>4.8.3. rechtswidrige Inhalte oder Inhalte, die Nacktheit zum Gegenstand haben oder Inhalte, die auf andere Mitglieder anstößig wirken, in sein Profil einzustellen; </p>
+<p>4.8.4. Tätigkeiten auszuführen oder Daten zu versenden, die nach ihrer Art oder Beschaffenheit (etwa Viren) bzw. Größe oder Anzahl dazu geeignet sind, den Bestand oder den Betrieb der Plattform zu gefährden oder zu beeinträchtigen; </p>
+<p>4.8.5. urheberrechtlich oder andere geschützte Inhalte anzubieten, zu verbreiten, zugänglich zu machen oder durch Links zu verknüpfen; </p>
+<p>4.8.6. Nachrichten mit Gewinnerzielungsabsichten (Spamming, Scamming, Hoaxes, Werbung, Kleinanzeigen usw.) zu versenden oder derartige Inhalte zugänglich zu machen, insbesondere durch Hinweis auf andere Dienste ähnlicher Ausrichtung;</p>
+<p>4.8.7. nach Fotomodellen oder Ähnlichem, auch für nicht-kommerzielle oder private Zwecke, zu suchen;</p>
+<p>4.8.8. Bildmaterial in das Profil einzustellen, auf dem nicht ausschließlich der jeweilige Nutzer mit deutlich erkennbarem Gesicht zu sehen ist und das nicht offensichtlich nur dem Zweck einer wahrheitsgetreuen und aktuellen Selbstdarstellung der eigenen Person gerecht wird; </p>
+<p>4.8.9. mehr als ein Nutzerprofil gleichzeitig zu betreiben. </p>
+<p>4.9. Bei einem Verstoß gegen die vorgenannten Bestimmungen, die guten Sitten oder Rechte Dritter haftet der Nutzer gegenüber Finya auf Ersatz aller hieraus entstehenden Schäden, sofern ihn ein Verschulden trifft. Der Nutzer stellt Finya hiermit im Innenverhältnis vollumfänglich von allen etwaigen aus Verstößen resultierenden Ansprüchen Dritter frei.</p>
+<p>4.10. Bei jedem durch Finya festgestellten Verstoß gegen die vorgenannten Bestimmungen ist Finya berechtigt, den Nutzer sofort von der Nutzung der Plattform auszuschließen und seine eingestellten Daten endgültig zu löschen.</p>
+<p>4.11. Um zu verhindern, dass gewerbliche oder das System schädigende Inhalte innerhalb des Portals versendet werden (etwa Versand von Viren oder Spam-Mails), setzt Finya elektronische Filter ein, die die Kommunikation nach vorgegebenen Kriterien durchsuchen und ggf. in speziell eingerichtete Mail-Ordner verschieben. Finya weist darauf hin, dass Mitarbeiter von Finya keinen Einblick in die zwischen Nutzern der Plattform ausgetauschte Kommunikation hat.</p>
+<h3>5. Kündigung</h3>
+<p>5.1. Jeder Nutzer ist jederzeit berechtigt, sein Profil ohne Angabe von Gründen von der Plattform zu löschen. Löschungen können direkt über eine Funktion innerhalb der Plattform, schriftlich oder per E-Mail erfolgen. Jede Löschung gilt als sofortige Beendigung der Registrierung. </p>
+<p>5.2. Mit Eingang des Löschverlangens des Nutzers ist Finya berechtigt, sämtliche von dem Nutzer eingestellten Daten unwiderruflich und dauerhaft zu löschen. </p>
+<h3>6. Betrieb des Portals</h3>
+<p>6.1. Finya ist berechtigt, das Portal jederzeit ein- oder umzustellen oder in sonstiger Weise zu ändern, soweit die Änderung oder Abweichung unter Berücksichtigung der Interessen von Finya für den Nutzer zumutbar ist. Aus technischen Gründen kann es jederzeit zu zeitlichen und/oder inhaltlichen Einschränkungen der Verfügbarkeit der Plattform oder einzelner Funktionalitäten kommen. Ein Anspruch auf jederzeitigen oder störungsfreien Zugang zur Plattform besteht ebenso wenig wie auf die ununterbrochene Nutzbarkeit bzw. Erreichbarkeit. Dies gilt insbesondere, soweit der Zugriff auf die Plattform durch Störungen verursacht wird, die nicht im Verantwortungsbereich von Finya liegen. </p>
+<p>6.2. Finya ist bemüht, den Zugang zur Plattform 24 Stunden täglich und 7 Tage pro Woche zur Verfügung zu stellen. Vorübergehende Betriebsunterbrechungen aufgrund der üblichen Wartungsarbeiten, Störungen bei fremden Providern oder Netzbetreibern sowie im Falle höherer Gewalt sind allerdings jederzeit möglich. </p>
+<h3>7. Rechte</h3>
+<p>7.1. Alle Rechte an der Plattform sowie den damit verbundenen Inhalten, Designs, Technologien oder Kennzeichnungen liegen, soweit nicht anders angegeben, ausschließlich bei Finya. Nutzungen durch den Nutzer außerhalb der Plattform bzw. außerhalb des von und mit Finya verfolgten Zwecks sind ohne vorherige schriftliche Zustimmung von Finya unzulässig. </p>
+<p>7.2. Finya ist berechtigt, sämtliche vom Nutzer in sein Profil eingestellten, nicht personenbezogenen Daten zu vervielfältigen, zu verbreiten, zu veröffentlichen sowie zum öffentlichen Abruf bereitzustellen. Dies gilt gleichwohl – oder zumindest analog – für alle anderen Medien wie etwa Print, TV oder Mobile. </p>
+<h3>8. Datenschutz</h3>
+<p>Finya verpflichtet sich, bei dem Betrieb des Portals alle einschlägigen Vorschriften des Datenschutzrechts einzuhalten. Sämtliche Bestimmungen und Vereinbarungen betreffend den Umgang mit personenbezogenen Daten sind Inhalt der <a href="/Legal/terms">Datenschutzerklärung</a>. </p>
+<h3>9. Haftung</h3>
+<p>9.1. Im Hinblick auf die Haftung von Finya gilt:</p>
+<p>9.1.1. Ansprüche des Nutzers auf Schadensersatz sind ausgeschlossen. Hiervon ausgenommen sind Schadensersatzansprüche des Nutzers aus der Verletzung des Lebens, des Körpers, der Gesundheit oder aus der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) sowie die Haftung für sonstige Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung von Finya, seiner gesetzlichen Vertreter oder Erfüllungsgehilfen beruhen. Wesentliche Vertragspflichten sind solche, deren Erfüllung zur Erreichung des Ziels des Vertrags notwendig ist.</p>
+<p>9.1.2. Bei der Verletzung wesentlicher Vertragspflichten haftet Finya nur auf den vertragstypischen, vorhersehbaren Schaden, wenn dieser einfach fahrlässig verursacht wurde, es sei denn, es handelt sich um Schadensersatzansprüche des Nutzers aus einer Verletzung des Lebens, des Körpers oder der Gesundheit. Im Falle dieser Ziffer ist die Haftung für entgangenen Gewinn, mittelbare Schäden, Folgeschäden und Ansprüche Dritter ausgeschlossen.</p>
+<p>9.1.3. Die Einschränkungen nach 9.1.1. und 9.1.2. gelten auch zugunsten der gesetzlichen Vertreter und Erfüllungsgehilfen von Finya, wenn Ansprüche direkt gegen diese geltend gemacht werden.</p>
+<p>9.1.4. Die Vorschriften des Produkthaftungsgesetzes bleiben unberührt.</p>
+<p>9.2. Finya haftet für die Wiederbeschaffung von Daten nur, soweit der Nutzer alle erforderlichen und zumutbaren Datensicherungsvorkehrungen getroffen und sichergestellt hat, dass die Daten aus Datenmaterial, das in maschinenlesbarer Form bereitgehalten wird, mit vertretbarem Aufwand rekonstruiert werden können. </p>
+<p>9.3. Im Übrigen ist jegliche Haftung von Finya ausgeschlossen. Insbesondere haftet Finya nicht für Ausfälle der Plattform, für den Verlust, die Unvollständigkeit oder die Nichterreichbarkeit der Plattform oder Schäden jeglicher Art aufgrund von Denial-of-Service-Attacken, E-Mail-Spamming oder Computerviren, welche von Dritten und nicht von Finya zu vertreten sind. </p>
+<p>9.4. Der Nutzer ist verpflichtet, etwaige Schäden im Sinne vorstehender Haftungsregelungen unverzüglich gegenüber Finya schriftlich oder per E-Mail anzuzeigen, sodass Finya möglichst frühzeitig informiert ist und eventuell gemeinsam mit dem Nutzer Schadensbegrenzung bzw. -minderung betreiben kann. Unbeschadet hiervon ist auch der Nutzer zu Maßnahmen der Schadensbegrenzung verpflichtet. </p>
+<p>9.5. Finya hat keinen Einfluss auf den Inhalt von verlinkten Webseiten. Etwaige Links, die von Finya bereitgestellt werden, sind ausschließlich zur verbesserten Informationsbeschaffung für die Nutzer bereitgestellt. Für Inhalte und Aktivitäten solcher Inhalte haftet Finya nicht.</p>
+<p>9.6. Finya ist nicht verantwortlich für falsche Angaben des Nutzers bei seiner Registrierung und für eventuellen Missbrauch der in ein Profil eingestellten oder durch ihn gegenüber Dritten preisgegebenen Informationen, sofern Finya hierbei kein Verschulden trifft.</p>
+<h3>10. Änderung der Nutzungsbedingungen</h3>
+<p>10.1. Finya ist berechtigt, diese Nutzungsbedingungen jederzeit zu ändern. Über solche Änderungen wird der Nutzer unverzüglich informiert. </p>
+<p>10.2. Wenn der Nutzer den Änderungen nicht innerhalb von zwei Wochen, nachdem ihm diese angezeigt wurden, widerspricht, gelten die Änderungen als akzeptiert. Über diesen Umstand wird der Nutzer bei Ankündigung der Änderungen informiert. </p>
+<p>10.3. Für den Fall, dass der Nutzer den Änderungen widerspricht, können er oder Finya die Nutzung der Plattform sofort beenden. </p>
+<h3>11. Schlussbestimmungen</h3>
+<p>11.1. Sollten Bestimmungen dieser Nutzungsbedingungen ganz oder teilweise unwirksam sein oder werden, so bleiben die übrigen Bestimmungen davon unberührt. Vielmehr gilt an Stelle jeder unwirksamen Bestimmung eine dem Zweck der Vereinbarung entsprechende oder zumindest nahe kommende Ersatzbestimmung, wie sie die Parteien zur Erreichung des ursprünglichen Ergebnisses vereinbart hätten, wenn sie die Unwirksamkeit der Bestimmung gekannt hätten. Entsprechendes gilt für Regelungslücken. </p>
+<p>11.2. Im Geschäftsverkehr mit Unternehmern, juristischen Personen des öffentlichen Rechts oder bei öffentlich rechtlichem Sondervermögen gilt als Erfüllungsort und Gerichtsstand Hamburg, wenn nicht etwas anderes vereinbart wurde. </p>
+<p>11.3. Es gilt das materielle Recht der Bundesrepublik Deutschland unter Ausschluss des Kollisionsrechts. </main>
+    </div>
+    
+<footer>
+    <div class="footer-content">
+        <div class="footer-linklist">
+            <div class="linklist-title">Finya</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/?q=101">Über uns</a></li>
+                <li><a href="/Registration/signup/">Kostenlos registrieren</a></li>
+                <li><a href="/Auth/signin/">Login</a></li>
+                <li><a href="/Legal/privacy/?p=de">Datenschutz</a></li>
+                <li><a href="javascript:void(0);" onclick="cookieConsent.showCookieBanner();">Cookies verwalten</a></li>
+                <li><a href="/Legal/terms/">Nutzungsbedingungen</a></li>
+                <li><a href="/Legal/about/">Impressum</a></li>
+                <li>&nbsp;</li>
+                                    <li><a href="https://www.finya.de/Misc/chLocale/?l=de_DE" hreflang="de-de">Finya Deutschland</a></li>
+                    <li><a href="https://www.finya.at/Misc/chLocale/?l=de_AT" hreflang="de-at">Finya Österreich</a></li>
+                    <li><a href="https://www.finya.ch/Misc/chLocale/?l=de_CH" hreflang="de-ch">Finya Schweiz</a></li>
+                                                </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Häufige Fragen</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/" rel="help">Hilfe und FAQ</a></li>
+                <li><a href="/Help/faq/?q=101">Was ist Finya?</a></li>
+                <li><a href="/Help/faq/?q=001">Warum ist Finya kostenlos?</a></li>
+                <li><a href="/Help/faq/?q=108">Kostenlos und seriös: wie geht das?</a></li>
+                <li>&nbsp;</li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://apps.apple.com/de/app/finya/id1584652796/?fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/app-store-badge.png" height="40" alt="Finya im App Store laden">
+                                            </a>
+                </li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://play.google.com/store/apps/details?id=com.finya.app%26fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/google-play-badge.png" height="40" alt="Finya bei Google Play laden">
+                                            </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Weitere Infos</div>
+            <ul class="linklist-items">
+                                    <li><a href="/Blog/">Blog</a></li>
+                    <li><a href="/Singles/">Singles</a></li>
+                
+                                    <li><a href="/Singles/aus/Berlin/">Singles in Berlin</a></li>
+                    <li><a href="/Singles/aus/Hamburg/">Singles in Hamburg</a></li>
+                    <li><a href="/Singles/aus/M%C3%BCnchen/">Singles in München</a></li>
+                    <li><a href="/Singles/aus/K%C3%B6ln/">Singles in Köln</a></li>
+                    <li><a href="/Singles/aus/Frankfurt%20am%20Main/">Singles in Frankfurt</a></li>
+                    <li>&nbsp;</li>
+                
+                                    <li><a href="https://www.facebook.com/finya">Finya bei Facebook</a></li>
+                    <li><a href="https://www.twitter.com/finya_DE">Finya bei Twitter</a></li>
+                    <li>&nbsp;</li>
+                                <li><a href="#top" onclick="document.querySelector('a[name=top]').scrollIntoView({'behavior':'smooth'});return false;"><i class="far fa-arrow-up"></i> Seitenanfang</a></li>
+            </ul>
+        </div>
+        <div class="footer-end">
+            Copyright &copy; 2001-2024 Finya GmbH &amp; Co. KG. Alle Rechte vorbehalten.<br>
+            Hand-crafted with <i class="fas fa-heart"></i> in Hamburg.        </div>
+    </div>
+</footer>
+    <style>
+  .cookie-consent-banner {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    width: calc(100% - 10px);
+    padding: 2em;
+    background-color: #1B9DFF;
+    color: #ffffff;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner {
+      flex-direction: column;
+    }
+  }
+
+  .cookie-consent-banner.visible {
+    display: flex;
+  }
+
+  .cookie-consent-banner__text {
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner__text {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .cookie-consent-banner__buttons {
+    display: flex;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+
+  .cookie-consent-banner__buttons__button:hover {
+    background-color: #eceff1;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.3);
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button {
+      flex-basis: auto;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+<script>
+  const cookieConsent = (function(document, location) {
+    const cookies = [
+      'ccStatistics',
+      // 'ccSocialMedia',
+    ]
+
+    let currentSelection = {}
+
+    const getCookie = (name) => {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    // const setCookieSelection = (name, value) => {
+    //   if (value !== undefined) {
+    //     document.querySelector(`input[name="${name}"][value="${value ? '1' : '-1'}"]`).checked = true
+    //   }
+    // }
+
+    const saveCookieSettings = (name, value) => {
+      let selectionCount = 0
+      let acceptedCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+        if (currentSelection[cookies[i]] === true) {
+          acceptedCount ++
+        }
+      }
+
+      let durationDays
+      if (acceptedCount === cookies.length) {
+        durationDays = 365
+      } else {
+        durationDays = 30
+      }
+
+      const d = new Date();
+      d.setTime(d.getTime() + (durationDays * 24 * 60 * 60 * 1000))
+      let expires = "expires="+ d.toUTCString()
+
+      document.cookie = `fyCcDecision=${JSON.stringify(currentSelection)}; ${expires}; path=/;`
+
+      if (selectionCount > 0) {
+        hideCookieBanner()
+      }
+    }
+
+    // const resetInput = (name) => {
+    //   const elements = document.querySelectorAll(`input[name="${name}"]`)
+    //   for(var i=0; i < elements.length; i++) {
+    //     elements[i].checked = false
+    //   }
+    // }
+
+    const hideCookieBanner = () => {
+      document.getElementsByClassName('cookie-consent-banner')[0].classList.remove('visible')
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const json = getCookie('fyCcDecision')
+      if (json) {
+        currentSelection = JSON.parse(json)
+      }
+
+      let selectionCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+      }
+
+      if (selectionCount === 0) {
+        cookieConsent.showCookieBanner()
+      }
+    })
+
+    return {
+      showCookieBanner: () => {
+        document.getElementsByClassName('cookie-consent-banner')[0].classList.add('visible')
+      },
+
+      // openCookieLayer: () => {
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.add('visible')
+      //   for(var i=0; i < cookies.length; i++) {
+      //     setCookieSelection(cookies[i], currentSelection[cookies[i]])
+      //   }
+      // },
+
+      // closeCookieLayer: () => {
+      //   saveCookieSettings()
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.remove('visible')
+      // },
+
+      acceptCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = true
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      declineCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = false
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      // onCookieSelectionChange: (name) => {
+      //   var value = document.querySelector(`input[name="${name}"]:checked`).value
+      //   currentSelection[name] = value === '1' ? true : false
+      // },
+
+      // resetAllCookies: () => {
+      //   for(var i=0; i < cookies.length; i++) {
+      //     resetInput(cookies[i])
+      //   }
+      //   currentSelection = {}
+      //   document.cookie = `fyCcDecision=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      // }
+    }
+  })(window.document, window.location)
+</script>
+
+<div class="cookie-consent-banner">
+  <div class="cookie-consent-banner__text">
+      Wir verwenden optionale Statistik-Cookies, um unsere Dienste auf Grundlage Ihrer Aktivitäten zu optimieren. Um
+diese Dienste verwenden zu dürfen, benötigen wir Ihre Einwilligung. Ihre Einwilligung können Sie jederzeit
+widerrufen, indem Sie diesen Banner über den Link „Cookies verwalten“ in der Fußzeile dieser Webseite
+erneut aufrufen und auf „Alle ablehnen“ klicken. Wenn Sie optionale Statistik-Cookies ablehnen, werden nur die Cookies
+verwendet, die zur Bereitstellung unserer Dienste technisch erforderlich sind. Weitere Informationen, unter
+anderem zu den verarbeiteten Daten, können Sie unserer <a href="/Legal/privacy/?p=de">Datenschutzerklärung</a> entnehmen.  </div>
+
+  <div class="cookie-consent-banner__buttons">
+    <a class="cookie-consent-banner__buttons__button" href="" onclick="cookieConsent.acceptCookies()">Annehmen</a>
+    <a class="cookie-consent-banner__buttons__button" href="javascript:void(0)" onclick="cookieConsent.declineCookies()">Alle ablehnen</a>
+      </div>
+</div>
+<script>
+    (function(document, location) {
+        var getCookie = function(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(";");
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==" ") c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return "";
+};
+var getQuery = function(name) {
+    var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(location.href);
+    if (!results || !results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if (!getCookie("msfcid0") && document.referrer) {
+    document.cookie = "msfcid0=" + document.referrer + "; path=/;";
+}
+if (getQuery("fycid")) {
+    document.cookie = "msfcid00=" + getQuery("fycid") + "; path=/;";
+} else if (getQuery("fy_campaign")) {
+    document.cookie = "msfcid00=" + getQuery("fy_campaign") + "; path=/;";
+}
+    })(window.document, window.location);
+</script>
+</body>
+</html>
+<!-- v1.144.113 -->
