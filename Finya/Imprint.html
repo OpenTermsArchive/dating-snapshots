@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de" translate="no">
+<head>
+    <script>
+        (function() {
+            var Cookies = (function(document, Date) {
+    var setCookie = function(name, value, millisecondDuration) {
+        var d = new Date();
+        d.setTime(d.getTime() + millisecondDuration);
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    };
+    var getCookie = function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    return {
+        set: setCookie,
+        get: getCookie
+    };
+})(document, Date)
+;
+            var hasFromAppParam = document.location.search.substring(1).split('&').some((part) => part.indexOf('from_app') === 0);
+            var hasFromAppCookie = Cookies.get('from_app') === '1';
+
+            if (hasFromAppParam && !hasFromAppCookie) {
+                var millisecondsADay = 86400000;
+                Cookies.set('from_app', '1', millisecondsADay);
+            }
+
+            if (hasFromAppCookie && !hasFromAppParam) {
+                document.location.href = document.location.href + (document.location.search ? '&' : '?') + 'from_app=1';
+            }
+        })()
+    </script>
+
+    <meta name="google" content="nopagereadaloud">
+    <link rel="alternate" href="https://www.finya.de/Legal/about/" hreflang="de-de">
+    <link rel="alternate" href="https://www.finya.at/Legal/about/" hreflang="de-at">
+    <link rel="alternate" href="https://www.finya.ch/Legal/about/" hreflang="de-ch">
+    <title>Impressum — Finya</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="application-name" content="Finya">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Finya">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Impressum — Finya">
+        <meta property="og:description" content="Impressum von Finya, dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta itemprop="name" content="Finya">
+    <meta itemprop="description" content="Impressum von Finya, dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+    <meta name="description" content="Impressum von Finya, dem großen Anbieter für kostenlose Partnersuche und Partnervermittlung.">
+        <link rel="icon" href="/assets/img/finya-favicon-144x144.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-6.3.0.all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/v/b55435d688edfde563702da9c99d4d6b/css/public.css">
+        
+    </head>
+<body class="public" data-locale="de_DE">
+            <header>
+            <div class="logo-wrapper">
+                <a href="/"><img src="/assets/img/finya-logo-2c-legacyblue-pos-500w.png" height="60"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Registration/signup/" class="header-link header-link-btn is--public">Kostenlos registrieren</a></div>
+                <div class="header-link-wrapper header-link-wrapper-login"><a href="/Auth/signin/" class="header-link header-link-btn header-link-signin is--public">Login</a></div>
+            </div>
+        </header>
+        <div class="content">
+        <main>
+    <h1>Impressum</h1>
+
+    <h2>Betreiber der Website</h2>
+    <p>
+        Finya GmbH &amp; Co. KG<br>
+        Kehrwieder 11<br>
+20457 Hamburg<br>
+Deutschland    </p>
+    <p>
+        Handelsregister HR A 101007<br>
+Amtsgericht Hamburg    </p>
+    <p>
+        Komplementärin:<br>
+GWI Beteiligungsgesellschaft mbH<br>
+Handelsregister HR B 91871<br>
+Amtsgericht Hamburg    </p>
+    <p>
+        Geschäftsführer:<br>
+Alexander Gerlach, Julien Walther<br>
+Kontaktierbar über o. a. Anschrift    </p>
+    <p>
+        USt-IdNr. nach §27a UStG:<br>
+DE238472376    </p>
+    <h2>Nutzeranfragen und Support</h2>
+    <p>
+        Zu den häufigsten Fragen – z. B. zu Features, zur Mitgliedschaft
+        und zu vielen weiteren Themen – findest du Antworten und Unterstützung auf unseren <a href="/Help/faq">Hilfe-Seiten</a>.    </p>
+    <h2>Behördenanfragen</h2>
+    <p>
+        Behörden stehen neben unserer Postanschrift auch die E-Mail-Adresse behoerden(at)finya.de sowie die Faxnr. +49&nbsp;40&nbsp;228688599 als Kontaktmöglichkeiten zur Verfügung.    </p>
+
+    <h2>Mitgliedschaften</h2>
+    <p>
+        <a href="https://certified-senders.org/certificate/?id=1cf0795ae1301a733d55513527250c4c" target="_blank" style="display:inline-block; padding: 20px 10px 0 0; margin-right: 10px;">
+            <img src="/assets/img/CSA_trust_seal.svg" style="display:inline-block;height:50px;">
+        </a>
+        <a href="https://www.bvdw.org/zertifizierungen/code-of-conduct/" target="_blank" style="display:inline-block; padding: 20px 10px 0 0; margin-right: 10px;">
+            <img src="/assets/img/CoC-PA.png" style="display:inline-block;height:50px;">
+        </a>
+    </p>
+</main>
+
+    </div>
+    
+<footer>
+    <div class="footer-content">
+        <div class="footer-linklist">
+            <div class="linklist-title">Finya</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/?q=101">Über uns</a></li>
+                <li><a href="/Registration/signup/">Kostenlos registrieren</a></li>
+                <li><a href="/Auth/signin/">Login</a></li>
+                <li><a href="/Legal/privacy/?p=de">Datenschutz</a></li>
+                <li><a href="javascript:void(0);" onclick="cookieConsent.showCookieBanner();">Cookies verwalten</a></li>
+                <li><a href="/Legal/terms/">Nutzungsbedingungen</a></li>
+                <li><a href="/Legal/about/">Impressum</a></li>
+                <li>&nbsp;</li>
+                                    <li><a href="https://www.finya.de/Misc/chLocale/?l=de_DE" hreflang="de-de">Finya Deutschland</a></li>
+                    <li><a href="https://www.finya.at/Misc/chLocale/?l=de_AT" hreflang="de-at">Finya Österreich</a></li>
+                    <li><a href="https://www.finya.ch/Misc/chLocale/?l=de_CH" hreflang="de-ch">Finya Schweiz</a></li>
+                                                </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Häufige Fragen</div>
+            <ul class="linklist-items">
+                <li><a href="/Help/faq/" rel="help">Hilfe und FAQ</a></li>
+                <li><a href="/Help/faq/?q=101">Was ist Finya?</a></li>
+                <li><a href="/Help/faq/?q=001">Warum ist Finya kostenlos?</a></li>
+                <li><a href="/Help/faq/?q=108">Kostenlos und seriös: wie geht das?</a></li>
+                <li>&nbsp;</li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://apps.apple.com/de/app/finya/id1584652796/?fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/app-store-badge.png" height="40" alt="Finya im App Store laden">
+                                            </a>
+                </li>
+                <li>
+                    <a href="https://finya.page.link/?link=https://play.google.com/store/apps/details?id=com.finya.app%26fycid%3Dfinyade_internal_footer_all_standard&apn=com.finya.app&isi=1584652796&ibi=com.finya.app&efr=1">
+                                                    <img src="/assets/img/de_DE/google-play-badge.png" height="40" alt="Finya bei Google Play laden">
+                                            </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-linklist">
+            <div class="linklist-title">Weitere Infos</div>
+            <ul class="linklist-items">
+                                    <li><a href="/Blog/">Blog</a></li>
+                    <li><a href="/Singles/">Singles</a></li>
+                
+                                    <li><a href="/Singles/aus/Berlin/">Singles in Berlin</a></li>
+                    <li><a href="/Singles/aus/Hamburg/">Singles in Hamburg</a></li>
+                    <li><a href="/Singles/aus/M%C3%BCnchen/">Singles in München</a></li>
+                    <li><a href="/Singles/aus/K%C3%B6ln/">Singles in Köln</a></li>
+                    <li><a href="/Singles/aus/Frankfurt%20am%20Main/">Singles in Frankfurt</a></li>
+                    <li>&nbsp;</li>
+                
+                                    <li><a href="https://www.facebook.com/finya">Finya bei Facebook</a></li>
+                    <li><a href="https://www.twitter.com/finya_DE">Finya bei Twitter</a></li>
+                    <li>&nbsp;</li>
+                                <li><a href="#top" onclick="document.querySelector('a[name=top]').scrollIntoView({'behavior':'smooth'});return false;"><i class="far fa-arrow-up"></i> Seitenanfang</a></li>
+            </ul>
+        </div>
+        <div class="footer-end">
+            Copyright &copy; 2001-2024 Finya GmbH &amp; Co. KG. Alle Rechte vorbehalten.<br>
+            Hand-crafted with <i class="fas fa-heart"></i> in Hamburg.        </div>
+    </div>
+</footer>
+    <style>
+  .cookie-consent-banner {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    width: calc(100% - 10px);
+    padding: 2em;
+    background-color: #1B9DFF;
+    color: #ffffff;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner {
+      flex-direction: column;
+    }
+  }
+
+  .cookie-consent-banner.visible {
+    display: flex;
+  }
+
+  .cookie-consent-banner__text {
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .cookie-consent-banner__text {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .cookie-consent-banner__buttons {
+    display: flex;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+
+  .cookie-consent-banner__buttons__button:hover {
+    background-color: #eceff1;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.3);
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button {
+      flex-basis: auto;
+    }
+  }
+
+  .cookie-consent-banner__buttons__button:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .cookie-consent-banner__buttons__button:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+<script>
+  const cookieConsent = (function(document, location) {
+    const cookies = [
+      'ccStatistics',
+      // 'ccSocialMedia',
+    ]
+
+    let currentSelection = {}
+
+    const getCookie = (name) => {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    // const setCookieSelection = (name, value) => {
+    //   if (value !== undefined) {
+    //     document.querySelector(`input[name="${name}"][value="${value ? '1' : '-1'}"]`).checked = true
+    //   }
+    // }
+
+    const saveCookieSettings = (name, value) => {
+      let selectionCount = 0
+      let acceptedCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+        if (currentSelection[cookies[i]] === true) {
+          acceptedCount ++
+        }
+      }
+
+      let durationDays
+      if (acceptedCount === cookies.length) {
+        durationDays = 365
+      } else {
+        durationDays = 30
+      }
+
+      const d = new Date();
+      d.setTime(d.getTime() + (durationDays * 24 * 60 * 60 * 1000))
+      let expires = "expires="+ d.toUTCString()
+
+      document.cookie = `fyCcDecision=${JSON.stringify(currentSelection)}; ${expires}; path=/;`
+
+      if (selectionCount > 0) {
+        hideCookieBanner()
+      }
+    }
+
+    // const resetInput = (name) => {
+    //   const elements = document.querySelectorAll(`input[name="${name}"]`)
+    //   for(var i=0; i < elements.length; i++) {
+    //     elements[i].checked = false
+    //   }
+    // }
+
+    const hideCookieBanner = () => {
+      document.getElementsByClassName('cookie-consent-banner')[0].classList.remove('visible')
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const json = getCookie('fyCcDecision')
+      if (json) {
+        currentSelection = JSON.parse(json)
+      }
+
+      let selectionCount = 0
+      for(var i=0; i < cookies.length; i++) {
+        if (currentSelection[cookies[i]] !== undefined) {
+          selectionCount ++
+        }
+      }
+
+      if (selectionCount === 0) {
+        cookieConsent.showCookieBanner()
+      }
+    })
+
+    return {
+      showCookieBanner: () => {
+        document.getElementsByClassName('cookie-consent-banner')[0].classList.add('visible')
+      },
+
+      // openCookieLayer: () => {
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.add('visible')
+      //   for(var i=0; i < cookies.length; i++) {
+      //     setCookieSelection(cookies[i], currentSelection[cookies[i]])
+      //   }
+      // },
+
+      // closeCookieLayer: () => {
+      //   saveCookieSettings()
+      //   document.getElementsByClassName('cookie-consent-layer')[0].classList.remove('visible')
+      // },
+
+      acceptCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = true
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      declineCookies: () => {
+        for(var i=0; i < cookies.length; i++) {
+          currentSelection[cookies[i]] = false
+        }
+        saveCookieSettings()
+        hideCookieBanner()
+      },
+
+      // onCookieSelectionChange: (name) => {
+      //   var value = document.querySelector(`input[name="${name}"]:checked`).value
+      //   currentSelection[name] = value === '1' ? true : false
+      // },
+
+      // resetAllCookies: () => {
+      //   for(var i=0; i < cookies.length; i++) {
+      //     resetInput(cookies[i])
+      //   }
+      //   currentSelection = {}
+      //   document.cookie = `fyCcDecision=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      // }
+    }
+  })(window.document, window.location)
+</script>
+
+<div class="cookie-consent-banner">
+  <div class="cookie-consent-banner__text">
+      Wir verwenden optionale Statistik-Cookies, um unsere Dienste auf Grundlage Ihrer Aktivitäten zu optimieren. Um
+diese Dienste verwenden zu dürfen, benötigen wir Ihre Einwilligung. Ihre Einwilligung können Sie jederzeit
+widerrufen, indem Sie diesen Banner über den Link „Cookies verwalten“ in der Fußzeile dieser Webseite
+erneut aufrufen und auf „Alle ablehnen“ klicken. Wenn Sie optionale Statistik-Cookies ablehnen, werden nur die Cookies
+verwendet, die zur Bereitstellung unserer Dienste technisch erforderlich sind. Weitere Informationen, unter
+anderem zu den verarbeiteten Daten, können Sie unserer <a href="/Legal/privacy/?p=de">Datenschutzerklärung</a> entnehmen.  </div>
+
+  <div class="cookie-consent-banner__buttons">
+    <a class="cookie-consent-banner__buttons__button" href="" onclick="cookieConsent.acceptCookies()">Annehmen</a>
+    <a class="cookie-consent-banner__buttons__button" href="javascript:void(0)" onclick="cookieConsent.declineCookies()">Alle ablehnen</a>
+      </div>
+</div>
+<script>
+    (function(document, location) {
+        var getCookie = function(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(";");
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==" ") c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return "";
+};
+var getQuery = function(name) {
+    var regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(location.href);
+    if (!results || !results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+if (!getCookie("msfcid0") && document.referrer) {
+    document.cookie = "msfcid0=" + document.referrer + "; path=/;";
+}
+if (getQuery("fycid")) {
+    document.cookie = "msfcid00=" + getQuery("fycid") + "; path=/;";
+} else if (getQuery("fy_campaign")) {
+    document.cookie = "msfcid00=" + getQuery("fy_campaign") + "; path=/;";
+}
+    })(window.document, window.location);
+</script>
+</body>
+</html>
+<!-- v1.144.113 -->
