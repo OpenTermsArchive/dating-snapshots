@@ -69,8 +69,25 @@
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/assets/v/4e300c545fc36cca57cf4b425c177fe7/css/public.css">
         
-    </head>
-<body class="public" data-locale="de_DE">
+            
+            <script>
+                window._ocrQueue = window._ocrQueue || [];
+                window._ocrQueue.push(function(tcData, hasFullConsent) {
+                    if (tcData.gdprApplies && !hasFullConsent(tcData)) {
+                        return;
+                    }
+                    
+                    window._comscore = window._comscore || [];
+                    window._comscore.push({ c1: "2", c2: "31878380", cs_ucfr: "1"});
+                    (function() {
+                        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                        el.parentNode.insertBefore(s, el);
+                    })();
+                });
+            </script>
+            </head>
+<body class="public signedin" data-locale="de_DE">
             <header>
             <div class="logo-wrapper">
                 <a href="/"><img src="/assets/img/finya-logo-2c-legacyblue-pos-500w.png" height="60"></a>
@@ -170,10 +187,7 @@
                 <li><a href="/Legal/terms/">Nutzungsbedingungen</a></li>
                 <li><a href="/Legal/about/">Impressum</a></li>
                 <li>&nbsp;</li>
-                                    <li><a href="https://www.finya.de/Misc/chLocale/?l=de_DE" hreflang="de-de">Finya Deutschland</a></li>
-                    <li><a href="https://www.finya.at/Misc/chLocale/?l=de_AT" hreflang="de-at">Finya Österreich</a></li>
-                    <li><a href="https://www.finya.ch/Misc/chLocale/?l=de_CH" hreflang="de-ch">Finya Schweiz</a></li>
-                                                </ul>
+                            </ul>
         </div>
         <div class="footer-linklist">
             <div class="linklist-title">Häufige Fragen</div>
