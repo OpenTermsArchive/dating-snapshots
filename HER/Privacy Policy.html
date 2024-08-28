@@ -1006,5 +1006,5 @@ newelem.innerHTML=t.innerHTML;t.parentNode.replaceChild(newelem,t);if(typeof(new
 convert_to_video_tag(imgs);}}
 function lazyload_video(imgs,bodyRect,top,window_height,win_width){for(var i=0;i<imgs.length;i++){var elem=imgs[i],elemRect=imgs[i].getBoundingClientRect();if(elemRect.top!=0&&(elemRect.top-(window_height-bodyRect.top))<w3_lazy_load_by_px){if(typeof(imgs[i].getElementsByTagName("source")[0])=="undefined"){lazyload_video_source(imgs[i],top,window_height,win_width,elemRect,bodyRect);}else{var sources=imgs[i].getElementsByTagName("source");for(var j=0;j<sources.length;j++){var source=sources[j];lazyload_video_source(source,top,window_height,win_width,elemRect,bodyRect);}}}}}</script></body>
 
-</html><!-- Rocket no webp -->
+</html>
 <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
