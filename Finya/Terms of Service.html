@@ -69,7 +69,24 @@
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="stylesheet" type="text/css" href="/assets/v/b40c2e765be7be0cb93f5936e67f1228/css/public.css">
         
-    </head>
+            
+            <script>
+                window._ocrQueue = window._ocrQueue || [];
+                window._ocrQueue.push(function(tcData, hasFullConsent) {
+                    if (tcData.gdprApplies && !hasFullConsent(tcData)) {
+                        return;
+                    }
+                    
+                    window._comscore = window._comscore || [];
+                    window._comscore.push({ c1: "2", c2: "31878380", cs_ucfr: "1"});
+                    (function() {
+                        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                        el.parentNode.insertBefore(s, el);
+                    })();
+                });
+            </script>
+            </head>
 <body class="public mobile signedin" data-locale="de_DE">
             <header>
             <div class="logo-wrapper">
