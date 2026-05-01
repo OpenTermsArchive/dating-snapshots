@@ -17,6 +17,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="preload" as="image" href="" fetchpriority="high">
+
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <link rel="alternate" hreflang="en" href="https://hily.com/cookie-policy/" />
 <link rel="alternate" hreflang="fr" href="https://hily.com/fr/cookie-policy/" />
@@ -135,7 +137,20 @@ blockquote {
         <!-- End Google Tag Manager -->
 
         <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-827971733"></script>
+        <script>
+            function initializeGoogleAds() {
+                const script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-827971733';
+                script.async = true;
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+
+                gtag('js', new Date());
+                gtag('config', 'AW-827971733');
+            }
+        </script>
         <script>
             function initializeYouTube() {
                 window.dataLayer = window.dataLayer || [];
@@ -1102,6 +1117,7 @@ var RocketPreloadLinksConfig = {"excludeUris":"/terms-of-use/|/privacypolicy/|/(
                     gtag('consent', 'update', consentMode);
                     localStorage.setItem('consentMode', JSON.stringify(consentMode));
 
+                    initializeGoogleAds();
                     initializeYouTube();
                     initTiktokAnalytics();
                     initSpotifyAnalytics();
